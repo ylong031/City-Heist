@@ -29,6 +29,6 @@ public class Buttons : MonoBehaviour
     public void Rules() 
     {
     
-    
+        Debug.Log("Rules!");
     }
 }
