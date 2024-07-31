@@ -1,0 +1,27 @@
+{
+  "name": "com.unity.services.core",
+  "displayName": "Services Core",
+  "version": "1.11.0",
+  "unity": "2019.4",
+  "description": "This package defines common components used by multiple Game Service packages.\nThese are standardized and aim to unify the overall experience of working with Game Services SDK.",
+  "dependencies": {
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.modules.androidjni": "1.0.0"
+  },
+  "relatedPackages": {
+    "com.unity.services.core.tests": "1.11.0"
+  },
+  "_upm": {
+    "changelog": "### Added\n\n- Adding `IServerAccessToken` and `IServerEnvironmentId` components for packages that want to support running operations in the context of a server.\n- Adding `IAccessTokenObserver` component for packages to be notified of changes to the `IAccessToken` value.\n\n### Fixed\n- Implement JsonConverters to prevent NotImplementedException when converters are invoked by reflection"
+  },
+  "upmCi": {
+    "footprint": "26dc1125efb9833efe48eeccb60a89be8a8c3619"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.services.core@1.11/manual/index.html",
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git",
+    "type": "git",
+    "revision": "dd29ee68b03935e05ea9551c5cf1e9c5ec83d939"
+  }
+}
