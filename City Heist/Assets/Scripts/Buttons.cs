@@ -22,8 +22,7 @@ public class Buttons : MonoBehaviour
 
     public void Exit() 
     {
-    
-    
+        
     }
 
     public void Rules() 
