@@ -34,10 +34,14 @@ public class GameManager : MonoBehaviour
 
     public Toggle[] tasks; 
 
-    private void Start()
+    void Awake()
     {
         instance = this;
+    }
 
+    private void Start()
+    {
+        // Locks cursor to center of game window and also hides cursor
         Cursor.lockState = CursorLockMode.Locked;
 
         // Starts the timer automatically
