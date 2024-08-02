@@ -12,9 +12,9 @@ public class Misc : MonoBehaviour
     public void Deduct() 
     {
         money = money - 10;
-    
-    
+        PlayerPrefs.SetFloat("Money", money);
     }
+
     private void Update()
     {
         moneytext.text = "$ " + money;

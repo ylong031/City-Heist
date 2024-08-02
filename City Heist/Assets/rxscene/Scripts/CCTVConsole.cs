@@ -22,6 +22,7 @@ public class CCTVConsole : MonoBehaviour
         {
             // Hack / Jam CCTV Console
             Cursor.lockState = CursorLockMode.None;
+            GameManager.instance.thirdPersonCamera.enabled = false;
             GameManager.instance.playerMovement.enabled = false;
             GameManager.instance.cctvPanel.SetActive(true);
         }
@@ -30,6 +31,7 @@ public class CCTVConsole : MonoBehaviour
     public void HackJamCCTV()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.thirdPersonCamera.enabled = true;
         GameManager.instance.playerMovement.enabled = true;
         GameManager.instance.cctvPanel.SetActive(false);
 
@@ -37,8 +39,12 @@ public class CCTVConsole : MonoBehaviour
         GameManager.instance.hackedCCTV = true;
         GameManager.instance.tasks[0].isOn = true;
         GameManager.instance.tasks[1].gameObject.SetActive(true);
-        interactText.text = "You successfuly hacked / jammed the CCTV! Police will now arrive 30s later!";
-        GameManager.instance.remainingTime += 30f;
+        if (GameManager.instance.tasks[1].isOn)
+        {
+            GameManager.instance.tasks[2].gameObject.SetActive(true);
+        }
+        interactText.text = "You successfuly hacked / jammed the CCTV! Police will now arrive " + GameManager.instance.disableCCTVReward + "s later!";
+        GameManager.instance.remainingTime += GameManager.instance.disableCCTVReward;
     }
 
     private void OnTriggerEnter(Collider other)

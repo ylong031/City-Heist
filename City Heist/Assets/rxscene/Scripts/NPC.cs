@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
-    public GameObject vaultKeycard;
+    public GameObject itemDrop;
 
     private void Update()
     {
@@ -33,15 +33,13 @@ public class NPC : MonoBehaviour
             {
                 // Take hostage
                 isTalkedTo = true;
-                GameManager.instance.remainingTime += 10f;
+                GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
                 dialoguePanel.SetActive(false);
                 personLyingDown.SetActive(true);
                 gameObject.SetActive(false);
-                if (name == "Bank Manager")
+                if (name == "Bank Manager" || name == "Security Guard")
                 {
-                    GameManager.instance.foundVaultKeycard = true;
-                    GameManager.instance.tasks[1].isOn = true;
-                    GameManager.instance.tasks[2].gameObject.SetActive(true);
+                    itemDrop.SetActive(true);
                 }
             }
         }
@@ -80,10 +78,10 @@ public class NPC : MonoBehaviour
         {
             personLyingDown.GetComponent<Renderer>().material.color = Color.red;
             isTalkedTo = true;
-            GameManager.instance.remainingTime -= 15f;
-            if (name == "Bank Manager")
+            GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
+            if (itemDrop != null)
             {
-                vaultKeycard.SetActive(true);
+                itemDrop.SetActive(true);
             }
             dialoguePanel.SetActive(false);
             personLyingDown.SetActive(true);

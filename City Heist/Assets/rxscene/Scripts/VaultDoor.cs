@@ -25,6 +25,7 @@ public class VaultDoor : MonoBehaviour
             {
                 // Open bank vault door keypad
                 Cursor.lockState = CursorLockMode.None;
+                GameManager.instance.thirdPersonCamera.enabled = false;
                 GameManager.instance.playerMovement.enabled = false;
                 GameManager.instance.vaultKeypad.SetActive(true);
             }
@@ -34,6 +35,7 @@ public class VaultDoor : MonoBehaviour
     public void OpenVaultDoor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.thirdPersonCamera.enabled = true;
         GameManager.instance.playerMovement.enabled = true;
         GameManager.instance.vaultKeypad.SetActive(false);
 

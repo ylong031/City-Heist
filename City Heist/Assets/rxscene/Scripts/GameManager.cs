@@ -1,9 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton
     public static GameManager instance;
 
     [HideInInspector]
@@ -21,26 +23,46 @@ public class GameManager : MonoBehaviour
     public GameObject youLosePanel;
 
     public PlayerMovement playerMovement;
+    public CinemachineFreeLook thirdPersonCamera;
 
+    // Vault Door Task
     [HideInInspector]
     public string vaultCode;
     public GameObject vaultKeypad;
     public TMP_Text currentCode;
     public VaultDoor vaultDoor;
 
+    // CCTV Console Task
     public GameObject cctvPanel;
     public Image[] wiresToRotate;
     public CCTVConsole cctvConsole;
 
-    public Toggle[] tasks; 
+    // Task list
+    public Toggle[] tasks;
+
+    // Carry over money from city scene
+    public TMP_Text moneyText;
+
+    // Rewards (Time)
+    public float disableCCTVReward;
+    public float takeHostageReward;
+
+    // Penalties (Time)
+    public float killHostagePenalty;
+    public float vaultDoorPenalty;
+    public float cctvConsolePenalty;
 
     void Awake()
     {
+        // Singleton
         instance = this;
     }
 
     private void Start()
     {
+        // Carry over money from city scene
+        moneyText.text = "$" + PlayerPrefs.GetFloat("Money").ToString();
+        
         // Locks cursor to center of game window and also hides cursor
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -103,6 +125,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Press T to open / close task list
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tasks[0].transform.parent.gameObject.SetActive(!tasks[0].transform.parent.gameObject.activeSelf);
+        }
+
         // Countdown Timer
         if (isTimerRunning)
         {
@@ -174,6 +202,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                remainingTime -= vaultDoorPenalty;
                 currentCode.text = "";
             }
         }
@@ -189,16 +218,20 @@ public class GameManager : MonoBehaviour
 
     public void CloseKeypad()
     {
+        remainingTime -= vaultDoorPenalty;
         Cursor.lockState = CursorLockMode.Locked;
         currentCode.text = "";
         vaultKeypad.SetActive(false);
+        thirdPersonCamera.enabled = true;
         playerMovement.enabled = true;
     }
 
     public void CloseCCTVPanel()
     {
+        remainingTime -= cctvConsolePenalty;
         Cursor.lockState = CursorLockMode.Locked;
         cctvPanel.SetActive(false);
+        thirdPersonCamera.enabled = true;
         playerMovement.enabled = true;
     }
 }

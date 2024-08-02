@@ -20,7 +20,10 @@ public class VaultKeycard : MonoBehaviour
             // Take the vault keycard
             GameManager.instance.foundVaultKeycard = true;
             GameManager.instance.tasks[1].isOn = true;
-            GameManager.instance.tasks[2].gameObject.SetActive(true);
+            if (GameManager.instance.tasks[1].gameObject.activeSelf)
+            {
+                GameManager.instance.tasks[2].gameObject.SetActive(true);
+            }
             interactText.text = "";
             Destroy(gameObject);
         }

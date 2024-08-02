@@ -7,9 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
 
-    public GameObject bullet;
-    public Transform gunShootPoint;
-
     // Update is called once per frame
     void Update()
     {
@@ -36,17 +33,5 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));*/
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, cam.transform.localEulerAngles.y, transform.localEulerAngles.z);
-
-        // Shoot
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
-    }
-
-    void Shoot()
-    {
-        GameObject bulletObj = Instantiate(bullet, gunShootPoint.position, Quaternion.identity);
-        bulletObj.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetComponent<Bullet>().speed;
     }
 }
