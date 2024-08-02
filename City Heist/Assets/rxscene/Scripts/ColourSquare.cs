@@ -8,6 +8,11 @@ public class ColourSquare : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.randomizer != null && Vector2.Distance(transform.position, GameManager.instance.randomizer.transform.position) <= 5f)
+        {
+            index = GameManager.instance.randomizer.moveCount;
+        }
+
         if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y)) > 90f)
         {
             return;

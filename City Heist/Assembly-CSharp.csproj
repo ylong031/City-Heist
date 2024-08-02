@@ -82,6 +82,7 @@
      <Compile Include="Assets\rxscene\Scripts\NPC.cs" />
      <Compile Include="Assets\rxscene\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\rxscene\Scripts\PlayerShooting.cs" />
+     <Compile Include="Assets\rxscene\Scripts\RandomizeColourSquares.cs" />
      <Compile Include="Assets\rxscene\Scripts\VaultCodeMemo.cs" />
      <Compile Include="Assets\rxscene\Scripts\VaultDoor.cs" />
      <Compile Include="Assets\rxscene\Scripts\VaultKeycard.cs" />

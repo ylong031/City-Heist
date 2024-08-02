@@ -6,7 +6,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    // Singleton
+    // Game Manager Singleton
     public static GameManager instance;
 
     [HideInInspector]
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public CinemachineFreeLook thirdPersonCamera;
 
-    // Vault Door Task A
+    // Vault Door Task A (Input Vault Code)
     [HideInInspector]
     public string vaultCode;
     public GameObject vaultKeypad;
@@ -36,12 +36,14 @@ public class GameManager : MonoBehaviour
     // Vault Door Task A / B
     public bool isColourSquareTask;
 
-    // Vault Door Task B
+    // Vault Door Task B (Colour Squares Task)
     [HideInInspector]
     public int currentIndex = 1;
     public Image[] colourSquares;
     public GameObject colourSquarePanel;
     public int finalIndex;
+    // Randomize Colour Square Task
+    public RandomizeColourSquares randomizer;
 
     // CCTV Console Task
     public GameObject cctvPanel;
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton
+        // Game Manager Singleton
         instance = this;
     }
 
@@ -136,14 +138,6 @@ public class GameManager : MonoBehaviour
             // Generate 4-digit bank vault code
             GenerateVaultCode();
         }
-        else
-        {
-            // Reset Colour Square Task
-            foreach (Image colourSquare in colourSquares)
-            {
-                colourSquare.GetComponent<Image>().color = Color.white;
-            }
-        }
     }
 
     void Update()
@@ -204,7 +198,7 @@ public class GameManager : MonoBehaviour
         int num3 = Random.Range(0, 10);
         int num4 = Random.Range(0, 10);
         vaultCode = num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString();
-        Debug.Log("The code to the vault is: " + vaultCode);
+        //Debug.Log("The code to the vault is: " + vaultCode);
     }
 
     public void InputVaultCode(int num)
