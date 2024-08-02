@@ -9,7 +9,6 @@ public class Driving : MonoBehaviour
 
     [SerializeField] private float turnSpeed;
 
-
     [SerializeField] TMP_Text speedtext;
 
     [SerializeField] GameObject smoke;
