@@ -15,9 +15,13 @@ public class Driving : MonoBehaviour
     [SerializeField] GameObject smoke;
 
     [SerializeField] GameObject misc;
+
+    private AudioSource smokeAudioSource;
+
     void Start()
     {
-        
+        //get audio from the smoke object
+        smokeAudioSource = smoke.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -77,6 +81,12 @@ public class Driving : MonoBehaviour
             speed = 0;
 
             smoke.GetComponent<ParticleSystem>().Play();
+
+            //play the audio for car crash
+            if (smokeAudioSource != null)
+            {
+                smokeAudioSource.Play();
+            }
 
             misc.GetComponent<Misc>().Deduct();
 
