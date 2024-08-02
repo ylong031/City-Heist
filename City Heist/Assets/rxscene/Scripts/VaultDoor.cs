@@ -23,11 +23,22 @@ public class VaultDoor : MonoBehaviour
             // If player presses E or F key
             if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
             {
-                // Open bank vault door keypad
-                Cursor.lockState = CursorLockMode.None;
-                GameManager.instance.thirdPersonCamera.enabled = false;
-                GameManager.instance.playerMovement.enabled = false;
-                GameManager.instance.vaultKeypad.SetActive(true);
+                if (!GameManager.instance.isColourSquareTask)
+                {
+                    // Open bank vault door keypad
+                    Cursor.lockState = CursorLockMode.None;
+                    GameManager.instance.thirdPersonCamera.enabled = false;
+                    GameManager.instance.playerMovement.enabled = false;
+                    GameManager.instance.vaultKeypad.SetActive(true);
+                }
+                else
+                {
+                    // Open colour square panel
+                    Cursor.lockState = CursorLockMode.None;
+                    GameManager.instance.thirdPersonCamera.enabled = false;
+                    GameManager.instance.playerMovement.enabled = false;
+                    GameManager.instance.colourSquarePanel.SetActive(true);
+                }
             }
         }
     }
@@ -37,7 +48,14 @@ public class VaultDoor : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.thirdPersonCamera.enabled = true;
         GameManager.instance.playerMovement.enabled = true;
-        GameManager.instance.vaultKeypad.SetActive(false);
+        if (!GameManager.instance.isColourSquareTask)
+        {
+            GameManager.instance.vaultKeypad.SetActive(false);
+        }
+        else
+        {
+            GameManager.instance.colourSquarePanel.SetActive(false);
+        }
 
         isOpen = true;
         GameManager.instance.tasks[2].isOn = true;

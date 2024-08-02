@@ -37,7 +37,11 @@ public class NPC : MonoBehaviour
                 dialoguePanel.SetActive(false);
                 personLyingDown.SetActive(true);
                 gameObject.SetActive(false);
-                if (name == "Bank Manager" || name == "Security Guard")
+                if (name == "Bank Manager" && !GameManager.instance.isColourSquareTask)
+                {
+                    itemDrop.SetActive(true);
+                }
+                else if (name == "Security Guard")
                 {
                     itemDrop.SetActive(true);
                 }
@@ -81,7 +85,14 @@ public class NPC : MonoBehaviour
             GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
             if (itemDrop != null)
             {
-                itemDrop.SetActive(true);
+                if (name == "Bank Manager" && GameManager.instance.isColourSquareTask)
+                {
+                    itemDrop.SetActive(false);
+                }
+                else
+                {
+                    itemDrop.SetActive(true);
+                }
             }
             dialoguePanel.SetActive(false);
             personLyingDown.SetActive(true);

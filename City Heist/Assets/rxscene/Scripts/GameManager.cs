@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Cinemachine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,12 +26,22 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public CinemachineFreeLook thirdPersonCamera;
 
-    // Vault Door Task
+    // Vault Door Task A
     [HideInInspector]
     public string vaultCode;
     public GameObject vaultKeypad;
     public TMP_Text currentCode;
     public VaultDoor vaultDoor;
+
+    // Vault Door Task A / B
+    public bool isColourSquareTask;
+
+    // Vault Door Task B
+    [HideInInspector]
+    public int currentIndex = 1;
+    public Image[] colourSquares;
+    public GameObject colourSquarePanel;
+    public int finalIndex;
 
     // CCTV Console Task
     public GameObject cctvPanel;
@@ -50,6 +61,7 @@ public class GameManager : MonoBehaviour
     // Penalties (Time)
     public float killHostagePenalty;
     public float vaultDoorPenalty;
+    public float colourSquareTaskPenalty;
     public float cctvConsolePenalty;
 
     void Awake()
@@ -69,16 +81,13 @@ public class GameManager : MonoBehaviour
         // Starts the timer automatically
         isTimerRunning = true;
 
-        // Generate 4-digit bank vault code
-        GenerateVaultCode();
-
         // Randomize wires rotation
         foreach (var wire in wiresToRotate)
         {
             var rand = Random.Range(0, 4);
             if (rand == 0)
             {
-                if(wire.transform.eulerAngles.z == 0f)
+                if (wire.transform.eulerAngles.z == 0f)
                 {
                     wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
                 }
@@ -119,6 +128,20 @@ public class GameManager : MonoBehaviour
                 {
                     wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 270f));
                 }
+            }
+        }
+
+        if (!isColourSquareTask)
+        {
+            // Generate 4-digit bank vault code
+            GenerateVaultCode();
+        }
+        else
+        {
+            // Reset Colour Square Task
+            foreach (Image colourSquare in colourSquares)
+            {
+                colourSquare.GetComponent<Image>().color = Color.white;
             }
         }
     }
@@ -203,9 +226,17 @@ public class GameManager : MonoBehaviour
             else
             {
                 remainingTime -= vaultDoorPenalty;
-                currentCode.text = "";
+                StartCoroutine(IncorrectCode());
             }
         }
+    }
+
+    IEnumerator IncorrectCode()
+    {
+        currentCode.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        currentCode.color = Color.white;
+        currentCode.text = "";
     }
 
     public void DeleteVaultCode()
@@ -231,6 +262,15 @@ public class GameManager : MonoBehaviour
         remainingTime -= cctvConsolePenalty;
         Cursor.lockState = CursorLockMode.Locked;
         cctvPanel.SetActive(false);
+        thirdPersonCamera.enabled = true;
+        playerMovement.enabled = true;
+    }
+
+    public void CloseColourSquarePanel()
+    {
+        remainingTime -= vaultDoorPenalty;
+        Cursor.lockState = CursorLockMode.Locked;
+        colourSquarePanel.SetActive(false);
         thirdPersonCamera.enabled = true;
         playerMovement.enabled = true;
     }

@@ -7,7 +7,7 @@ public class WiresToRotate : MonoBehaviour
 
     private void Update()
     {
-        if(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y)) > 50f)
+        if(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y)) > 75f)
         {
             return;
         }
