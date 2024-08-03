@@ -1,0 +1,596 @@
+fileFormatVersion: 2
+guid: 05e6cd1d7abc7f449855f4c38820fd4a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4332029052735853504
+    second: pngfind.com-barbed-wire-png-522290_0
+  - first:
+      213: 6334044169193205527
+    second: pngfind.com-barbed-wire-png-522290_1
+  - first:
+      213: 5745559473787418495
+    second: pngfind.com-barbed-wire-png-522290_2
+  - first:
+      213: -9090636737993207480
+    second: pngfind.com-barbed-wire-png-522290_3
+  - first:
+      213: -329324550098109444
+    second: pngfind.com-barbed-wire-png-522290_4
+  - first:
+      213: -3400613899641042739
+    second: pngfind.com-barbed-wire-png-522290_5
+  - first:
+      213: -3867126556912191934
+    second: pngfind.com-barbed-wire-png-522290_6
+  - first:
+      213: -7406351155020034060
+    second: pngfind.com-barbed-wire-png-522290_7
+  - first:
+      213: 4507833279210563250
+    second: pngfind.com-barbed-wire-png-522290_8
+  - first:
+      213: -4946096542107839942
+    second: pngfind.com-barbed-wire-png-522290_9
+  - first:
+      213: -9168393982921688821
+    second: pngfind.com-barbed-wire-png-522290_10
+  - first:
+      213: -746891062620965996
+    second: pngfind.com-barbed-wire-png-522290_11
+  - first:
+      213: 7256127468423101848
+    second: pngfind.com-barbed-wire-png-522290_12
+  - first:
+      213: 9169959951158580620
+    second: pngfind.com-barbed-wire-png-522290_13
+  - first:
+      213: 1404966234928277572
+    second: pngfind.com-barbed-wire-png-522290_14
+  - first:
+      213: -5888806362497698707
+    second: pngfind.com-barbed-wire-png-522290_15
+  - first:
+      213: 3185234811840229013
+    second: pngfind.com-barbed-wire-png-522290_16
+  - first:
+      213: 8030831234230992800
+    second: pngfind.com-barbed-wire-png-522290_17
+  - first:
+      213: 6466158737340300343
+    second: pngfind.com-barbed-wire-png-522290_18
+  - first:
+      213: -5117360196208562175
+    second: pngfind.com-barbed-wire-png-522290_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ce103578a81e3c0800000000000000
+      internalID: -4332029052735853504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f2568dc9b07e750800000000000000
+      internalID: 6334044169193205527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77bafe66e35cbf40800000000000000
+      internalID: 5745559473787418495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_3
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8419cc11d0297d180800000000000000
+      internalID: -9090636737993207480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_4
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb369701110e6bf0800000000000000
+      internalID: -329324550098109444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_5
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8c3adeca79ec0d0800000000000000
+      internalID: -3400613899641042739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_6
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246f4c9a2e4355ac0800000000000000
+      internalID: -3867126556912191934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_7
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 432
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff0a337dda573990800000000000000
+      internalID: -7406351155020034060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6a702eb7a0f8e30800000000000000
+      internalID: 4507833279210563250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_9
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 289
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32dfd6866feb5bb0800000000000000
+      internalID: -4946096542107839942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 146
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09bf1faf3253c080800000000000000
+      internalID: -9168393982921688821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_11
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 146
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4933096298282a5f0800000000000000
+      internalID: -746891062620965996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d3058ec71f2b460800000000000000
+      internalID: 7256127468423101848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_13
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c859d55bdfd324f70800000000000000
+      internalID: 9169959951158580620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_14
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448615ac8517f7310800000000000000
+      internalID: 1404966234928277572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_15
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64b34440d1c64ea0800000000000000
+      internalID: -5888806362497698707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_16
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ee1fd6f2a343c20800000000000000
+      internalID: 3185234811840229013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_17
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af3377557e337f60800000000000000
+      internalID: 8030831234230992800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_18
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cf478cc196cb950800000000000000
+      internalID: 6466158737340300343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-barbed-wire-png-522290_19
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 3
+        width: 137
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100f345b30c7bf8b0800000000000000
+      internalID: -5117360196208562175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 27090b9fc72f52f41a504b6f6342dee7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
