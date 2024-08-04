@@ -1,54 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{F77FDA68-973F-75DF-C00F-29ABC2E37382}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{68da7ff7-3f97-df75-c00f-29abc2e37382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsExamples", "NavMeshComponentsExamples.csproj", "{FC2B195C-E22D-56F5-B764-A93ABEFCD128}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsExamples", "NavMeshComponentsExamples.csproj", "{5c192bfc-2de2-f556-b764-a93abefcd128}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{686355CD-3B8F-3B87-DFC0-A556B33AC7C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{cd556368-8f3b-873b-dfc0-a556b33ac7c1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsTestsPlaymode", "NavMeshComponentsTestsPlaymode.csproj", "{3CD173CE-23F0-E2E3-60C2-4216C108E186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsTestsPlaymode", "NavMeshComponentsTestsPlaymode.csproj", "{ce73d13c-f023-e3e2-60c2-4216c108e186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{79E8A709-2293-4475-D52B-47509B62ADD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{09a7e879-9322-7544-d52b-47509b62add2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsTestsEditmode", "NavMeshComponentsTestsEditmode.csproj", "{8A9400C4-15D4-6C84-E4F3-BBE25C5E707D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsTestsEditmode", "NavMeshComponentsTestsEditmode.csproj", "{c400948a-d415-846c-e4f3-bbe25c5e707d}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsExamplesEditor", "NavMeshComponentsExamplesEditor.csproj", "{F3CF391F-9FDD-0BF7-9E7A-30BBC0F5E6BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsExamplesEditor", "NavMeshComponentsExamplesEditor.csproj", "{1f39cff3-dd9f-f70b-9e7a-30bbc0f5e6ba}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F77FDA68-973F-75DF-C00F-29ABC2E37382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F77FDA68-973F-75DF-C00F-29ABC2E37382}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F77FDA68-973F-75DF-C00F-29ABC2E37382}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F77FDA68-973F-75DF-C00F-29ABC2E37382}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC2B195C-E22D-56F5-B764-A93ABEFCD128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC2B195C-E22D-56F5-B764-A93ABEFCD128}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC2B195C-E22D-56F5-B764-A93ABEFCD128}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC2B195C-E22D-56F5-B764-A93ABEFCD128}.Release|Any CPU.Build.0 = Release|Any CPU
-		{686355CD-3B8F-3B87-DFC0-A556B33AC7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{686355CD-3B8F-3B87-DFC0-A556B33AC7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{686355CD-3B8F-3B87-DFC0-A556B33AC7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{686355CD-3B8F-3B87-DFC0-A556B33AC7C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CD173CE-23F0-E2E3-60C2-4216C108E186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CD173CE-23F0-E2E3-60C2-4216C108E186}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CD173CE-23F0-E2E3-60C2-4216C108E186}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CD173CE-23F0-E2E3-60C2-4216C108E186}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79E8A709-2293-4475-D52B-47509B62ADD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79E8A709-2293-4475-D52B-47509B62ADD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79E8A709-2293-4475-D52B-47509B62ADD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79E8A709-2293-4475-D52B-47509B62ADD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A9400C4-15D4-6C84-E4F3-BBE25C5E707D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A9400C4-15D4-6C84-E4F3-BBE25C5E707D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A9400C4-15D4-6C84-E4F3-BBE25C5E707D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A9400C4-15D4-6C84-E4F3-BBE25C5E707D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3CF391F-9FDD-0BF7-9E7A-30BBC0F5E6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3CF391F-9FDD-0BF7-9E7A-30BBC0F5E6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3CF391F-9FDD-0BF7-9E7A-30BBC0F5E6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3CF391F-9FDD-0BF7-9E7A-30BBC0F5E6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68da7ff7-3f97-df75-c00f-29abc2e37382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68da7ff7-3f97-df75-c00f-29abc2e37382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5c192bfc-2de2-f556-b764-a93abefcd128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5c192bfc-2de2-f556-b764-a93abefcd128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{cd556368-8f3b-873b-dfc0-a556b33ac7c1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cd556368-8f3b-873b-dfc0-a556b33ac7c1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ce73d13c-f023-e3e2-60c2-4216c108e186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ce73d13c-f023-e3e2-60c2-4216c108e186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09a7e879-9322-7544-d52b-47509b62add2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09a7e879-9322-7544-d52b-47509b62add2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c400948a-d415-846c-e4f3-bbe25c5e707d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c400948a-d415-846c-e4f3-bbe25c5e707d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1f39cff3-dd9f-f70b-9e7a-30bbc0f5e6ba}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1f39cff3-dd9f-f70b-9e7a-30bbc0f5e6ba}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
