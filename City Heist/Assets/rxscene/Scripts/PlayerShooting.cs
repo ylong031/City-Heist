@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -14,16 +15,19 @@ public class PlayerShooting : MonoBehaviour
     public GameObject emptyGunMagazine;
     public Transform reloadMagazineDropPoint;
 
+    public TMP_Text bulletCountText;
+
     void Start()
     {
         currentBulletCount = maxBulletCount;
+        bulletCountText.text = currentBulletCount + "/∞";
     }
 
     // Update is called once per frame
     void Update()
     {
-        // If you are reloading
-        if (isReloading)
+        // If you are reloading / doing puzzle task
+        if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf)
         {
             // You can't shoot
             return;
@@ -52,6 +56,8 @@ public class PlayerShooting : MonoBehaviour
         currentBulletCount--;
         GameObject bulletObj = Instantiate(bullet, gunShootPoint.position, Quaternion.identity);
         bulletObj.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetComponent<Bullet>().speed;
+
+        bulletCountText.text = currentBulletCount + "/∞";
     }
 
     IEnumerator Reload()
@@ -61,5 +67,7 @@ public class PlayerShooting : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
         currentBulletCount = maxBulletCount;
         isReloading = false;
+
+        bulletCountText.text = currentBulletCount + "/∞";
     }
 }

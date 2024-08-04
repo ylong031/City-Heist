@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class VaultDoor : MonoBehaviour
 {
@@ -43,9 +44,31 @@ public class VaultDoor : MonoBehaviour
         }
     }
 
-    public void OpenVaultDoor()
+    public IEnumerator OpenVaultDoor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (GameManager.instance.isColourSquareTask)
+        {
+            foreach (var colourSquare in GameManager.instance.colourSquares)
+            {
+                if (colourSquare.color == Color.green)
+                {
+                    continue;
+                }
+                colourSquare.color = Color.green;
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            GameManager.instance.currentCode.color = Color.green;
+            GameManager.instance.currentCode.text = "SUCCESS";
+            yield return new WaitForSeconds(1.5f);
+        }
+
         GameManager.instance.thirdPersonCamera.enabled = true;
         GameManager.instance.playerMovement.enabled = true;
         if (!GameManager.instance.isColourSquareTask)
@@ -75,15 +98,15 @@ public class VaultDoor : MonoBehaviour
         // If player is near vault door
         if (other.tag == "Player")
         {
-            // If player has found the vault keycard & hacked the CCTV
-            if (GameManager.instance.foundVaultKeycard && GameManager.instance.hackedCCTV)
+            // If player has found the vault keycard & jammed the CCTV
+            if (GameManager.instance.foundVaultKeycard && GameManager.instance.jammedCCTV)
             {
                 isPlayerNearVaultDoor = true;
 
                 // Display interact text
                 interactText.text = "Press E or F key to open vault door.";
             }
-            else if (!GameManager.instance.hackedCCTV)
+            else if (!GameManager.instance.jammedCCTV)
             {
                 // Display interact text
                 interactText.text = "The CCTVs around the vault are still active.";

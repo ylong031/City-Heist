@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool foundMoney = false;
     [HideInInspector]
-    public bool hackedCCTV = false;
+    public bool jammedCCTV = false;
 
     // Countdown Timer
     public float remainingTime = 180f;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public Image[] colourSquares;
     public GameObject colourSquarePanel;
     public int finalIndex;
-    // Randomize Colour Square Task
+    // Randomize Colour Squares Task
     public RandomizeColourSquares randomizer;
 
     // CCTV Console Task
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text moneyText;
 
     // Rewards (Time)
-    public float disableCCTVReward;
+    public float jamCCTVReward;
     public float takeHostageReward;
 
     // Penalties (Time)
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
         }
 
         // CCTV Panel
-        if (cctvPanel.activeSelf)
+        if (cctvPanel.activeSelf && !cctvConsole.isBeingJammed)
         {
             foreach(var wire in wiresToRotate)
             {
@@ -176,7 +176,8 @@ public class GameManager : MonoBehaviour
                     return;
                 }
             }
-            cctvConsole.HackJamCCTV();
+            cctvConsole.isBeingJammed = true;
+            StartCoroutine(cctvConsole.JamCCTV());
         }
     }
 
@@ -215,7 +216,7 @@ public class GameManager : MonoBehaviour
         {
             if (currentCode.text == vaultCode)
             {
-                vaultDoor.OpenVaultDoor();
+                StartCoroutine(vaultDoor.OpenVaultDoor());
             }
             else
             {
