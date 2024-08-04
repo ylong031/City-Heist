@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public Image[] colourSquares;
     public GameObject colourSquarePanel;
     public int finalIndex;
-    // Randomize Colour Squares Task
+    // Randomize Colour Squares Task Correct Path
     public RandomizeColourSquares randomizer;
 
     // CCTV Console Task

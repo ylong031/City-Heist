@@ -21,11 +21,11 @@ public class RandomizeColourSquares : MonoBehaviour
             horizontalMove++;
             if (horizontalMove >= 8)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 219, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
             }
             else
             {
-                transform.position = new Vector3(transform.position.x + 219, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + (GameManager.instance.colourSquares[1].transform.position.x - GameManager.instance.colourSquares[0].transform.position.x), transform.position.y, transform.position.z);
             }
         }
         else if (rand == 1)
@@ -33,18 +33,18 @@ public class RandomizeColourSquares : MonoBehaviour
             verticalMove++;
             if (verticalMove >= 3)
             {
-                transform.position = new Vector3(transform.position.x + 219, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + (GameManager.instance.colourSquares[1].transform.position.x - GameManager.instance.colourSquares[0].transform.position.x), transform.position.y, transform.position.z);
             }
             else
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 219, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
             }
         }
 
         moveCount++;
         if (moveCount >= 10)
         {
-            //Debug.Log("End Reached!");
+            //Debug.Log("Randomization Complete!");
             yield return new WaitForSeconds(0.05f);
             Destroy(gameObject);
         }
