@@ -12,16 +12,6 @@ public class ColourSquare : MonoBehaviour
         {
             index = GameManager.instance.randomizer.moveCount;
         }
-
-/*        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y)) > 90f)
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            ChangeSquareColour();
-        }*/
     }
 
     public void ChangeSquareColour()
@@ -38,7 +28,8 @@ public class ColourSquare : MonoBehaviour
         else
         {
             GameManager.instance.currentIndex = 1;
-            GameManager.instance.remainingTime -= GameManager.instance.colourSquareTaskPenalty;
+            //GameManager.instance.remainingTime -= GameManager.instance.colourSquareTaskPenalty;
+            StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.colourSquareTaskPenalty));
             StartCoroutine(IncorrectPath());
         }
     }

@@ -1,23 +1,10 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class WiresToRotate : MonoBehaviour
 {
     public float correctRot;
     public bool isInCorrectRot = false;
-
-    /*private void Update()
-    {
-        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(Input.mousePosition.x, Input.mousePosition.y)) > 75f)
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            ChangeWireRotation();
-        }
-    }*/
+    bool firstTimeCorrect = false;
 
     public void ChangeWireRotation()
     {
@@ -41,9 +28,16 @@ public class WiresToRotate : MonoBehaviour
         if (transform.eulerAngles.z == correctRot)
         {
             isInCorrectRot = true;
+            firstTimeCorrect = true;
         }
         else
         {
+            // If wire rotates from correct rotation to incorrect rotation
+            if (isInCorrectRot && firstTimeCorrect)
+            {
+                // Incur time penalty
+                StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.cctvConsolePenalty));
+            }
             isInCorrectRot = false;
         }
     }

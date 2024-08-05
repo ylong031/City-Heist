@@ -22,7 +22,7 @@ public class VaultCodeMemo : MonoBehaviour
         // If player presses E or F key
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
-            // Display memo text
+            // Display vault code memo text
             GetComponent<Renderer>().enabled = false;
             interactText.text = "";
             dialoguePanel.SetActive(true);
@@ -34,7 +34,7 @@ public class VaultCodeMemo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // If player is near the vault keycard
+        // If player is near the vault code memo
         if (other.tag == "Player")
         {
             isPlayerNearby = true;

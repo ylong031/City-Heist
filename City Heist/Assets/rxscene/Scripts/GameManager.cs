@@ -220,7 +220,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                remainingTime -= vaultDoorPenalty;
+                //remainingTime -= vaultDoorPenalty;
+                StartCoroutine(ChangeRemainingTime(-vaultDoorPenalty));
                 StartCoroutine(IncorrectCode());
             }
         }
@@ -229,7 +230,7 @@ public class GameManager : MonoBehaviour
     IEnumerator IncorrectCode()
     {
         currentCode.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         currentCode.color = Color.white;
         currentCode.text = "";
     }
@@ -244,7 +245,8 @@ public class GameManager : MonoBehaviour
 
     public void CloseKeypad()
     {
-        remainingTime -= vaultDoorPenalty;
+        //remainingTime -= vaultDoorPenalty;
+        StartCoroutine(ChangeRemainingTime(-vaultDoorPenalty));
         Cursor.lockState = CursorLockMode.Locked;
         currentCode.text = "";
         vaultKeypad.SetActive(false);
@@ -254,7 +256,61 @@ public class GameManager : MonoBehaviour
 
     public void CloseCCTVPanel()
     {
-        remainingTime -= cctvConsolePenalty;
+        // Randomize wires rotation
+        foreach (var wire in wiresToRotate)
+        {
+            wire.GetComponent<WiresToRotate>().isInCorrectRot = false;
+            wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, wire.GetComponent<WiresToRotate>().correctRot));
+
+            var rand = Random.Range(0, 4);
+            if (rand == 0)
+            {
+                if (wire.transform.eulerAngles.z == 0f)
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
+                }
+                else
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                }
+            }
+            else if (rand == 1)
+            {
+                if (wire.transform.eulerAngles.z == 90f)
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+                }
+                else
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
+                }
+            }
+            else if (rand == 2)
+            {
+                if (wire.transform.eulerAngles.z == 180f)
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 270f));
+                }
+                else
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+                }
+            }
+            else if (rand == 3)
+            {
+                if (wire.transform.eulerAngles.z == 270f)
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                }
+                else
+                {
+                    wire.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 270f));
+                }
+            }
+        }
+
+        //remainingTime -= cctvConsolePenalty;
+        StartCoroutine(ChangeRemainingTime(-cctvConsolePenalty));
         Cursor.lockState = CursorLockMode.Locked;
         cctvPanel.SetActive(false);
         thirdPersonCamera.enabled = true;
@@ -263,10 +319,36 @@ public class GameManager : MonoBehaviour
 
     public void CloseColourSquarePanel()
     {
-        remainingTime -= vaultDoorPenalty;
+        // Reset Colour Squares
+        currentIndex = 1;
+        StartCoroutine(ChangeRemainingTime(-colourSquareTaskPenalty));
+        foreach (Image colourSquare in colourSquares)
+        {
+            colourSquare.GetComponent<Image>().color = Color.white;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         colourSquarePanel.SetActive(false);
         thirdPersonCamera.enabled = true;
         playerMovement.enabled = true;
+    }
+
+    public IEnumerator ChangeRemainingTime(float time)
+    {
+        for (int i = 0; i < Mathf.Abs(time); i++)
+        {
+            if (time < 0f)
+            {
+                countdownTimerText.color = Color.red;
+                remainingTime -= 1f;
+            }
+            else
+            {
+                countdownTimerText.color = Color.green;
+                remainingTime += 1f;
+            }
+            yield return new WaitForSeconds(1 / (Mathf.Abs(time) * 2));
+        }
+        countdownTimerText.color = Color.black;
     }
 }

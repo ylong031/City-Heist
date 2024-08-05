@@ -12,8 +12,8 @@ public class VaultDoor : MonoBehaviour
 
     private void Update()
     {
-        // If player hasn't found the vault keycard, don't do anything
-        if (!GameManager.instance.foundVaultKeycard)
+        // If player hasn't found the vault keycard / vault door has already been opened, don't do anything
+        if (!GameManager.instance.foundVaultKeycard || isOpen)
         {
             return;
         }

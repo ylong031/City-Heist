@@ -19,8 +19,8 @@ public class CCTVConsole : MonoBehaviour
 
     private void Update()
     {
-        // If player isn't near CCTV console, don't do anything
-        if (!isPlayerNearConsole)
+        // If player isn't near CCTV console / CCTV has already been jammed, don't do anything
+        if (!isPlayerNearConsole || isJammed)
         {
             return;
         }
@@ -42,6 +42,8 @@ public class CCTVConsole : MonoBehaviour
 
         computerVirus.SetActive(true);
         yield return new WaitForSeconds(computerVirusAnimationTime);
+
+        yield return new WaitForSeconds(0.25f);
 
         tintPanel.SetActive(true);
         yield return new WaitForSeconds(0.25f);
@@ -73,7 +75,8 @@ public class CCTVConsole : MonoBehaviour
             GameManager.instance.tasks[2].gameObject.SetActive(true);
         }
         interactText.text = "You successfuly jammed the CCTV! Police will now arrive " + GameManager.instance.jamCCTVReward + "s later!";
-        GameManager.instance.remainingTime += GameManager.instance.jamCCTVReward;
+        //GameManager.instance.remainingTime += GameManager.instance.jamCCTVReward;
+        StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.jamCCTVReward));
     }
 
     private void OnTriggerEnter(Collider other)

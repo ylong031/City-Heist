@@ -16020,7 +16020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   computerVirus: {fileID: 1138972382}
-  computerVirusAnimationTime: 2.5
+  computerVirusAnimationTime: 3.5
   tintPanel: {fileID: 1684922125}
   isBeingJammed: 0
 --- !u!65 &1852922457
@@ -16332,7 +16332,7 @@ MonoBehaviour:
   vaultKeypad: {fileID: 1694538451}
   currentCode: {fileID: 1500664635}
   vaultDoor: {fileID: 1862712733}
-  isColourSquareTask: 1
+  isColourSquareTask: 0
   currentIndex: 1
   colourSquares:
   - {fileID: 1082968900}
@@ -16387,7 +16387,7 @@ MonoBehaviour:
   - {fileID: 1732198551}
   moneyText: {fileID: 1829240042}
   jamCCTVReward: 30
-  takeHostageReward: 10
+  takeHostageReward: 15
   killHostagePenalty: 15
   vaultDoorPenalty: 25
   colourSquareTaskPenalty: 15

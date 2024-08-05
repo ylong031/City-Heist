@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour
                 // Take hostage
                 isTalkedTo = true;
                 GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
+                //StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
                 dialoguePanel.SetActive(false);
                 personLyingDown.SetActive(true);
                 gameObject.SetActive(false);
@@ -83,6 +84,7 @@ public class NPC : MonoBehaviour
             personLyingDown.GetComponent<Renderer>().material.color = Color.red;
             isTalkedTo = true;
             GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
+            //StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
             if (itemDrop != null)
             {
                 if (name == "Bank Manager" && GameManager.instance.isColourSquareTask)
