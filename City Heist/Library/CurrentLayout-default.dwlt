@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 129
+  controlID: 81
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 56
+  controlID: 110
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 57
+  controlID: 111
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,20 +311,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Bank Scene/Office Props Softpack/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Bank Scene/Office Props Softpack/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Andrea Nelson\Documents\GitHub\City-Heist\City Heist
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 484c0000
-    m_LastClickedID: 19528
-    m_ExpandedIDs: 000000001c4c000000ca9a3b
+    scrollPos: {x: 0, y: 39}
+    m_SelectedIDs: 56510000
+    m_LastClickedID: 20822
+    m_ExpandedIDs: 00000000544b00005a4b00009e4b00008a4e0000b24f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -352,7 +352,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c4c0000
+    m_ExpandedIDs: 00000000544b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -396,7 +396,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 88}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -474,10 +474,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 484c0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: dcf9ffff
+      scrollPos: {x: 0, y: 1481}
+      m_SelectedIDs: dc3a0000
+      m_LastClickedID: 15068
+      m_ExpandedIDs: d4edfdffa0fcfdff62a6feff64a8feff6217ffff9e19ffff941cffff9837ffff8c85ffff2090ffffae92ffff0c94ffffb8a9fffff4c2ffff38fbffffa4360000a637000084380000703a00007a3a0000823a0000a03a0000463b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -493,7 +493,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.170448, y: 4.0248556, z: -15.054165}
+    m_Target: {x: -16.475822, y: -14.687412, z: -20.593489}
     speed: 2
-    m_Value: {x: -8.170448, y: 4.0248556, z: -15.054165}
+    m_Value: {x: -16.475822, y: -14.687412, z: -20.593489}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,28 +577,28 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.24170022, y: -0.40358645, z: 0.11143434, w: 0.8753751}
+    m_Target: {x: -0.16185676, y: 0.75245297, z: -0.20097469, w: -0.6059942}
     speed: 2
-    m_Value: {x: -0.24170023, y: 0.40358645, z: -0.11143434, w: -0.87537515}
+    m_Value: {x: -0.15312964, y: 0.7712084, z: -0.20227055, w: -0.5838455}
   m_Size:
-    m_Target: 16.447943
+    m_Target: 24.66688
     speed: 2
-    m_Value: 16.447943
+    m_Value: 23.60467
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.1
+    m_SpeedNormalized: 0.53
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -688,18 +688,18 @@ MonoBehaviour:
       y: 0
       width: 882
       height: 364
-    m_Scale: {x: 0.40890047, y: 0.40890047}
-    m_Translation: {x: 441, y: 186.145}
+    m_Scale: {x: 0.33703703, y: 0.33703703}
+    m_Translation: {x: 441, y: 182}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1078.5021
-      y: -455.23303
-      width: 2157.0042
-      height: 890.1922
+      x: -1308.4615
+      y: -540
+      width: 2616.923
+      height: 1080
     m_MinimalGUI: 1
   m_defaultScale: 0.33703703
   m_LastWindowPixelSize: {x: 882, y: 364}
