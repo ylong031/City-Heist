@@ -3407,7 +3407,9 @@ GameObject:
   - component: {fileID: 453053823}
   - component: {fileID: 453053822}
   - component: {fileID: 453053826}
-  m_Layer: 0
+  - component: {fileID: 453053827}
+  - component: {fileID: 453053825}
+  m_Layer: 15
   m_Name: Bank Staff 3
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -3489,6 +3491,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453053820}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &453053825
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453053820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &453053826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3508,6 +3524,20 @@ MonoBehaviour:
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
   itemDrop: {fileID: 116827663}
+--- !u!136 &453053827
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453053820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &463839354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +3974,7 @@ GameObject:
   - component: {fileID: 499924201}
   - component: {fileID: 499924202}
   - component: {fileID: 499924203}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Security Guard
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -4054,7 +4084,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -4386,7 +4416,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533241307}
-  m_LocalRotation: {x: 0.27232724, y: -4e-45, z: 1e-45, w: 0.9622047}
+  m_LocalRotation: {x: 0.27232724, y: 4e-45, z: -1e-45, w: 0.9622047}
   m_LocalPosition: {x: 0.2, y: 11, z: -28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9392,7 +9422,9 @@ GameObject:
   - component: {fileID: 1195255565}
   - component: {fileID: 1195255567}
   - component: {fileID: 1195255568}
-  m_Layer: 0
+  - component: {fileID: 1195255569}
+  - component: {fileID: 1195255564}
+  m_Layer: 15
   m_Name: Bank Staff 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -9413,6 +9445,20 @@ Transform:
   m_Father: {fileID: 1885354981}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!136 &1195255564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195255562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1195255565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9492,6 +9538,20 @@ MonoBehaviour:
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
   itemDrop: {fileID: 952181643}
+--- !u!136 &1195255569
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195255562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1206430875
 GameObject:
   m_ObjectHideFlags: 3
@@ -10429,7 +10489,9 @@ GameObject:
   - component: {fileID: 1280753595}
   - component: {fileID: 1280753597}
   - component: {fileID: 1280753598}
-  m_Layer: 0
+  - component: {fileID: 1280753599}
+  - component: {fileID: 1280753594}
+  m_Layer: 15
   m_Name: Bank Staff 2
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -10450,6 +10512,20 @@ Transform:
   m_Father: {fileID: 1543307936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!136 &1280753594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280753592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1280753595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10529,6 +10605,20 @@ MonoBehaviour:
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
   itemDrop: {fileID: 1590856385}
+--- !u!136 &1280753599
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280753592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1283978204
 GameObject:
   m_ObjectHideFlags: 0
@@ -11226,7 +11316,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.28978413, y: -0.000000016468091, z: 0.0000000049861364, w: 0.95709205}
+  m_LocalRotation: {x: 0.28978413, y: 0.000000016468091, z: -0.0000000049861364, w: 0.95709205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13360,7 +13450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604957481}
-  m_LocalRotation: {x: 0.2723272, y: -3e-45, z: 1e-45, w: 0.96220475}
+  m_LocalRotation: {x: 0.2723272, y: 1e-45, z: -0, w: 0.96220475}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14730,7 +14820,7 @@ GameObject:
   - component: {fileID: 1740195596}
   - component: {fileID: 1740195597}
   - component: {fileID: 1740195598}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bank Customer
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -17763,7 +17853,9 @@ GameObject:
   - component: {fileID: 2011655648}
   - component: {fileID: 2011655650}
   - component: {fileID: 2011655651}
-  m_Layer: 0
+  - component: {fileID: 2011655652}
+  - component: {fileID: 2011655647}
+  m_Layer: 15
   m_Name: Bank Manager
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -17784,6 +17876,20 @@ Transform:
   m_Father: {fileID: 1231483473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!136 &2011655647
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011655645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2011655648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17863,6 +17969,20 @@ MonoBehaviour:
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
   itemDrop: {fileID: 952677081}
+--- !u!136 &2011655652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011655645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2023403435
 GameObject:
   m_ObjectHideFlags: 0

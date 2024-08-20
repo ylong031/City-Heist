@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        // Adds Gravity to Player
+        // Add Gravity to Player
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        velocity.y += gravity * 2 * Time.deltaTime;
+        velocity.y += (gravity * 2) * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
 
