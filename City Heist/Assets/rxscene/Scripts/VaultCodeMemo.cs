@@ -28,7 +28,8 @@ public class VaultCodeMemo : MonoBehaviour
             dialoguePanel.SetActive(true);
             text.enabled = false;
             nameText.text = "";
-            dialogueText.text = "The vault code for today is: " + GameManager.instance.vaultCode;
+            //dialogueText.text = "The vault code for today is: " + GameManager.instance.vaultCode;
+            dialogueText.text = GameManager.instance.vaultCodeMemoText;
         }
     }
 

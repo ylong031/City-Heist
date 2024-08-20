@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using Cinemachine;
 using System.Collections;
+using System.Globalization;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,6 +66,9 @@ public class GameManager : MonoBehaviour
     public float vaultDoorPenalty;
     public float colourSquareTaskPenalty;
     public float cctvConsolePenalty;
+
+    [HideInInspector]
+    public string vaultCodeMemoText;
 
     void Awake()
     {
@@ -200,6 +204,34 @@ public class GameManager : MonoBehaviour
         int num4 = Random.Range(0, 10);
         vaultCode = num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString();
         //Debug.Log("The code to the vault is: " + vaultCode);
+        GenerateVaultCodeMemoText(num1, num2, num3, num4);
+
+    }
+
+    void GenerateVaultCodeMemoText(int digit1, int digit2, int digit3, int digit4)
+    {
+        var rand = Random.Range(0, 4);
+        if (rand == 0)
+        {
+            //vaultCodeMemoText = string.Format("The vault code for today is: {0}ABC\n{0} + A = {1}\nA + B = {2}\nB + C = {3}\n", digit1, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+            vaultCodeMemoText = string.Format("The vault code for today is: ABCD\nA = {0}\nA + B = {1}\nB + C = {2}\nC + D = {3}", digit1, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+        }
+        else if (rand == 1)
+        {
+            //vaultCodeMemoText = string.Format("The vault code for today is: A{0}BC\nA + {0} = {1}\nA + B = {2}\nB + C = {3}\n", digit2, digit1 + digit2, digit1 + digit3, digit3 + digit4);
+            vaultCodeMemoText = string.Format("The vault code for today is: ABCD\nA + B = {1}\nB = {0}\nB + C = {2}\nC + D = {3}", digit2, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+        }
+        else if (rand == 2)
+        {
+            //vaultCodeMemoText = string.Format("The vault code for today is: AB{0}C\nA + B = {1}\nB + {0} = {2}\nB + C = {3}\n", digit3, digit1 + digit2, digit2 + digit3, digit2 + digit4);
+            vaultCodeMemoText = string.Format("The vault code for today is: ABCD\nA + B = {1}\nB + C = {2}\nC = {0}\nC + D = {3}", digit3, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+        }
+        else if (rand == 3)
+        {
+            //vaultCodeMemoText = string.Format("The vault code for today is: ABC{0}\nA + B = {1}\nB + C = {2}\nC + {0} = {3}\n", digit4, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+            vaultCodeMemoText = string.Format("The vault code for today is: ABCD\nA + B = {1}\nB + C = {2}\nC + D = {3}\nD = {0}", digit4, digit1 + digit2, digit2 + digit3, digit3 + digit4);
+        }
+        //Debug.Log(vaultCodeMemoText);
     }
 
     public void InputVaultCode(int num)
