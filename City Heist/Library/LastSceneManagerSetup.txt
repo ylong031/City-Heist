@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Bank 1.unity
+- path: Assets/rxscene/rxscene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
