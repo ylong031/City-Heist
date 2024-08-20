@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 407619c5c19a54982b3880b5a085c597, type: 3}
+  iconMaxWidth: 192
+  title: Mini Simple Characters | Free Demo
+  sections:
+  - heading: About
+    text: Thank you for downloading the Mini Simple Characters | Free Demo asset.This demo base character is intended to you to test and see if it fit your needs before you buy the other characters or packs derived from this basemesh.
+    linkText: 
+    url: 
+  - heading: ✓ Optimization
+    text: "This character is extremely light and can be used in both pc and mobile
+      games. All models share a single texture file, allowing you to customize the colors
+      according to your needs just by duplicanting materials and adjusting the material offset. \n\n⚠*Many models have primary, secondary, and even tertiary material slots, check the <Materials> option in the [ Inspector > Skinned Mesh Renderer ] to add multiple materials and customize colors to fit your needs."
+    linkText: 
+    url: 
+  - heading: ✓ Textures
+    text: "Diffuse/Albedo:\n-256px (.png)"
+    linkText: 
+    url: 
+  - heading: ✓ Polycount
+    text: "
+- beard_01 | 76 Tris\n
+- beard_02 | 96 Tris\n
+- body_arms | 768 Tris\n
+- body_head | 296 Tris\n
+- body_legs | 640 Tris\n
+- body_torso | 256 Tris\n
+- eyebrows | 80 Tris\n
+- eyes_01 | 192 Tris\n
+- eyes_02 | 80 Tris\n
+- glasses_01 | 260 Tris\n
+- glasses_02 | 332 Tris\n
+- hair_01 | 192 Tris\n
+- hair_02 | 208 Tris\n
+- pants_01 | 640 Tris\n
+- shirt_01 | 576 Tris\n
+- shirt_02 | 196 Tris\n
+- shoes_01 | 344 Tris\n
+- shorts_01 | 512 Tris\n"
+    linkText: 
+    url: 
+  - heading: ✓ Blendshapes
+    text:  "Eyebrows:\nFemale\nUp Left\nUp Right\nDown Left\nDown Right\nAngry Left\nAngry Right\nSad Left\nSad Right\n\nEyes 02:\nHappy\nClosed\n\n⚠*Make sure that the <Blend Shape Normals>is set to <Import> in [ Inspector > Import Settings > Model Tab ] to avoid artifacts when using the blendshapes"
+    linkText:
+    url:
+  - heading: ✓ Animations
+    text:  "-Idle\n-Walk\n-Run\n-Jump\n-Loose\n\n*All models have Humanoid rigs (Rigged/Skinned and Mecanim ready)\n\n⚠*Remember to adjust <Muscle & Settings> in the model´s [Rig > Configure] to adjust overlapping and clipping depending of your source animations."
+    linkText:
+    url:
+  - heading: ✓ Modular Design
+    text:  "This character is designed to be modular, making it easy to create a variety of combinations, allowing you to create unique characters and scenes."
+    linkText:
+    url:
+  - heading:
+    text:  "Each asset has been carefully crafted to add a unique touch to your game project!"
+    linkText:
+    url:
+  - heading: ☎ Contact/Support
+    text: 
+    linkText: Asset Store Profile 
+    url: https://assetstore.unity.com/publishers/20594
+  - heading: 
+    text: 
+    linkText: Twitter
+    url: https://twitter.com/joaobaltieri
+  loadedLayout: 1
