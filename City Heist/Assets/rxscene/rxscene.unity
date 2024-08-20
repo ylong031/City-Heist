@@ -1865,6 +1865,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235713651}
   m_CullTransparentMesh: 1
+--- !u!1 &237607917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237607918}
+  m_Layer: 12
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &237607918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237607917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 514937876}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271264238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2114,7 @@ GameObject:
   - component: {fileID: 332267534}
   - component: {fileID: 332267533}
   - component: {fileID: 332267532}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CCTV Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,6 +4090,7 @@ Transform:
   m_Children:
   - {fileID: 1190772927}
   - {fileID: 537853055}
+  - {fileID: 237607918}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4078,6 +4109,12 @@ MonoBehaviour:
   controller: {fileID: 514937878}
   cam: {fileID: 533241310}
   speed: 8
+  groundCheck: {fileID: 237607918}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &514937878
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4323,7 +4360,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -5592,7 +5629,7 @@ GameObject:
   - component: {fileID: 690634264}
   - component: {fileID: 690634263}
   - component: {fileID: 690634262}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5847,7 +5884,7 @@ GameObject:
   - component: {fileID: 700199603}
   - component: {fileID: 700199602}
   - component: {fileID: 700199601}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Conference Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10772,7 +10809,7 @@ GameObject:
   - component: {fileID: 1330906592}
   - component: {fileID: 1330906591}
   - component: {fileID: 1330906590}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bank Vault Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11171,7 +11208,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -11404,6 +11441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406758921}
   - component: {fileID: 1406758920}
+  - component: {fileID: 1406758922}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -11435,7 +11473,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -11529,6 +11567,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406758922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406758919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.6
+  m_DampingWhenOccluded: 0.6
+  m_OptimalTargetDistance: 0
 --- !u!1 &1446178648
 GameObject:
   m_ObjectHideFlags: 0
@@ -13274,7 +13342,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -13391,7 +13459,7 @@ GameObject:
   - component: {fileID: 1632323800}
   - component: {fileID: 1632323799}
   - component: {fileID: 1632323798}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14899,7 +14967,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
