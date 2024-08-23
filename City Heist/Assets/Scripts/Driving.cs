@@ -35,6 +35,7 @@ public class Driving : MonoBehaviour
             transform.Rotate(0, -turnSpeed * Time.deltaTime, 0f);
 
 
+
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -44,16 +45,16 @@ public class Driving : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.UpArrow))    
         {
-            if (speed >= 20) return;
-            speed += 2;
+            if (speed >= 25) return;
+            speed += 5;
             
             
 
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (speed <= -20) return;
-            speed -= 2;
+            if (speed <= -25) return;
+            speed -= 5;
 
         }
 
