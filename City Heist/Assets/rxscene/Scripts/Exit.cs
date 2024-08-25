@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-    public GameObject youWinPanel;
-
     public TMP_Text interactText;
+    public string nextScene;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,8 +14,9 @@ public class Exit : MonoBehaviour
         {
             if (GameManager.instance.foundMoney)
             {
-                youWinPanel.SetActive(true);
-                GameManager.instance.playerMovement.enabled = false;
+                // Win
+                //SceneManager.LoadScene(nextScene);
+                StartCoroutine(SceneTransition.instance.TransitionToScene(nextScene));
             }
             else
             {

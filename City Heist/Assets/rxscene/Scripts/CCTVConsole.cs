@@ -11,7 +11,7 @@ public class CCTVConsole : MonoBehaviour
 
     public TMP_Text interactText;
 
-    public GameObject computerVirus;
+    public GameObject[] computerVirus;
     public float computerVirusAnimationTime;
     public GameObject tintPanel;
     [HideInInspector]
@@ -40,7 +40,10 @@ public class CCTVConsole : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-        computerVirus.SetActive(true);
+        foreach (var virus in computerVirus)
+        {
+            virus.SetActive(true);
+        }
         yield return new WaitForSeconds(computerVirusAnimationTime);
 
         yield return new WaitForSeconds(0.25f);

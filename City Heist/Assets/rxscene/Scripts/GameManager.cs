@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using Cinemachine;
 using System.Collections;
-using System.Globalization;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,16 +16,18 @@ public class GameManager : MonoBehaviour
     public bool foundMoney = false;
     [HideInInspector]
     public bool jammedCCTV = false;
+    [HideInInspector]
+    public bool takenHostage = false;
 
     // Countdown Timer
     public float remainingTime = 180f;
     public bool isTimerRunning = false;
     public TMP_Text countdownTimerText;
 
-    public GameObject youLosePanel;
-
     public PlayerMovement playerMovement;
     public CinemachineFreeLook thirdPersonCamera;
+
+    public GameObject instructionsPanel;
 
     // Vault Door Task A (Input Vault Code)
     [HideInInspector]
@@ -67,8 +69,15 @@ public class GameManager : MonoBehaviour
     public float colourSquareTaskPenalty;
     public float cctvConsolePenalty;
 
+    // Rewards (Money)
+    public int minWalletMoneyReward;
+    public int maxWalletMoneyReward;
+    public float vaultMoneyReward;
+
     [HideInInspector]
     public string vaultCodeMemoText;
+
+    //public Animator sceneTransition;
 
     void Awake()
     {
@@ -80,12 +89,6 @@ public class GameManager : MonoBehaviour
     {
         // Carry over money from city scene
         moneyText.text = "$" + PlayerPrefs.GetFloat("Money").ToString();
-        
-        // Locks cursor to center of game window and also hides cursor
-        Cursor.lockState = CursorLockMode.Locked;
-
-        // Starts the timer automatically
-        isTimerRunning = true;
 
         // Randomize wires rotation
         foreach (var wire in wiresToRotate)
@@ -165,15 +168,39 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Time has run out!");
                 remainingTime = 0;
                 isTimerRunning = false;
-                youLosePanel.SetActive(true);
-                playerMovement.enabled = false;
+
+                // If the player has taken at least one hostage
+                if (takenHostage)
+                {
+                    // Bank 2
+                    if (SceneManager.GetActiveScene().name == "Bank 2")
+                    {
+                        // End
+                        //SceneManager.LoadScene("End Scene");
+                        StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+                    }
+                    // Bank 1
+                    else
+                    {
+                        // Retreat
+                        //SceneManager.LoadScene("CityScene");
+                        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+                    }
+                }
+                // If the player has not taken any hostages
+                else
+                {
+                    // Lose
+                    //SceneManager.LoadScene("End Scene");
+                    StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+                }
             }
         }
 
         // CCTV Panel
         if (cctvPanel.activeSelf && !cctvConsole.isBeingJammed)
         {
-            foreach(var wire in wiresToRotate)
+            foreach (var wire in wiresToRotate)
             {
                 if (!wire.GetComponent<WiresToRotate>().isInCorrectRot)
                 {
@@ -383,4 +410,24 @@ public class GameManager : MonoBehaviour
         }
         countdownTimerText.color = Color.black;
     }
+
+    public void CloseInstructionsPanel()
+    {
+        // Locks cursor to center of game window and also hides cursor
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Starts the timer automatically
+        isTimerRunning = true;
+
+        thirdPersonCamera.enabled = true;
+        playerMovement.enabled = true;
+        instructionsPanel.SetActive(false);
+    }
+
+    //public IEnumerator SceneTransition(string nextScene)
+    //{
+    //    sceneTransition.SetTrigger("Transition");
+    //    yield return new WaitForSeconds(1f);
+    //    SceneManager.LoadScene(nextScene);
+    //}
 }

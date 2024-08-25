@@ -33,6 +33,7 @@ public class NPC : MonoBehaviour
             {
                 // Take hostage
                 isTalkedTo = true;
+                GameManager.instance.takenHostage = true;
                 GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
                 //StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
                 dialoguePanel.SetActive(false);

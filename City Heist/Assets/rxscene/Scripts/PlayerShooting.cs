@@ -17,6 +17,10 @@ public class PlayerShooting : MonoBehaviour
 
     public TMP_Text bulletCountText;
 
+    public bool isAuto = false;
+    float shootTime;
+    public float bulletsPerSecond;
+
     void Start()
     {
         currentBulletCount = maxBulletCount;
@@ -26,8 +30,10 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shootTime -= Time.deltaTime;
+
         // If you are reloading / doing puzzle task
-        if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf)
+        if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf)
         {
             // You can't shoot
             return;
@@ -36,11 +42,28 @@ public class PlayerShooting : MonoBehaviour
         // If there are bullets in your gun
         if (currentBulletCount > 0)
         {
-            // If Left Mouse Button is pressed
-            if (Input.GetMouseButtonDown(0))
+            if(shootTime <= 0f)
             {
-                // Shoot a bullet
-                Shoot();
+                if (isAuto)
+                {
+                    // If Left Mouse Button is held
+                    if (Input.GetMouseButton(0))
+                    {
+                        // Shoot a bullet
+                        Shoot();
+                        shootTime = 1 / bulletsPerSecond;
+                    }
+                }
+                else
+                {
+                    // If Left Mouse Button is pressed
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        // Shoot a bullet
+                        Shoot();
+                        shootTime = 1 / bulletsPerSecond;
+                    }
+                }
             }
         }
         else

@@ -10,8 +10,8 @@ public class Portal : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            SceneManager.LoadScene(sceneName);
-        
+            //SceneManager.LoadScene(sceneName);
+            StartCoroutine(SceneTransition.instance.TransitionToScene(sceneName));
         }
     }
 }
