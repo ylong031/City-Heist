@@ -15,6 +15,12 @@ public class Misc : MonoBehaviour
         PlayerPrefs.SetFloat("Money", money);
     }
 
+    private void Start()
+    {
+        money += PlayerPrefs.GetFloat("Money", 0f);
+        PlayerPrefs.SetFloat("Money", money);
+    }
+
     private void Update()
     {
         moneytext.text = "$ " + money;
@@ -31,8 +37,6 @@ public class Misc : MonoBehaviour
                 taskmenu.SetActive(true);
             
             }
-           
-
         }
     }
 }

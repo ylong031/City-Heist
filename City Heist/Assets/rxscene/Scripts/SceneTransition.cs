@@ -21,6 +21,12 @@ public class SceneTransition : MonoBehaviour
     {
         sceneTransition.SetTrigger("Transition");
         yield return new WaitForSeconds(1f);
+
+        if (nextScene == "End Scene")
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         SceneManager.LoadScene(nextScene);
     }
 }

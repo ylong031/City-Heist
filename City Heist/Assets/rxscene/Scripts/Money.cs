@@ -25,18 +25,22 @@ public class Money : MonoBehaviour
                 GameManager.instance.tasks[3].isOn = true;
                 GameManager.instance.tasks[4].gameObject.SetActive(true);
                 interactText.text = "";
-                float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
-                GameManager.instance.moneyText.text = "$" + money;
-                PlayerPrefs.SetFloat("Money", money);
+                //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
+                //GameManager.instance.moneyText.text = "$" + money;
+                //PlayerPrefs.SetFloat("Money", money);
+                GameManager.instance.money += GameManager.instance.vaultMoneyReward;
+                GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
                 GameManager.instance.playerMovement.speed *= 0.5f;
                 Destroy(gameObject);
             }
             else
             {
                 interactText.text = "";
-                float money = PlayerPrefs.GetFloat("Money") + Random.Range(GameManager.instance.minWalletMoneyReward, GameManager.instance.maxWalletMoneyReward + 1);
-                GameManager.instance.moneyText.text = "$" + money;
-                PlayerPrefs.SetFloat("Money", money);
+                //float money = PlayerPrefs.GetFloat("Money") + Random.Range(GameManager.instance.minWalletMoneyReward, GameManager.instance.maxWalletMoneyReward + 1);
+                //GameManager.instance.moneyText.text = "$" + money;
+                //PlayerPrefs.SetFloat("Money", money);
+                GameManager.instance.money += Random.Range(GameManager.instance.minWalletMoneyReward, GameManager.instance.maxWalletMoneyReward + 1);
+                GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
                 Destroy(gameObject);
             }
         }

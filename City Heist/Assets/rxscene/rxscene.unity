@@ -11736,7 +11736,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.28978413, y: -0.000000016468091, z: 0.0000000049861364, w: 0.95709205}
+  m_LocalRotation: {x: 0.28978413, y: 0.000000016468091, z: -0.0000000049861364, w: 0.95709205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17107,14 +17107,15 @@ MonoBehaviour:
   - {fileID: 1994664824}
   - {fileID: 1732198551}
   moneyText: {fileID: 1829240042}
+  money: 0
   jamCCTVReward: 30
-  takeHostageReward: 15
+  takeHostageReward: 10
   killHostagePenalty: 15
-  vaultDoorPenalty: 25
+  vaultDoorPenalty: 20
   colourSquareTaskPenalty: 15
   cctvConsolePenalty: 20
-  minWalletMoneyReward: 10
-  maxWalletMoneyReward: 50
+  minWalletMoneyReward: 20
+  maxWalletMoneyReward: 100
   vaultMoneyReward: 1000
   vaultCodeMemoText: 
 --- !u!4 &1867200734

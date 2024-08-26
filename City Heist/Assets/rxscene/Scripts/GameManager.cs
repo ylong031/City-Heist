@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     // Carry over money from city scene
     public TMP_Text moneyText;
+    [HideInInspector]
+    public float money;
 
     // Rewards (Time)
     public float jamCCTVReward;
@@ -88,7 +90,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Carry over money from city scene
-        moneyText.text = "$" + PlayerPrefs.GetFloat("Money").ToString();
+        //moneyText.text = "$" + PlayerPrefs.GetFloat("Money").ToString();
+        money = PlayerPrefs.GetFloat("Money");
+        moneyText.text = "$" + money.ToString();
 
         // Randomize wires rotation
         foreach (var wire in wiresToRotate)
@@ -177,6 +181,7 @@ public class GameManager : MonoBehaviour
                     {
                         // End
                         //SceneManager.LoadScene("End Scene");
+                        PlayerPrefs.SetFloat("Money", money);
                         StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                     }
                     // Bank 1
@@ -184,6 +189,7 @@ public class GameManager : MonoBehaviour
                     {
                         // Retreat
                         //SceneManager.LoadScene("CityScene");
+                        PlayerPrefs.SetFloat("Money", money);
                         StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
                     }
                 }
@@ -423,11 +429,4 @@ public class GameManager : MonoBehaviour
         playerMovement.enabled = true;
         instructionsPanel.SetActive(false);
     }
-
-    //public IEnumerator SceneTransition(string nextScene)
-    //{
-    //    sceneTransition.SetTrigger("Transition");
-    //    yield return new WaitForSeconds(1f);
-    //    SceneManager.LoadScene(nextScene);
-    //}
 }

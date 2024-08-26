@@ -16,6 +16,7 @@ public class Exit : MonoBehaviour
             {
                 // Win
                 //SceneManager.LoadScene(nextScene);
+                PlayerPrefs.SetFloat("Money", GameManager.instance.money);
                 StartCoroutine(SceneTransition.instance.TransitionToScene(nextScene));
             }
             else
