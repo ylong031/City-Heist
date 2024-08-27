@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/CityScene.unity
     guid: bcf5dfe3645be8e4789b175009a4be80
   - enabled: 1
-    path: Assets/rxscene/rxscene.unity
+    path: Assets/Scenes/Bank 1.unity
     guid: 832b8179447463c44aaf40493e515032
+  - enabled: 1
+    path: Assets/Scenes/Bank 2.unity
+    guid: cf48e9d0b9f57594ea5d3a95d0ec7708
   - enabled: 1
     path: Assets/Scenes/End Scene.unity
     guid: b6bf517461115374899c456f344fe349

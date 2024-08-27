@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public bool takenHostage = false;
 
     // Countdown Timer
-    public float remainingTime = 180f;
+    public float remainingTime;
     public bool isTimerRunning = false;
     public TMP_Text countdownTimerText;
 
@@ -89,10 +89,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+
         // Carry over money from city scene
         //moneyText.text = "$" + PlayerPrefs.GetFloat("Money").ToString();
         money = PlayerPrefs.GetFloat("Money");
         moneyText.text = "$" + money.ToString();
+
+        // Carry over remaining time from city scene
+        remainingTime = PlayerPrefs.GetFloat("Time", 1000f);
+        DisplayRemainingTime(remainingTime);
 
         // Randomize wires rotation
         foreach (var wire in wiresToRotate)
@@ -176,28 +182,63 @@ public class GameManager : MonoBehaviour
                 // If the player has taken at least one hostage
                 if (takenHostage)
                 {
-                    // Bank 2
-                    if (SceneManager.GetActiveScene().name == "Bank 2")
-                    {
-                        // End
-                        //SceneManager.LoadScene("End Scene");
-                        PlayerPrefs.SetFloat("Money", money);
-                        StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
-                    }
-                    // Bank 1
-                    else
-                    {
-                        // Retreat
-                        //SceneManager.LoadScene("CityScene");
-                        PlayerPrefs.SetFloat("Money", money);
-                        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
-                    }
+                    //// Bank 2
+                    //if (SceneManager.GetActiveScene().name == "Bank 2")
+                    //{
+                    //    // 1st Bank - Bank 2
+                    //    if (PlayerPrefs.GetInt("NextBank", 0) == 0)
+                    //    {
+                    //        // Retreat
+                    //        PlayerPrefs.SetInt("NextBank", 1);
+                    //        PlayerPrefs.SetFloat("Time", remainingTime);
+                    //        PlayerPrefs.SetFloat("Money", money);
+                    //        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+                    //    }
+                    //    // 2nd (Final) Bank - Bank 2
+                    //    else
+                    //    {
+                    //        // End
+                    //        //SceneManager.LoadScene("End Scene");
+                    //        PlayerPrefs.SetInt("NextBank", 0);
+                    //        PlayerPrefs.SetFloat("Money", money);
+                    //        StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+                    //    }
+
+                    //}
+                    //// Bank 1
+                    //else
+                    //{
+                    //    // 1st Bank - Bank 1
+                    //    if (PlayerPrefs.GetInt("NextBank", 0) == 0)
+                    //    {
+                    //        // Retreat
+                    //        PlayerPrefs.SetInt("NextBank", 2);
+                    //        PlayerPrefs.SetFloat("Time", remainingTime);
+                    //        PlayerPrefs.SetFloat("Money", money);
+                    //        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+                    //    }
+                    //    // 2nd (Final) Bank - Bank 1
+                    //    else
+                    //    {
+                    //        // End
+                    //        //SceneManager.LoadScene("CityScene");
+                    //        PlayerPrefs.SetInt("NextBank", 0);
+                    //        PlayerPrefs.SetFloat("Money", money);
+                    //        StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+                    //    }
+                    //}
+                    
+                    // Lose (Some money gained)
+                    PlayerPrefs.SetInt("NextBank", 0);
+                    PlayerPrefs.SetFloat("Money", money);
+                    StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                 }
                 // If the player has not taken any hostages
                 else
                 {
-                    // Lose
+                    // Lose (No money gained)
                     //SceneManager.LoadScene("End Scene");
+                    PlayerPrefs.SetInt("NextBank", 0);
                     StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                 }
             }
