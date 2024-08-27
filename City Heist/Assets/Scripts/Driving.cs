@@ -17,6 +17,15 @@ public class Driving : MonoBehaviour
 
     private AudioSource smokeAudioSource;
 
+    [SerializeField] GameObject thirdpersoncamera;
+
+    [SerializeField] GameObject firstpersoncamera;
+
+
+    private bool stop;
+
+
+
     void Start()
     {
         //get audio from the smoke object
@@ -46,7 +55,7 @@ public class Driving : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))    
         {
             if (speed >= 25) return;
-            speed += 5;
+            speed += 0.5f;
             
             
 
@@ -54,13 +63,60 @@ public class Driving : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             if (speed <= -25) return;
-            speed -= 5;
+            speed -= 0.5f;
 
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            speed = 0;
+            
+            stop = true;
+
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (thirdpersoncamera.activeSelf) 
+            {
+                thirdpersoncamera.SetActive(false);
+                firstpersoncamera.SetActive(true);
+
+            }
+            else 
+            {
+                thirdpersoncamera.SetActive(true);
+                firstpersoncamera.SetActive(false);
+
+
+            }
+
+           
+
+
+
+        }
+
+        if (stop) 
+        {
+            if (speed > 0) 
+            {
+                speed = speed - 0.5f;
+
+
+            }
+            if (speed < 0)
+            {
+                speed = speed + 0.5f;
+
+
+            }
+
+
+        }
+        if (speed == 0) 
+        {
+            stop = false;
 
         }
 
@@ -78,7 +134,7 @@ public class Driving : MonoBehaviour
     {
         if(collision.collider.CompareTag("Vehicle"))
         {
-            speed = 0;
+            stop = true;
 
             smoke.GetComponent<ParticleSystem>().Play();
 
