@@ -6,6 +6,7 @@ public class Money : MonoBehaviour
     bool isPlayerNearby = false;
     public TMP_Text interactText;
     public bool isWallet = true;
+    public GameObject[] moneyObjs;
 
     private void Update()
     {
@@ -21,6 +22,7 @@ public class Money : MonoBehaviour
             // Take the money
             if (!isWallet)
             {
+                // Vault money
                 GameManager.instance.foundMoney = true;
                 GameManager.instance.tasks[3].isOn = true;
                 GameManager.instance.tasks[4].gameObject.SetActive(true);
@@ -31,10 +33,15 @@ public class Money : MonoBehaviour
                 GameManager.instance.money += GameManager.instance.vaultMoneyReward;
                 GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
                 GameManager.instance.playerMovement.speed *= 0.5f;
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                foreach (var moneyObj in moneyObjs)
+                {
+                    Destroy(moneyObj);
+                }
             }
             else
             {
+                // Wallet Money
                 interactText.text = "";
                 //float money = PlayerPrefs.GetFloat("Money") + Random.Range(GameManager.instance.minWalletMoneyReward, GameManager.instance.maxWalletMoneyReward + 1);
                 //GameManager.instance.moneyText.text = "$" + money;

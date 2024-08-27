@@ -84,7 +84,8 @@ public class VaultDoor : MonoBehaviour
         GameManager.instance.tasks[2].isOn = true;
         GameManager.instance.tasks[3].gameObject.SetActive(true);
         interactText.text = "";
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        GetComponent<Animator>().enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
