@@ -78,8 +78,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public string vaultCodeMemoText;
-
-    //public Animator sceneTransition;
+    public GameObject vaultCodeMemo;
 
     void Awake()
     {
@@ -150,8 +149,42 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Randomizes which bank vault uses vault code and colour square task
+        if (PlayerPrefs.GetInt("isColourSquareTask", -1) == -1)
+        {
+            var rand2 = Random.Range(0, 2);
+            if (rand2 == 0)
+            {
+                isColourSquareTask = false;
+                PlayerPrefs.SetInt("isColourSquareTask", 0);
+            }
+            else if (rand2 == 1)
+            {
+                isColourSquareTask = true;
+                PlayerPrefs.SetInt("isColourSquareTask", 1);
+            }
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("isColourSquareTask", -1) == 0)
+            {
+                isColourSquareTask = true;
+                PlayerPrefs.SetInt("isColourSquareTask", -1);
+            }
+            else if (PlayerPrefs.GetInt("isColourSquareTask", -1) == 1)
+            {
+                isColourSquareTask = false;
+                PlayerPrefs.SetInt("isColourSquareTask", -1);
+            }
+        }
+
         if (!isColourSquareTask)
         {
+            // Spawn vault code memo inside bank manager's room safe (Bank 2 only)
+            if(vaultCodeMemo != null)
+            {
+                vaultCodeMemo.SetActive(true);
+            }
             // Generate 4-digit bank vault code
             GenerateVaultCode();
         }

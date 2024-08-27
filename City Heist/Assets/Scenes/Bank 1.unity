@@ -3563,6 +3563,7 @@ MonoBehaviour:
   interactText: {fileID: 271264240}
   isWallet: 1
   moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &116827666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6839,11 +6840,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1267741395}
   - {fileID: 136322215}
   - {fileID: 1089286709}
   - {fileID: 789881557}
   - {fileID: 279606057}
+  - {fileID: 1267741395}
   - {fileID: 75720905}
   - {fileID: 404191146}
   m_Father: {fileID: 1925310997}
@@ -8814,8 +8815,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1277337391}
   - {fileID: 1081892100}
+  - {fileID: 1277337391}
   - {fileID: 618707433}
   - {fileID: 1882459768}
   - {fileID: 1336308878}
@@ -11323,6 +11324,7 @@ MonoBehaviour:
   interactText: {fileID: 271264240}
   isWallet: 1
   moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &351619690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36343,6 +36345,7 @@ MonoBehaviour:
   interactText: {fileID: 271264240}
   isWallet: 1
   moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &952181646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36431,8 +36434,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952677081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 0.1, z: 10.2}
-  m_LocalScale: {x: 0.3, y: 0.1, z: 0.4}
+  m_LocalPosition: {x: -13, y: 0.04, z: 10.2}
+  m_LocalScale: {x: 0.3, y: 0.01, z: 0.4}
   m_Children: []
   m_Father: {fileID: 1231483473}
   m_RootOrder: 2
@@ -38234,8 +38237,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 15444853}
   - {fileID: 556826707}
+  - {fileID: 15444853}
   - {fileID: 1038218145}
   - {fileID: 1740742087}
   m_Father: {fileID: 385403837}
@@ -42496,6 +42499,7 @@ MonoBehaviour:
   - {fileID: 975954671}
   - {fileID: 329083003}
   - {fileID: 548582368}
+  isMiniSafe: 0
 --- !u!65 &1120459031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51873,7 +51877,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.18910751, y: -0.000000008447955, z: 0.0000000016269276, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 0.0000000084479606, z: -0.0000000016269286,
+    w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -56984,9 +56989,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -1.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 870563769}
   - {fileID: 487703257}
   - {fileID: 1543858954}
-  - {fileID: 870563769}
   - {fileID: 1120797896}
   - {fileID: 2122654644}
   m_Father: {fileID: 1124543428}
@@ -57328,7 +57333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1520961193
 Transform:
   m_ObjectHideFlags: 0
@@ -60174,6 +60179,7 @@ MonoBehaviour:
   interactText: {fileID: 271264240}
   isWallet: 1
   moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &1590856388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61021,7 +61027,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604957481}
-  m_LocalRotation: {x: 0.17121494, y: -1e-45, z: -0, w: 0.9852337}
+  m_LocalRotation: {x: 0.17121495, y: -1e-45, z: -0, w: 0.9852337}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -66107,7 +66113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747155550}
-  m_LocalRotation: {x: 0.15331319, y: -0.000000008501481, z: 0.0000000013189826, w: 0.98817766}
+  m_LocalRotation: {x: 0.15331319, y: 0.000000008501481, z: -0.0000000013189826, w: 0.98817766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -67459,7 +67465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1800883040
 Transform:
   m_ObjectHideFlags: 0
@@ -71458,6 +71464,7 @@ MonoBehaviour:
   maxWalletMoneyReward: 100
   vaultMoneyReward: 1000
   vaultCodeMemoText: 
+  vaultCodeMemo: {fileID: 0}
 --- !u!4 &1867200734
 Transform:
   m_ObjectHideFlags: 0
@@ -74091,8 +74098,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1483753015}
   - {fileID: 2038715}
+  - {fileID: 1483753015}
   - {fileID: 95994510}
   - {fileID: 1243493487}
   - {fileID: 1647875130}

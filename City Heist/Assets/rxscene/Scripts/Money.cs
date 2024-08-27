@@ -7,11 +7,13 @@ public class Money : MonoBehaviour
     public TMP_Text interactText;
     public bool isWallet = true;
     public GameObject[] moneyObjs;
+    public bool isMiniSafe = false;
+    bool isPickedUp = false;
 
     private void Update()
     {
         // If player isn't nearby, don't do anything
-        if (!isPlayerNearby)
+        if (!isPlayerNearby || isPickedUp)
         {
             return;
         }
@@ -22,21 +24,39 @@ public class Money : MonoBehaviour
             // Take the money
             if (!isWallet)
             {
-                // Vault money
-                GameManager.instance.foundMoney = true;
-                GameManager.instance.tasks[3].isOn = true;
-                GameManager.instance.tasks[4].gameObject.SetActive(true);
-                interactText.text = "";
-                //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
-                //GameManager.instance.moneyText.text = "$" + money;
-                //PlayerPrefs.SetFloat("Money", money);
-                GameManager.instance.money += GameManager.instance.vaultMoneyReward;
-                GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
-                GameManager.instance.playerMovement.speed *= 0.5f;
-                //Destroy(gameObject);
-                foreach (var moneyObj in moneyObjs)
+                if (isMiniSafe)
                 {
-                    Destroy(moneyObj);
+                    // Mini safe money
+                    interactText.text = "";
+                    //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
+                    //GameManager.instance.moneyText.text = "$" + money;
+                    //PlayerPrefs.SetFloat("Money", money);
+                    GameManager.instance.money += GameManager.instance.vaultMoneyReward / 2;
+                    GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
+                    //Destroy(gameObject);
+                    foreach (var moneyObj in moneyObjs)
+                    {
+                        Destroy(moneyObj);
+                    }
+                }
+                else
+                {
+                    // Vault money
+                    GameManager.instance.foundMoney = true;
+                    GameManager.instance.tasks[3].isOn = true;
+                    GameManager.instance.tasks[4].gameObject.SetActive(true);
+                    interactText.text = "";
+                    //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
+                    //GameManager.instance.moneyText.text = "$" + money;
+                    //PlayerPrefs.SetFloat("Money", money);
+                    GameManager.instance.money += GameManager.instance.vaultMoneyReward;
+                    GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
+                    GameManager.instance.playerMovement.speed *= 0.5f;
+                    //Destroy(gameObject);
+                    foreach (var moneyObj in moneyObjs)
+                    {
+                        Destroy(moneyObj);
+                    }
                 }
             }
             else
@@ -50,6 +70,7 @@ public class Money : MonoBehaviour
                 GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
                 Destroy(gameObject);
             }
+            isPickedUp = true;
         }
     }
 

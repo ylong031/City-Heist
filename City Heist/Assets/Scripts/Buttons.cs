@@ -19,6 +19,7 @@ public class Buttons : MonoBehaviour
         }
         PlayerPrefs.SetFloat("Time", 600f);
         PlayerPrefs.SetInt("NextBank", 0);
+        PlayerPrefs.SetInt("isColourSquareTask", -1);
     }
 
     public void Play() 
