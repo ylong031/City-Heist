@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class NPC : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class NPC : MonoBehaviour
     public TMP_Text dialogueText;
 
     public GameObject itemDrop;
+
+    void Start()
+    {
+        StartCoroutine(ChangeBankManagerDialogue());
+    }
 
     private void Update()
     {
@@ -46,6 +52,29 @@ public class NPC : MonoBehaviour
                 else if (name == "Security Guard" && itemDrop != null)
                 {
                     itemDrop.SetActive(true);
+                }
+            }
+        }
+    }
+
+    IEnumerator ChangeBankManagerDialogue()
+    {
+        yield return new WaitForSeconds(1f);
+        if (name == "Bank Manager")
+        {
+            if (GameManager.instance.vaultCodeMemo != null && GameManager.instance.vaultCodeMemo.activeSelf)
+            {
+                dialogue = "I don't remember what the vault code is, but I swear a memo of it is in the safe at my office! Okay I told you already, please......just don't kill me......";
+            }
+            else
+            {
+                if (GameManager.instance.isColourSquareTask)
+                {
+                    dialogue = "Please......just don't kill me......";
+                }
+                else
+                {
+                    dialogue = "Here! This memo has the code to the vault! Please......just don't kill me......";
                 }
             }
         }

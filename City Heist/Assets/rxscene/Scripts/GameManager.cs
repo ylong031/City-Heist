@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     public string vaultCodeMemoText;
     public GameObject vaultCodeMemo;
     public GameObject[] vaultKeycards;
+    public NPC securityGuard;
 
     void Awake()
     {
@@ -196,10 +197,19 @@ public class GameManager : MonoBehaviour
         if (rand3 == 0)
         {
             Destroy(vaultKeycards[0]);
+            securityGuard.dialogue = "Here's the keycard to the vault! Take it! Just take it and don't hurt me......";
         }
         if (rand3 == 1)
         {
             Destroy(vaultKeycards[1]);
+            if (SceneManager.GetActiveScene().name == "Bank 2")
+            {
+                securityGuard.dialogue = "I swear I put the vault keycard somewhere in the bank manager's office! I told you what I know already, just don't hurt me......";
+            }
+            else
+            {
+                securityGuard.dialogue = "I swear I put the vault keycard somewhere in the security room! I told you what I know already, just don't hurt me......";
+            }
         }
     }
 

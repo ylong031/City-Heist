@@ -244,7 +244,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 180
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 1463147783}
+  - {fileID: 1324694409}
+  - {fileID: 410668716}
+  - {fileID: 638025312}
 --- !u!222 &6258542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5293,7 +5297,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 0
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 556164672}
+  - {fileID: 13665507}
+  - {fileID: 814275758}
+  - {fileID: 1463147783}
 --- !u!114 &169525899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14937,7 +14945,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 270
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 367456442}
+  - {fileID: 1324694409}
+  - {fileID: 410668716}
+  - {fileID: 638025312}
 --- !u!114 &422364134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38626,7 +38638,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1070100321
 RectTransform:
@@ -38698,7 +38710,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 90
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 1236827921}
+  - {fileID: 1463147783}
+  - {fileID: 410668716}
+  - {fileID: 638025312}
 --- !u!114 &1070100325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52039,8 +52055,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.18910751, y: -0.0000000084479606, z: 0.0000000016269286,
-    w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -60290,7 +60305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604957481}
-  m_LocalRotation: {x: 0.17121495, y: -1e-45, z: -0, w: 0.9852337}
+  m_LocalRotation: {x: 0.17121494, y: -1e-45, z: -0, w: 0.9852337}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -63567,7 +63582,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 0
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 1236827921}
+  - {fileID: 367456442}
+  - {fileID: 410668716}
+  - {fileID: 638025312}
 --- !u!222 &1665646364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66420,7 +66439,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747155550}
-  m_LocalRotation: {x: 0.15331319, y: 0.000000008501481, z: -0.0000000013189826, w: 0.98817766}
+  m_LocalRotation: {x: 0.15331319, y: -0.000000008501481, z: 0.0000000013189826, w: 0.98817766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -69722,6 +69741,7 @@ MonoBehaviour:
   vaultKeycards:
   - {fileID: 1152527542}
   - {fileID: 1658126505}
+  securityGuard: {fileID: 499924202}
 --- !u!4 &1867200734
 Transform:
   m_ObjectHideFlags: 0
@@ -72153,7 +72173,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 270
   isInCorrectRot: 0
-  wireOutlines: []
+  wireOutlines:
+  - {fileID: 228691408}
+  - {fileID: 1283978208}
+  - {fileID: 1329287605}
+  - {fileID: 408743041}
+  - {fileID: 1324694409}
 --- !u!114 &1927390982
 MonoBehaviour:
   m_ObjectHideFlags: 0
