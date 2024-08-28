@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WiresToRotate : MonoBehaviour
 {
     public float correctRot;
     public bool isInCorrectRot = false;
     bool firstTimeCorrect = false;
+    public Outline[] wireOutlines;
 
     public void ChangeWireRotation()
     {
@@ -29,9 +31,19 @@ public class WiresToRotate : MonoBehaviour
         {
             isInCorrectRot = true;
             firstTimeCorrect = true;
+
+            foreach (var wireOutline in wireOutlines)
+            {
+                wireOutline.enabled = true;
+            }
         }
         else
         {
+            foreach (var wireOutline in wireOutlines)
+            {
+                wireOutline.enabled = false;
+            }
+
             // If wire rotates from correct rotation to incorrect rotation
             if (isInCorrectRot && firstTimeCorrect)
             {
