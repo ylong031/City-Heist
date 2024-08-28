@@ -77,7 +77,7 @@ public class Money : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // If player is near the money
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !isPickedUp)
         {
             isPlayerNearby = true;
             if (!isWallet)
