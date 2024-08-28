@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 651272310568210863}
   cam: {fileID: 0}
-  speed: 5
+  speed: 8
   groundCheck: {fileID: 651272310844530263}
   groundDistance: 0.4
   groundMask:

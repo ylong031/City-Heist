@@ -13,7 +13,7 @@ public class Buttons : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        if (moneyText != null)
+        if (moneyText != null && PlayerPrefs.GetFloat("Money") != 0)
         {
             moneyText.text = "$" + PlayerPrefs.GetFloat("Money");
         }

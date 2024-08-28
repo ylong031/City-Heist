@@ -31,7 +31,7 @@ public class Money : MonoBehaviour
                     //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
                     //GameManager.instance.moneyText.text = "$" + money;
                     //PlayerPrefs.SetFloat("Money", money);
-                    GameManager.instance.money += GameManager.instance.vaultMoneyReward / 2;
+                    GameManager.instance.money += GameManager.instance.miniSafeMoneyReward;
                     GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
                     //Destroy(gameObject);
                     foreach (var moneyObj in moneyObjs)
@@ -45,13 +45,13 @@ public class Money : MonoBehaviour
                     GameManager.instance.foundMoney = true;
                     GameManager.instance.tasks[3].isOn = true;
                     GameManager.instance.tasks[4].gameObject.SetActive(true);
-                    interactText.text = "";
+                    interactText.text = "You are now slowed by 30% due to the weight of the loot. Escape quickly!";
                     //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
                     //GameManager.instance.moneyText.text = "$" + money;
                     //PlayerPrefs.SetFloat("Money", money);
                     GameManager.instance.money += GameManager.instance.vaultMoneyReward;
                     GameManager.instance.moneyText.text = "$" + GameManager.instance.money.ToString();
-                    GameManager.instance.playerMovement.speed *= 0.5f;
+                    GameManager.instance.playerMovement.speed *= 0.7f;
                     //Destroy(gameObject);
                     foreach (var moneyObj in moneyObjs)
                     {
@@ -76,6 +76,11 @@ public class Money : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Player" && isPickedUp && !isWallet && !isMiniSafe)
+        {
+            interactText.text = "You are now slowed by 30% due to the weight of the loot. Escape quickly!";
+        }
+
         // If player is near the money
         if (other.tag == "Player" && !isPickedUp)
         {

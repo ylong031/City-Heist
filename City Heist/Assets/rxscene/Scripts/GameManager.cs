@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     public int minWalletMoneyReward;
     public int maxWalletMoneyReward;
     public float vaultMoneyReward;
+    public float miniSafeMoneyReward;
 
     [HideInInspector]
     public string vaultCodeMemoText;
