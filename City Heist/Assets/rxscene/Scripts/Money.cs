@@ -45,7 +45,7 @@ public class Money : MonoBehaviour
                     GameManager.instance.foundMoney = true;
                     GameManager.instance.tasks[3].isOn = true;
                     GameManager.instance.tasks[4].gameObject.SetActive(true);
-                    interactText.text = "You are now slowed by 30% due to the weight of the loot. Escape quickly!";
+                    interactText.text = "You are now 30% slower due to the weight of the loot. Hurry!";
                     //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
                     //GameManager.instance.moneyText.text = "$" + money;
                     //PlayerPrefs.SetFloat("Money", money);
@@ -78,7 +78,7 @@ public class Money : MonoBehaviour
     {
         if (other.tag == "Player" && isPickedUp && !isWallet && !isMiniSafe)
         {
-            interactText.text = "You are now slowed by 30% due to the weight of the loot. Escape quickly!";
+            interactText.text = "You are now 30% slower due to the weight of the loot. Hurry!";
         }
 
         // If player is near the money
@@ -87,7 +87,7 @@ public class Money : MonoBehaviour
             isPlayerNearby = true;
             if (!isWallet)
             {
-                interactText.text = "Press E or F key to take the money.";
+                interactText.text = "Press E or F key to take the loot.";
             }
             else
             {

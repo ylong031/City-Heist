@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1471607890}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2809,7 +2809,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Take Money
+  m_Text: Take Loot
 --- !u!222 &93391767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12382,6 +12382,7 @@ MonoBehaviour:
   wireOutlines:
   - {fileID: 346607622}
   - {fileID: 1740822073}
+  - {fileID: 465736891}
 --- !u!114 &367456443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13576,6 +13577,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 397625478}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &397625480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2654661558636315405, guid: dc90d554ef4c11844b2ac15acc133098,
+    type: 3}
+  m_PrefabInstance: {fileID: 397625478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &397625481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397625480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923506, z: 0.36750907}
+  m_Center: {x: 0, y: -0.018479496, z: 0.18375453}
 --- !u!1 &400876106
 GameObject:
   m_ObjectHideFlags: 0
@@ -15894,6 +15914,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 434609650}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &434609652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2654661558636315405, guid: dc90d554ef4c11844b2ac15acc133098,
+    type: 3}
+  m_PrefabInstance: {fileID: 434609650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &434609653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434609652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923506, z: 0.36750907}
+  m_Center: {x: 0, y: -0.018479496, z: 0.18375453}
 --- !u!1 &435627394
 GameObject:
   m_ObjectHideFlags: 0
@@ -16631,8 +16670,8 @@ GameObject:
   - component: {fileID: 453053821}
   - component: {fileID: 453053824}
   - component: {fileID: 453053823}
-  - component: {fileID: 453053822}
   - component: {fileID: 453053826}
+  - component: {fileID: 453053822}
   - component: {fileID: 453053827}
   - component: {fileID: 453053825}
   m_Layer: 15
@@ -16656,8 +16695,8 @@ Transform:
   m_Father: {fileID: 1945535164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!136 &453053822
-CapsuleCollider:
+--- !u!135 &453053822
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16666,10 +16705,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 3
-  m_Direction: 2
-  m_Center: {x: -0.25, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &453053823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16743,7 +16781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7696a9363837b3469587935ff57d7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: Please spare me...
+  dialogue: Please spare me......
   health: 1
   personLyingDown: {fileID: 1406656597}
   dialoguePanel: {fileID: 670290559}
@@ -29893,6 +29931,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 750551473}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &750551475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884871784188532655, guid: f3f0b4f2ff1395e49b5030a84572002e,
+    type: 3}
+  m_PrefabInstance: {fileID: 750551473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &750551476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750551475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923506, z: 0.36750907}
+  m_Center: {x: 0, y: -0.018479496, z: 0.18375453}
 --- !u!1 &754421069
 GameObject:
   m_ObjectHideFlags: 0
@@ -33001,7 +33058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 153, y: -10}
+  m_AnchoredPosition: {x: 147, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848138649
@@ -36229,6 +36286,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 940513808}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &940513810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2654661558636315405, guid: dc90d554ef4c11844b2ac15acc133098,
+    type: 3}
+  m_PrefabInstance: {fileID: 940513808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &940513811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940513810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923512, z: 0.36750916}
+  m_Center: {x: 0, y: -0.018479023, z: 0.1837546}
 --- !u!1001 &940939275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40542,6 +40618,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1054147428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054147430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5540370406812440391, guid: f7b2313a7ea7d3c468c920137406f346,
+    type: 3}
+  m_PrefabInstance: {fileID: 1054147428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1054147431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054147430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923506, z: 0.40273175}
+  m_Center: {x: 0, y: -0.018479496, z: 0.20136587}
 --- !u!1 &1055402691
 GameObject:
   m_ObjectHideFlags: 0
@@ -46703,6 +46798,8 @@ MonoBehaviour:
   isInCorrectRot: 0
   wireOutlines:
   - {fileID: 465736891}
+  - {fileID: 91396535}
+  - {fileID: 1803113936}
 --- !u!114 &1236827922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49222,7 +49319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7696a9363837b3469587935ff57d7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: Please don't kill me...
+  dialogue: Please don't kill me......
   health: 1
   personLyingDown: {fileID: 1061749884}
   dialoguePanel: {fileID: 670290559}
@@ -50475,6 +50572,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1319170542}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1319170544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5540370406812440391, guid: f7b2313a7ea7d3c468c920137406f346,
+    type: 3}
+  m_PrefabInstance: {fileID: 1319170542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1319170545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319170544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923512, z: 0.40273184}
+  m_Center: {x: 0, y: -0.018479023, z: 0.20136593}
 --- !u!1001 &1319874296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57618,6 +57734,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1520477783}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1520477785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884871784188532655, guid: f3f0b4f2ff1395e49b5030a84572002e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1520477783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1520477786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520477785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923512, z: 0.36750916}
+  m_Center: {x: 0, y: -0.018479023, z: 0.1837546}
 --- !u!1 &1520961192
 GameObject:
   m_ObjectHideFlags: 0
@@ -62573,7 +62708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hack / Jam CCTV
+  m_Text: Jam CCTVs
 --- !u!222 &1629484738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -63676,7 +63811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Find Keycard To Vault
+  m_Text: Find Keycard to Vault
 --- !u!222 &1660695637
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -64277,7 +64412,7 @@ GameObject:
   - component: {fileID: 1688389580}
   - component: {fileID: 1688389579}
   m_Layer: 5
-  m_Name: DialogueText (TMP) (1)
+  m_Name: DialogueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64299,8 +64434,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 668, y: -28}
-  m_SizeDelta: {x: 1066, y: 50}
+  m_AnchoredPosition: {x: 535, y: -28}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688389579
 MonoBehaviour:
@@ -66180,7 +66315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7696a9363837b3469587935ff57d7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: I'm just a nobody, please don't kill me...
+  dialogue: I'm just a nobody, please don't kill me......
   health: 1
   personLyingDown: {fileID: 1029391886}
   dialoguePanel: {fileID: 670290559}
@@ -66568,7 +66703,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747155550}
-  m_LocalRotation: {x: 0.15331319, y: -0.000000008501481, z: 0.0000000013189826, w: 0.98817766}
+  m_LocalRotation: {x: 0.15331319, y: 0.000000008501481, z: -0.0000000013189826, w: 0.98817766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -66661,6 +66796,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1752364443}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752364445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2654661558636315405, guid: dc90d554ef4c11844b2ac15acc133098,
+    type: 3}
+  m_PrefabInstance: {fileID: 1752364443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1752364446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752364445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923512, z: 0.36750916}
+  m_Center: {x: 0, y: -0.018479023, z: 0.1837546}
 --- !u!1001 &1752405377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67864,7 +68018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90, y: -10}
+  m_AnchoredPosition: {x: 77, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799546213
@@ -69542,7 +69696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -10}
+  m_AnchoredPosition: {x: 158, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819625790
@@ -71925,7 +72079,7 @@ MonoBehaviour:
   - {fileID: 1732198551}
   moneyText: {fileID: 1829240042}
   money: 0
-  jamCCTVReward: 30
+  jamCCTVReward: 45
   takeHostageReward: 15
   killHostagePenalty: 15
   vaultDoorPenalty: 15
@@ -74681,6 +74835,8 @@ MonoBehaviour:
   - {fileID: 1283978208}
   - {fileID: 1329287605}
   - {fileID: 408743041}
+  - {fileID: 346607622}
+  - {fileID: 1740822073}
 --- !u!114 &1927390982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74874,7 +75030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -10}
+  m_AnchoredPosition: {x: 90, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932496636
@@ -78733,7 +78889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Open Vault Door
+  m_Text: Crack Open Vault Door
 --- !u!222 &2074362776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -80796,5 +80952,35 @@ PrefabInstance:
       propertyPath: bulletCountText
       value: 
       objectReference: {fileID: 137304589}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000027981145
+      objectReference: {fileID: 0}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000024480341
+      objectReference: {fileID: 0}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 651272311085596831, guid: 7071cc6b7d6274445a9958683dbcd678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.99998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7071cc6b7d6274445a9958683dbcd678, type: 3}

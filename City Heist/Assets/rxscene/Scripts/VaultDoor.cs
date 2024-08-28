@@ -105,7 +105,7 @@ public class VaultDoor : MonoBehaviour
                 isPlayerNearVaultDoor = true;
 
                 // Display interact text
-                interactText.text = "Press E or F key to open vault door.";
+                interactText.text = "Press E or F key to use the vault keycard and crack open the vault door.";
             }
             else if (!GameManager.instance.jammedCCTV)
             {
@@ -115,7 +115,7 @@ public class VaultDoor : MonoBehaviour
             else if(!GameManager.instance.foundVaultKeycard)
             {
                 // Display interact text
-                interactText.text = "You need the vault keycard.";
+                interactText.text = "You need the vault keycard to crack open the vault door.";
             }
         }
     }
