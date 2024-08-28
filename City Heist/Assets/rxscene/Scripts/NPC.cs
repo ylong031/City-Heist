@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
                 {
                     itemDrop.SetActive(true);
                 }
-                else if (name == "Security Guard")
+                else if (name == "Security Guard" && itemDrop != null)
                 {
                     itemDrop.SetActive(true);
                 }
@@ -94,7 +94,10 @@ public class NPC : MonoBehaviour
                 }
                 else
                 {
-                    itemDrop.SetActive(true);
+                    if (itemDrop != null)
+                    {
+                        itemDrop.SetActive(true);
+                    }
                 }
             }
             dialoguePanel.SetActive(false);

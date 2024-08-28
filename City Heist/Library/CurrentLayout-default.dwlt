@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 630
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 126
+  controlID: 127
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 127
+  controlID: 128
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 128
+  controlID: 59
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 129
+  controlID: 60
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -235,8 +235,8 @@ MonoBehaviour:
     y: 0
     width: 586
     height: 261
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 15}
@@ -420,20 +420,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: be370000
       m_LastClickedID: 0
-      m_ExpandedIDs: 221dfdff382afdff9a7afdff14bafdfff4f9fdff5c3cfefffc7dfeff028bfeff70cafeff9c08ffff7e48ffff3e89ffff5896ffff40e3ffff7afaffff46fbffff1e4c00004ee70000f4ec0000f4f900009aff00008e9e010096a0010034a40100e8ab010034b10100dab60100
+      m_ExpandedIDs: 603dfbffcc7cfbff98bafbff04fafbffd037fcff3e77fcff0a80fcff7a81fcfffe8dfcff3c94fcffaad3fcff70e0fcff06f1fcff7430fdffaa30fdff8470fdff6cb1fdff1af6fdff0c34feff9674feff12b3feffc0f2feffd639ffffe27cffffb0baffffcafaffff66fbffff883c00006a480000ea03010092040100280501002e110100fa97010090980100a4c101004ee70100aaf30100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Vault Code Memo
-        m_OriginalName: Vault Code Memo
+        m_Name: Vault Keycard (1)
+        m_OriginalName: Vault Keycard (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 126542
+        m_UserData: -66606
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -482,9 +482,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -30.5, y: 0.7, z: -9.47}
+    m_Target: {x: 15, y: 1, z: -15.9}
     speed: 2
-    m_Value: {x: -30.5, y: 0.7, z: -9.47}
+    m_Value: {x: 14.999988, y: 0.9999999, z: -15.900005}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0.94965416
+        m_Value: 0.9989843
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -530,17 +530,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.23589315, y: -0.6621929, z: 0.23238108, w: 0.67220086}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: 0.23589316, y: -0.66219294, z: 0.23238109, w: 0.6722009}
+    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_Size:
-    m_Target: 0.12747566
+    m_Target: 0.85732174
     speed: 2
-    m_Value: 0.12747566
+    m_Value: 0.85733384
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -709,9 +709,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0370000
-    m_LastClickedID: 14240
-    m_ExpandedIDs: 00000000943700009e37000000ca9a3b
+    m_SelectedIDs: a2370000
+    m_LastClickedID: 14242
+    m_ExpandedIDs: 0000000094370000b87100003876000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

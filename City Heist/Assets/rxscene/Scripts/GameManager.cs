@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public string vaultCodeMemoText;
     public GameObject vaultCodeMemo;
+    public GameObject[] vaultKeycards;
 
     void Awake()
     {
@@ -187,6 +188,17 @@ public class GameManager : MonoBehaviour
             }
             // Generate 4-digit bank vault code
             GenerateVaultCode();
+        }
+
+        // Spawn vault keycard on security guard / inside the bank
+        var rand3 = Random.Range(0, 2);
+        if (rand3 == 0)
+        {
+            Destroy(vaultKeycards[0]);
+        }
+        if (rand3 == 1)
+        {
+            Destroy(vaultKeycards[1]);
         }
     }
 

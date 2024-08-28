@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Renxi\\City Heist\\City Heist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|c:\\users\\renxi\\city heist\\city heist\\assets\\scripts\\portal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\portal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|c:\\users\\renxi\\city heist\\city heist\\assets\\rxscene\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|C:\\Users\\Renxi\\City Heist\\City Heist\\assets\\rxscene\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|solutionrelative:assets\\rxscene\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|C:\\Users\\Renxi\\City Heist\\City Heist\\assets\\rxscene\\scripts\\vaultdoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|solutionrelative:assets\\rxscene\\scripts\\vaultdoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|C:\\Users\\Renxi\\City Heist\\City Heist\\assets\\rxscene\\scripts\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|solutionrelative:assets\\rxscene\\scripts\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|C:\\Users\\Renxi\\City Heist\\City Heist\\assets\\rxscene\\scripts\\vaultdoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|solutionrelative:assets\\rxscene\\scripts\\vaultdoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F77FDA68-973F-75DF-C00F-29ABC2E37382}|Assembly-CSharp.csproj|C:\\Users\\Renxi\\City Heist\\City Heist\\assets\\rxscene\\scripts\\cctvconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,21 +74,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Portal.cs",
-              "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\Scripts\\Portal.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Portal.cs",
-              "ToolTip": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\Scripts\\Portal.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\Portal.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T02:41:09.693Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -103,36 +86,38 @@
               "RelativeToolTip": "Assets\\rxscene\\Scripts\\VaultDoor.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAYwFYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T06:48:07.744Z"
+              "WhenOpened": "2024-08-26T06:48:07.744Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Money.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\Money.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\Money.cs",
               "ToolTip": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\Money.cs",
               "RelativeToolTip": "Assets\\rxscene\\Scripts\\Money.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwE8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T15:14:50.159Z"
+              "WhenOpened": "2024-08-25T15:14:50.159Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\rxscene\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAYwJcAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAYwJ8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-20T04:34:38.027Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Exit.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\Exit.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\Exit.cs",
@@ -144,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "NPC.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\NPC.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\NPC.cs",
@@ -156,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CCTVConsole.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\CCTVConsole.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\CCTVConsole.cs",
@@ -168,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "SceneTransition.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\SceneTransition.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\SceneTransition.cs",
@@ -180,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "VaultKeycard.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\VaultKeycard.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\VaultKeycard.cs",
@@ -192,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "WiresToRotate.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\WiresToRotate.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\WiresToRotate.cs",
@@ -204,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "RandomizeColourSquares.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\RandomizeColourSquares.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\RandomizeColourSquares.cs",
@@ -216,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\PlayerMovement.cs",
@@ -228,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "VaultCodeMemo.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\VaultCodeMemo.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\VaultCodeMemo.cs",
@@ -240,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "GunMagazine.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\GunMagazine.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\GunMagazine.cs",
@@ -252,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "PlayerShooting.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\PlayerShooting.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\PlayerShooting.cs",
@@ -264,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "ColourSquare.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\ColourSquare.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\ColourSquare.cs",
@@ -276,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\Renxi\\City Heist\\City Heist\\Assets\\rxscene\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\rxscene\\Scripts\\Bullet.cs",
