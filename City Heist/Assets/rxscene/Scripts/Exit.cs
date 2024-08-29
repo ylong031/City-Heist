@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-    public TMP_Text interactText;
+    public GameObject escapePanel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,13 +61,64 @@ public class Exit : MonoBehaviour
             }
             else
             {
-                interactText.text = "You have not cracked the vault and stolen the money!";
+                escapePanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        interactText.text = "";
+        escapePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Escape()
+    {
+        // Bank 2
+        if (SceneManager.GetActiveScene().name == "Bank 2")
+        {
+            // 1st Bank - Bank 2
+            if (PlayerPrefs.GetInt("NextBank", 0) == 0)
+            {
+                // Retreat
+                PlayerPrefs.SetInt("NextBank", 1);
+                PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
+                PlayerPrefs.SetFloat("Money", GameManager.instance.money);
+                StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+            }
+            // 2nd (Final) Bank - Bank 2
+            else
+            {
+                // End
+                //SceneManager.LoadScene("End Scene");
+                PlayerPrefs.SetInt("NextBank", 0);
+                PlayerPrefs.SetFloat("Money", GameManager.instance.money);
+                StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+            }
+
+        }
+        // Bank 1
+        else
+        {
+            // 1st Bank - Bank 1
+            if (PlayerPrefs.GetInt("NextBank", 0) == 0)
+            {
+                // Retreat
+                PlayerPrefs.SetInt("NextBank", 2);
+                PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
+                PlayerPrefs.SetFloat("Money", GameManager.instance.money);
+                StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+            }
+            // 2nd (Final) Bank - Bank 1
+            else
+            {
+                // End
+                //SceneManager.LoadScene("CityScene");
+                PlayerPrefs.SetInt("NextBank", 0);
+                PlayerPrefs.SetFloat("Money", GameManager.instance.money);
+                StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
+            }
+        }
     }
 }

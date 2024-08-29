@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject bullet;
-    public Transform gunShootPoint;
+    public Transform[] gunShootPoint;
 
     public int maxBulletCount;
-    int currentBulletCount;
+    int[] currentBulletCount;
     public float reloadTime;
     bool isReloading = false;
 
     public GameObject emptyGunMagazine;
-    public Transform reloadMagazineDropPoint;
+    public Transform[] reloadMagazineDropPoint;
 
     public TMP_Text bulletCountText;
 
@@ -21,10 +21,17 @@ public class PlayerShooting : MonoBehaviour
     float shootTime;
     public float bulletsPerSecond;
 
+    public GameObject[] guns;
+    int currentGunIndex = 0;
+
     void Start()
     {
-        currentBulletCount = maxBulletCount;
-        bulletCountText.text = currentBulletCount + "/∞";
+        //currentBulletCount = maxBulletCount;
+        currentBulletCount = new int[3];
+        currentBulletCount[0] = 12;
+        currentBulletCount[1] = 30;
+        currentBulletCount[2] = 30;
+        bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
     }
 
     // Update is called once per frame
@@ -35,12 +42,106 @@ public class PlayerShooting : MonoBehaviour
         // If you are reloading / doing puzzle task
         if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf)
         {
-            // You can't shoot
+            // You can't shoot / cycle guns
             return;
         }
 
+        // Cycle guns with mouse scroll wheel
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // up
+        {
+            if (currentGunIndex == 0)
+            {
+                currentGunIndex = 2;
+            }
+            else
+            {
+                currentGunIndex--;
+            }
+
+            // Pistol
+            if (currentGunIndex == 0)
+            {
+                guns[1].SetActive(false);
+                guns[2].SetActive(false);
+                guns[0].SetActive(true);
+                isAuto = false;
+                maxBulletCount = 12;
+                reloadTime = 2f;
+                bulletsPerSecond = 9f;
+            }
+            // AK
+            else if (currentGunIndex == 1)
+            {
+                guns[2].SetActive(false);
+                guns[0].SetActive(false);
+                guns[1].SetActive(true);
+                isAuto = true;
+                maxBulletCount = 30;
+                reloadTime = 2.9f;
+                bulletsPerSecond = 10f;
+            }
+            // M4
+            else if (currentGunIndex == 2)
+            {
+                guns[0].SetActive(false);
+                guns[1].SetActive(false);
+                guns[2].SetActive(true);
+                isAuto = true;
+                maxBulletCount = 30;
+                reloadTime = 3.1f;
+                bulletsPerSecond = 11.63f;
+            }
+            bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // down
+        {
+            if (currentGunIndex == 2)
+            {
+                currentGunIndex = 0;
+            }
+            else
+            {
+                currentGunIndex++;
+            }
+
+            // Pistol
+            if (currentGunIndex == 0)
+            {
+                guns[1].SetActive(false);
+                guns[2].SetActive(false);
+                guns[0].SetActive(true);
+                isAuto = false;
+                maxBulletCount = 12;
+                reloadTime = 2f;
+                bulletsPerSecond = 9f;
+            }
+            // AK
+            else if (currentGunIndex == 1)
+            {
+                guns[2].SetActive(false);
+                guns[0].SetActive(false);
+                guns[1].SetActive(true);
+                isAuto = true;
+                maxBulletCount = 30;
+                reloadTime = 2.9f;
+                bulletsPerSecond = 10f;
+            }
+            // M4
+            else if (currentGunIndex == 2)
+            {
+                guns[0].SetActive(false);
+                guns[1].SetActive(false);
+                guns[2].SetActive(true);
+                isAuto = true;
+                maxBulletCount = 30;
+                reloadTime = 3.1f;
+                bulletsPerSecond = 11.63f;
+            }
+            bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+        }
+
         // If there are bullets in your gun
-        if (currentBulletCount > 0)
+        if (currentBulletCount[currentGunIndex] > 0)
         {
             if(shootTime <= 0f)
             {
@@ -76,21 +177,31 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
-        currentBulletCount--;
-        GameObject bulletObj = Instantiate(bullet, gunShootPoint.position, Quaternion.identity);
+        currentBulletCount[currentGunIndex]--;
+        GameObject bulletObj = Instantiate(bullet, gunShootPoint[currentGunIndex].position, Quaternion.identity);
         bulletObj.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetComponent<Bullet>().speed;
 
-        bulletCountText.text = currentBulletCount + "/∞";
+        bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
     }
 
     IEnumerator Reload()
     {
-        GameObject gunMagObj = Instantiate(emptyGunMagazine, reloadMagazineDropPoint.position, reloadMagazineDropPoint.rotation);
+        GameObject gunMagObj = Instantiate(emptyGunMagazine, reloadMagazineDropPoint[currentGunIndex].position, reloadMagazineDropPoint[currentGunIndex].rotation);
         gunMagObj.GetComponent<Rigidbody>().velocity = -transform.up - transform.forward;
-        yield return new WaitForSeconds(reloadTime);
-        currentBulletCount = maxBulletCount;
+
+        //yield return new WaitForSeconds(reloadTime);
+        bulletCountText.text = "Reloading";
+        yield return new WaitForSeconds(reloadTime / 4);
+        bulletCountText.text = "Reloading.";
+        yield return new WaitForSeconds(reloadTime / 4);
+        bulletCountText.text = "Reloading..";
+        yield return new WaitForSeconds(reloadTime / 4);
+        bulletCountText.text = "Reloading...";
+        yield return new WaitForSeconds(reloadTime / 4);
+
+        currentBulletCount[currentGunIndex] = maxBulletCount;
         isReloading = false;
 
-        bulletCountText.text = currentBulletCount + "/∞";
+        bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
     }
 }

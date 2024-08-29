@@ -14,11 +14,13 @@ public class Portal : MonoBehaviour
         if (PlayerPrefs.GetInt("NextBank", 0) == 2 && sceneName == "Bank 1")
         {
             playerVehicle.position = new Vector3(15, 0.3f, 200);
+            playerVehicle.rotation = Quaternion.Euler(new Vector3(0f, 270f, 0f));
             gameObject.SetActive(false);
         }
         else if (PlayerPrefs.GetInt("NextBank", 0) == 1 && sceneName == "Bank 2")
         {
             playerVehicle.position = new Vector3(220, 0.3f, 17.6f);
+            playerVehicle.rotation = Quaternion.Euler(new Vector3(0f, 270f, 0f));
             gameObject.SetActive(false);
         }
     }

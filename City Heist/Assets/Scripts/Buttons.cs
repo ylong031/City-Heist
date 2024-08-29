@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
     public TMP_Text moneyText;
+    public TMP_Dropdown qualityDropdown;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,13 @@ public class Buttons : MonoBehaviour
         PlayerPrefs.SetFloat("Time", 600f);
         PlayerPrefs.SetInt("NextBank", 0);
         PlayerPrefs.SetInt("isColourSquareTask", -1);
+
+        if(qualityDropdown != null)
+        {
+            qualityDropdown.value = QualitySettings.GetQualityLevel();
+            qualityDropdown.RefreshShownValue();
+        }
+        PlayerPrefs.SetInt("EnableMinimap", 1);
     }
 
     public void Play() 
@@ -42,5 +50,24 @@ public class Buttons : MonoBehaviour
     public void Rules() 
     {
         Debug.Log("Rules!");
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+        Debug.Log(QualitySettings.GetQualityLevel());
+    }
+
+    public void EnableMinimap(bool b)
+    {
+        Debug.Log(b);
+        if (b)
+        {
+            PlayerPrefs.SetInt("EnableMinimap", 1);
+        }
+        else if (!b)
+        {
+            PlayerPrefs.SetInt("EnableMinimap", 0);
+        }
     }
 }
