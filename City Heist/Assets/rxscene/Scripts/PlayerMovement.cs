@@ -53,4 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, cam.transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+    }
 }

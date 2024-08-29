@@ -8,6 +8,7 @@ TagManager:
   - obstacles
   - NPC
   - Vehicle
+  - Glass
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,11 @@ public class Bullet : MonoBehaviour
         {
             other.GetComponent<NPC>().TakeDamage(1);
         }
+        if (other.tag == "Glass")
+        {
+            Destroy(other.gameObject);
+            Instantiate(GameManager.instance.fracturedGlass, other.transform.position, other.transform.rotation);
+        }
         Destroy(gameObject);
     }
 }

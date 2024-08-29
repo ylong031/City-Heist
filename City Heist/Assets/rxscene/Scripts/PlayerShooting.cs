@@ -28,8 +28,11 @@ public class PlayerShooting : MonoBehaviour
     {
         //currentBulletCount = maxBulletCount;
         currentBulletCount = new int[3];
+        // Pistol
         currentBulletCount[0] = 12;
-        currentBulletCount[1] = 30;
+        // AK
+        currentBulletCount[1] = 40;
+        // M4
         currentBulletCount[2] = 30;
         bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
     }
@@ -39,8 +42,8 @@ public class PlayerShooting : MonoBehaviour
     {
         shootTime -= Time.deltaTime;
 
-        // If you are reloading / doing puzzle task
-        if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf)
+        // If you are reloading / doing puzzle task / game is paused
+        if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf || PauseGame.instance.isPaused)
         {
             // You can't shoot / cycle guns
             return;
@@ -76,7 +79,7 @@ public class PlayerShooting : MonoBehaviour
                 guns[0].SetActive(false);
                 guns[1].SetActive(true);
                 isAuto = true;
-                maxBulletCount = 30;
+                maxBulletCount = 40;
                 reloadTime = 2.9f;
                 bulletsPerSecond = 10f;
             }
@@ -122,7 +125,7 @@ public class PlayerShooting : MonoBehaviour
                 guns[0].SetActive(false);
                 guns[1].SetActive(true);
                 isAuto = true;
-                maxBulletCount = 30;
+                maxBulletCount = 40;
                 reloadTime = 2.9f;
                 bulletsPerSecond = 10f;
             }

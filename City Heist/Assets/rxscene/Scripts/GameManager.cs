@@ -83,6 +83,13 @@ public class GameManager : MonoBehaviour
     public GameObject[] vaultKeycards;
     public NPC securityGuard;
 
+    public GameObject escapePanel;
+
+    public GameObject fracturedGlass;
+
+    public GameObject rulesPanel;
+    public GameObject staticRulesPanel;
+
     void Awake()
     {
         // Game Manager Singleton
@@ -210,6 +217,17 @@ public class GameManager : MonoBehaviour
             {
                 securityGuard.dialogue = "I swear I put the vault keycard somewhere in the security room! I told you what I know already, just don't hurt me......";
             }
+        }
+
+        // 2nd bank
+        if (PlayerPrefs.GetInt("NextBank", 0) != 0)
+        {
+            CloseInstructionsPanel();
+        }
+        // 1st bank
+        else
+        {
+            rulesPanel.SetActive(true);
         }
     }
 
@@ -525,5 +543,15 @@ public class GameManager : MonoBehaviour
         thirdPersonCamera.enabled = true;
         playerMovement.enabled = true;
         instructionsPanel.SetActive(false);
+    }
+
+    public void ShowRules()
+    {
+        staticRulesPanel.SetActive(true);
+    }
+
+    public void CloseRules()
+    {
+        staticRulesPanel.SetActive(false);
     }
 }

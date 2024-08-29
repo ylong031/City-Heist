@@ -8,6 +8,7 @@ public class Buttons : MonoBehaviour
 {
     public TMP_Text moneyText;
     public TMP_Dropdown qualityDropdown;
+    public GameObject rulesPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,8 @@ public class Buttons : MonoBehaviour
     public void Play() 
     {
         //SceneManager.LoadScene(1);
-        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+        //StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+        rulesPanel.SetActive(true);
     }
 
     public void Return()

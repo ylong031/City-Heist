@@ -15,6 +15,13 @@ public class Misc : MonoBehaviour
     public bool isTimerRunning = true;
     public TMP_Text countdownTimerText;
 
+    // Pause
+    [HideInInspector]
+    public bool isPaused = false;
+    public GameObject pausePanel;
+    public Driving playerVehicle;
+    public GameObject staticRulesPanel;
+
     public void Deduct() 
     {
         money = money - 10;
@@ -48,6 +55,11 @@ public class Misc : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
+        }
+
         // Countdown Timer
         if (isTimerRunning)
         {
@@ -74,5 +86,44 @@ public class Misc : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         countdownTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void Pause()
+    {
+        if (staticRulesPanel.activeSelf)
+        {
+            return;
+        }
+
+        pausePanel.SetActive(!pausePanel.activeSelf);
+        if (!isPaused)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            playerVehicle.enabled = false;
+        }
+        else if (isPaused)
+        {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+            playerVehicle.enabled = true;
+        }
+        isPaused = !isPaused;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Pause();
+        StartCoroutine(SceneTransition.instance.TransitionToScene("MainMenu"));
+    }
+
+    public void ShowRules()
+    {
+        staticRulesPanel.SetActive(true);
+    }
+
+    public void CloseRules()
+    {
+        staticRulesPanel.SetActive(false);
     }
 }

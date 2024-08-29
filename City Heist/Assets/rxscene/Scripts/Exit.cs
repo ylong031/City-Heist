@@ -1,11 +1,8 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-    public GameObject escapePanel;
-
     private void OnTriggerEnter(Collider other)
     {
         // If player is near the exit
@@ -61,7 +58,7 @@ public class Exit : MonoBehaviour
             }
             else
             {
-                escapePanel.SetActive(true);
+                GameManager.instance.escapePanel.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
             }
         }
@@ -69,7 +66,7 @@ public class Exit : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        escapePanel.SetActive(false);
+        GameManager.instance.escapePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
