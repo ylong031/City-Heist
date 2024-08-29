@@ -37,22 +37,22 @@ public class Driving : MonoBehaviour
     {
 
         speedtext.text = "Speed : " + speed;
-     
-      
-        if (Input.GetKey(KeyCode.LeftArrow)) 
+
+
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, -turnSpeed * Time.deltaTime, 0f);
 
 
 
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0 , turnSpeed * Time.deltaTime, 0f);
 
 
         }
-        if (Input.GetKey(KeyCode.UpArrow))    
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))    
         {
             if (speed >= 25) return;
             speed += 0.5f;
@@ -60,14 +60,14 @@ public class Driving : MonoBehaviour
             
 
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow)||Input.GetKey(KeyCode.S))
         {
             if (speed <= -25) return;
             speed -= 0.5f;
 
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.E))
         {
             
             stop = true;
