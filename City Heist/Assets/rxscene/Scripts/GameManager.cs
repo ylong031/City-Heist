@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     public GameObject escapePanel;
 
     public GameObject fracturedGlass;
+    public GameObject wideFracturedGlass;
 
     public GameObject rulesPanel;
     public GameObject staticRulesPanel;
@@ -304,6 +305,7 @@ public class GameManager : MonoBehaviour
                     
                     // Lose (Some money gained)
                     PlayerPrefs.SetInt("NextBank", 0);
+                    PlayerPrefs.SetFloat("Time", remainingTime);
                     PlayerPrefs.SetFloat("Money", money);
                     StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                 }
@@ -313,6 +315,8 @@ public class GameManager : MonoBehaviour
                     // Lose (No money gained)
                     //SceneManager.LoadScene("End Scene");
                     PlayerPrefs.SetInt("NextBank", 0);
+                    PlayerPrefs.SetFloat("Time", remainingTime);
+                    PlayerPrefs.SetFloat("Money", 0);
                     StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                 }
             }

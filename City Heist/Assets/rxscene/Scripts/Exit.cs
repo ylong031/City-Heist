@@ -23,6 +23,7 @@ public class Exit : MonoBehaviour
                     if (PlayerPrefs.GetInt("NextBank", 0) == 2)
                     {
                         PlayerPrefs.SetInt("NextBank", 0);
+                        PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
                         PlayerPrefs.SetFloat("Money", GameManager.instance.money);
                         StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                     }
@@ -43,6 +44,7 @@ public class Exit : MonoBehaviour
                     if (PlayerPrefs.GetInt("NextBank", 0) == 1)
                     {
                         PlayerPrefs.SetInt("NextBank", 0);
+                        PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
                         PlayerPrefs.SetFloat("Money", GameManager.instance.money);
                         StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                     }
@@ -90,6 +92,7 @@ public class Exit : MonoBehaviour
                 // End
                 //SceneManager.LoadScene("End Scene");
                 PlayerPrefs.SetInt("NextBank", 0);
+                PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
                 PlayerPrefs.SetFloat("Money", GameManager.instance.money);
                 StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
             }
@@ -113,6 +116,7 @@ public class Exit : MonoBehaviour
                 // End
                 //SceneManager.LoadScene("CityScene");
                 PlayerPrefs.SetInt("NextBank", 0);
+                PlayerPrefs.SetFloat("Time", GameManager.instance.remainingTime);
                 PlayerPrefs.SetFloat("Money", GameManager.instance.money);
                 StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
             }

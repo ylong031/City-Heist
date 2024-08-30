@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    public TMP_Text moneyText;
     public TMP_Dropdown qualityDropdown;
     public GameObject rulesPanel;
 
@@ -15,13 +14,7 @@ public class Buttons : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        if (moneyText != null && PlayerPrefs.GetFloat("Money") != 0)
-        {
-            moneyText.text = "$" + PlayerPrefs.GetFloat("Money");
-        }
-        PlayerPrefs.SetFloat("Time", 600f);
-        PlayerPrefs.SetInt("NextBank", 0);
-        PlayerPrefs.SetInt("isColourSquareTask", -1);
+        PlayerPrefs.DeleteAll();
 
         if(qualityDropdown != null)
         {
@@ -37,12 +30,6 @@ public class Buttons : MonoBehaviour
         //StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
         rulesPanel.SetActive(true);
     }
-
-    public void Return()
-    {
-        SceneManager.LoadScene(0);
-    }
-
     public void Exit() 
     {
         Debug.Log("Quitting......");

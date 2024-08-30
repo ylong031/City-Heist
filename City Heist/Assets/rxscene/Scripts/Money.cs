@@ -46,6 +46,7 @@ public class Money : MonoBehaviour
                     GameManager.instance.tasks[3].isOn = true;
                     GameManager.instance.tasks[4].gameObject.SetActive(true);
                     interactText.text = "You are now 30% slower due to the weight of the loot. Hurry!";
+                    GameManager.instance.playerMovement.moneyBag.SetActive(true);
                     //float money = PlayerPrefs.GetFloat("Money") + GameManager.instance.vaultMoneyReward;
                     //GameManager.instance.moneyText.text = "$" + money;
                     //PlayerPrefs.SetFloat("Money", money);
