@@ -92,7 +92,7 @@ public class Money : MonoBehaviour
             }
             else
             {
-                interactText.text = "Press E or F key to take the wallet.";
+                interactText.text = "Press E or F key to take the money.";
             }
         }
     }

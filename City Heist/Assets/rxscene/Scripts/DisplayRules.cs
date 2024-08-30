@@ -42,9 +42,22 @@ public class DisplayRules : MonoBehaviour
             {
                 leftClickContinueText.SetActive(false);
                 index++;
-                rulesText.text += "\n";
                 StartCoroutine(DisplayRulesOneSentenceAtATime());
             }
+        }
+        else if(isRunning && Input.GetMouseButtonDown(0))
+        {
+            StopAllCoroutines();
+            for (int i = 0; i <= index; i++)
+            {
+                if (i == 0)
+                {
+                    rulesText.text = "";
+                }
+                rulesText.text += sentences[i] + "\n";
+            }
+            isRunning = false;
+            leftClickContinueText.SetActive(true);
         }
     }
 
@@ -54,8 +67,9 @@ public class DisplayRules : MonoBehaviour
         foreach (var sentence in sentences[index])
         {
             rulesText.text += sentence;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.02f);
         }
+        rulesText.text += "\n";
         isRunning = false;
         leftClickContinueText.SetActive(true);
     }

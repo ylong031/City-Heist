@@ -25,6 +25,10 @@ public class Misc : MonoBehaviour
     public void Deduct() 
     {
         money = money - 10;
+        if (money < 0)
+        {
+            money = 0;
+        }
         PlayerPrefs.SetFloat("Money", money);
     }
 

@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    public TMP_Text text;
 
     public GameObject itemDrop;
 
@@ -39,10 +40,19 @@ public class NPC : MonoBehaviour
             {
                 // Take hostage
                 isTalkedTo = true;
-                GameManager.instance.takenHostage = true;
+                if (!GameManager.instance.takenHostage && PlayerPrefs.GetInt("NextBank", 0) == 0)
+                {
+                    nameText.text = "";
+                    dialogueText.text = "You have just taken a hostage! You now have more time for your heist as the police can't act carelessly with a hostage's life at stake!";
+                    text.enabled = false;
+                    GameManager.instance.takenHostage = true;
+                }
+                else
+                {
+                    dialoguePanel.SetActive(false);
+                }
                 GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
                 //StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
-                dialoguePanel.SetActive(false);
                 personLyingDown.SetActive(true);
                 gameObject.SetActive(false);
                 if (name == "Bank Manager" && !GameManager.instance.isColourSquareTask)
@@ -97,6 +107,7 @@ public class NPC : MonoBehaviour
             dialoguePanel.SetActive(true);
             nameText.text = name;
             dialogueText.text = dialogue;
+            text.enabled = true;
         }
     }
 
@@ -113,6 +124,19 @@ public class NPC : MonoBehaviour
         {
             personLyingDown.GetComponent<Renderer>().material.color = Color.red;
             isTalkedTo = true;
+            if (!GameManager.instance.killedCivilian)
+            {
+                nameText.text = "";
+                dialogueText.text = "You have just killed a civilian! You now have less time for your heist as the police will now do everything in their power to arrest you!";
+                dialoguePanel.SetActive(true);
+                text.enabled = false;
+                GameManager.instance.killedCivilian = true;
+            }
+            else
+            {
+                dialoguePanel.SetActive(false);
+                text.enabled = true;
+            }
             GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
             //StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
             if (itemDrop != null)
@@ -129,7 +153,6 @@ public class NPC : MonoBehaviour
                     }
                 }
             }
-            dialoguePanel.SetActive(false);
             personLyingDown.SetActive(true);
             gameObject.SetActive(false);
         }

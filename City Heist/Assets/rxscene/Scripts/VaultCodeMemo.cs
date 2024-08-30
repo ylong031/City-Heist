@@ -24,6 +24,7 @@ public class VaultCodeMemo : MonoBehaviour
         {
             // Display vault code memo text
             GetComponent<Renderer>().enabled = false;
+            GetComponentInChildren<TMP_Text>().enabled = false;
             interactText.text = "";
             dialoguePanel.SetActive(true);
             text.enabled = false;
@@ -46,6 +47,7 @@ public class VaultCodeMemo : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         GetComponent<Renderer>().enabled = true;
+        GetComponentInChildren<TMP_Text>().enabled = true;
         isPlayerNearby = false;
         interactText.text = "";
         dialoguePanel.SetActive(false);

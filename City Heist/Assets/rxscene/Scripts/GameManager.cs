@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public bool jammedCCTV = false;
     [HideInInspector]
     public bool takenHostage = false;
+    [HideInInspector]
+    public bool killedCivilian = false;
 
     // Countdown Timer
     public float remainingTime;
@@ -99,6 +101,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("NextBank", 0) != 0)
+        {
+            killedCivilian = true;
+        }
+
         Cursor.lockState = CursorLockMode.None;
 
         // Carry over money from city scene
@@ -314,9 +321,10 @@ public class GameManager : MonoBehaviour
                 {
                     // Lose (No money gained)
                     //SceneManager.LoadScene("End Scene");
-                    PlayerPrefs.SetInt("NextBank", 0);
-                    PlayerPrefs.SetFloat("Time", remainingTime);
-                    PlayerPrefs.SetFloat("Money", 0);
+                    //PlayerPrefs.SetInt("NextBank", 0);
+                    //PlayerPrefs.SetFloat("Time", remainingTime);
+                    //PlayerPrefs.SetFloat("Money", 0);
+                    PlayerPrefs.SetInt("GameLost", 1);
                     StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
                 }
             }

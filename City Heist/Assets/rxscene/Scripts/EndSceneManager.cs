@@ -11,10 +11,19 @@ public class EndSceneManager : MonoBehaviour
     public Animator robberyVehicleAnim;
     public GameObject robberyVehicleSmoke;
 
+    public GameObject losePanel;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+
+        if (PlayerPrefs.GetInt("GameLost", 0) == 1)
+        {
+            PlayerPrefs.DeleteAll();
+            losePanel.SetActive(true);
+            return;
+        }
 
         float moneyEarned = PlayerPrefs.GetFloat("Money");
         moneyEarnedText.text = "Money Earned: $" + moneyEarned;
@@ -27,25 +36,21 @@ public class EndSceneManager : MonoBehaviour
         string grade = "";
         if (moneyEarned >= 4000)
         {
-            grade = "S+";
+            grade = "S";
         }
         else if (moneyEarned >= 3000)
         {
-            grade = "S";
+            grade = "A";
         }
         else if (moneyEarned >= 2000)
         {
-            grade = "A";
+            grade = "B";
         }
         else if (moneyEarned >= 1000)
         {
-            grade = "B";
-        }
-        else if (moneyEarned >= 0)
-        {
             grade = "C";
         }
-        else if (moneyEarned < 0)
+        else
         {
             grade = "D";
         }
@@ -65,6 +70,16 @@ public class EndSceneManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         robberyVehicleAnim.enabled = true;
         yield return new WaitForSeconds(1f);
+        StartCoroutine(SceneTransition.instance.TransitionToScene("MainMenu"));
+    }
+
+    public void Retry()
+    {
+        StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
+    }
+
+    public void FastReturnToMainMenu()
+    {
         StartCoroutine(SceneTransition.instance.TransitionToScene("MainMenu"));
     }
 }
