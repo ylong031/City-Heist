@@ -10,6 +10,7 @@ TagManager:
   - Vehicle
   - Glass
   - WideGlass
+  - Walls&Doors
   layers:
   - Default
   - TransparentFX

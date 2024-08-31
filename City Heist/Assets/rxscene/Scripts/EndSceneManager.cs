@@ -34,7 +34,7 @@ public class EndSceneManager : MonoBehaviour
         timeLeftText.text = "Time Left:\n" + minutes + "min " + seconds + "s";
 
         string grade = "";
-        if (moneyEarned >= 4000)
+        if (moneyEarned >= 3800)
         {
             grade = "S";
         }

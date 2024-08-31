@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public float remainingTime;
     public bool isTimerRunning = false;
     public TMP_Text countdownTimerText;
+    public TMP_Text countdownTimerChangesText;
 
     public PlayerMovement playerMovement;
     public CinemachineFreeLook thirdPersonCamera;
@@ -527,6 +528,18 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ChangeRemainingTime(float time)
     {
+        if (time < 0f)
+        {
+            countdownTimerChangesText.color = Color.red;
+            countdownTimerChangesText.text = time.ToString() + "s";
+        }
+        else
+        {
+            countdownTimerChangesText.color = Color.green;
+            countdownTimerChangesText.text = "+" + time.ToString() + "s";
+        }
+        countdownTimerChangesText.gameObject.SetActive(true);
+
         for (int i = 0; i < Mathf.Abs(time); i++)
         {
             if (time < 0f)
@@ -539,9 +552,11 @@ public class GameManager : MonoBehaviour
                 countdownTimerText.color = Color.green;
                 remainingTime += 1f;
             }
-            yield return new WaitForSeconds(1 / (Mathf.Abs(time) * 2));
+            yield return new WaitForSeconds(1 / (Mathf.Abs(time) * 1.5f));
         }
         countdownTimerText.color = Color.black;
+        yield return new WaitForSeconds(0.5f);
+        countdownTimerChangesText.gameObject.SetActive(false);
     }
 
     public void CloseInstructionsPanel()

@@ -12,6 +12,11 @@ public class NPC : MonoBehaviour
     bool isPlayerNearby = false;
     bool isTalkedTo = false;
 
+    // mng = Bank Manager; grd = Security Guard
+    bool mngGrdIsTakenHostage = false;
+    bool mngGrdIsShot = false;
+    bool talkedToShotMngGrd = false;
+
     public GameObject dialoguePanel;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
@@ -31,7 +36,7 @@ public class NPC : MonoBehaviour
         {
             return;
         }
-        
+
         // If player is nearby
         if (isPlayerNearby)
         {
@@ -51,10 +56,27 @@ public class NPC : MonoBehaviour
                 {
                     dialoguePanel.SetActive(false);
                 }
-                GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
-                //StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
+
+                if (name == "Bank Manager" || name == "Security Guard")
+                {
+                    StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
+                }
+                else
+                {
+                    GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
+                }
+
                 personLyingDown.SetActive(true);
-                gameObject.SetActive(false);
+                // Only the bank manager and the security guard can be talked to after being taken hostage
+                if (name == "Bank Manager" || name == "Security Guard")
+                {
+                    GetComponent<Renderer>().enabled = false;
+                    mngGrdIsTakenHostage = true;
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
                 if (name == "Bank Manager" && !GameManager.instance.isColourSquareTask)
                 {
                     itemDrop.SetActive(true);
@@ -92,6 +114,92 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Talk to Bank Manager / Security Guard hostage
+        if (mngGrdIsTakenHostage && other.tag == "Player")
+        {
+            if (name == "Bank Manager")
+            {
+                // Display dialogue panel and text
+                dialoguePanel.SetActive(true);
+                nameText.text = name;
+                if (dialogue.Contains("office"))
+                {
+                    dialogueText.text = "The memo containing the code to the vault is in the safe at my office, just take it and leave!";
+                }
+                else if (dialogue.Contains("Here!"))
+                {
+                    dialogueText.text = "The memo containing the code to the vault is right there! Just take it and leave me be!";
+                }
+                else
+                {
+                    dialogueText.text = "Please......I don't want to die......";
+                }
+                text.enabled = false;
+            }
+            else if (name == "Security Guard")
+            {
+                // Display dialogue panel and text
+                dialoguePanel.SetActive(true);
+                nameText.text = name;
+                if (dialogue.Contains("office"))
+                {
+                    dialogueText.text = "I already told you! I swear I put the vault keycard somewhere in the bank manager's office! Just go......";
+                }
+                else if (dialogue.Contains("security"))
+                {
+                    dialogueText.text = "I already told you! I swear I put the vault keycard somewhere in the security room! Just go away......";
+                }
+                else
+                {
+                    dialogueText.text = "Look! The vault keycard is just right there! Just take it and go away, please......";
+                }
+                text.enabled = false;
+            }
+        }
+        // Talk to shot Bank Manager / Security Guard
+        else if (mngGrdIsShot && !talkedToShotMngGrd && other.tag == "Player")
+        {
+            if (name == "Bank Manager")
+            {
+                // Display dialogue panel and text
+                dialoguePanel.SetActive(true);
+                nameText.text = name;
+                if (dialogue.Contains("office"))
+                {
+                    dialogueText.text = "I already told you the memo containing the code to the vault is in the safe at my office, why did you shoot me anyways......";
+                }
+                else if (dialogue.Contains("Here!"))
+                {
+                    dialogueText.text = "The memo containing the code to the vault is just right there, why did you shoot me anyways......";
+                }
+                else
+                {
+                    dialogueText.text = "Kids......Forgive daddy......Take care of mommy for me......";
+                }
+                text.enabled = false;
+            }
+            else if (name == "Security Guard")
+            {
+                // Display dialogue panel and text
+                dialoguePanel.SetActive(true);
+                nameText.text = name;
+                if (dialogue.Contains("office"))
+                {
+                    dialogueText.text = "I shouldn't have put the vault keycard on the table in the bank manager's office......Maybe that way I could have lived......";
+                }
+                else if (dialogue.Contains("security"))
+                {
+                    dialogueText.text = "Maybe I shouldn't have put the vault keycard on the table in the security room......That way I could have lived......";
+                }
+                else
+                {
+                    dialogueText.text = "The vault keycard is right there, but just know that you cannot turn back now......The police will definitely arrest you......";
+                }
+                text.enabled = false;
+            }
+            talkedToShotMngGrd = true;
+        }
+
         // If player already talked to, don't do anything
         if (isTalkedTo)
         {
@@ -113,16 +221,33 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        isPlayerNearby = false;
-        dialoguePanel.SetActive(false);
+        if (talkedToShotMngGrd && other.tag == "Player")
+        {
+            personLyingDown.GetComponent<Renderer>().material.color = Color.red;
+        }
+
+        if (other.tag == "Player")
+        {
+            isPlayerNearby = false;
+            dialoguePanel.SetActive(false);
+        }
     }
 
     public void TakeDamage(int dmg)
     {
+        if (mngGrdIsTakenHostage || mngGrdIsShot)
+        {
+            return;
+        }
+
         health -= dmg;
         if(health <= 0)
         {
-            personLyingDown.GetComponent<Renderer>().material.color = Color.red;
+            if (name != "Bank Manager" && name != "Security Guard")
+            {
+                personLyingDown.GetComponent<Renderer>().material.color = Color.red;
+            }
+
             isTalkedTo = true;
             if (!GameManager.instance.killedCivilian)
             {
@@ -137,8 +262,16 @@ public class NPC : MonoBehaviour
                 dialoguePanel.SetActive(false);
                 text.enabled = true;
             }
-            GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
-            //StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
+
+            if (name == "Bank Manager" || name == "Security Guard")
+            {
+                StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
+            }
+            else
+            {
+                GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
+            }
+
             if (itemDrop != null)
             {
                 if (name == "Bank Manager" && GameManager.instance.isColourSquareTask)
@@ -154,7 +287,16 @@ public class NPC : MonoBehaviour
                 }
             }
             personLyingDown.SetActive(true);
-            gameObject.SetActive(false);
+            // Only the bank manager and the security guard can be talked to ONCE after being shot
+            if (name == "Bank Manager" || name == "Security Guard")
+            {
+                GetComponent<Renderer>().enabled = false;
+                mngGrdIsShot = true;
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

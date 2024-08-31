@@ -50,53 +50,102 @@ public class PlayerShooting : MonoBehaviour
         }
 
         // Cycle guns with mouse scroll wheel
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // up
-        {
-            if (currentGunIndex == 0)
-            {
-                currentGunIndex = 2;
-            }
-            else
-            {
-                currentGunIndex--;
-            }
+        /*        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // up
+                {
+                    if (currentGunIndex == 0)
+                    {
+                        currentGunIndex = 2;
+                    }
+                    else
+                    {
+                        currentGunIndex--;
+                    }
 
-            // Pistol
-            if (currentGunIndex == 0)
-            {
-                guns[1].SetActive(false);
-                guns[2].SetActive(false);
-                guns[0].SetActive(true);
-                isAuto = false;
-                maxBulletCount = 12;
-                reloadTime = 2f;
-                bulletsPerSecond = 9f;
-            }
-            // AK
-            else if (currentGunIndex == 1)
-            {
-                guns[2].SetActive(false);
-                guns[0].SetActive(false);
-                guns[1].SetActive(true);
-                isAuto = true;
-                maxBulletCount = 40;
-                reloadTime = 2.9f;
-                bulletsPerSecond = 10f;
-            }
-            // M4
-            else if (currentGunIndex == 2)
-            {
-                guns[0].SetActive(false);
-                guns[1].SetActive(false);
-                guns[2].SetActive(true);
-                isAuto = true;
-                maxBulletCount = 30;
-                reloadTime = 3.1f;
-                bulletsPerSecond = 11.63f;
-            }
-            bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // down
+                    // Pistol
+                    if (currentGunIndex == 0)
+                    {
+                        guns[1].SetActive(false);
+                        guns[2].SetActive(false);
+                        guns[0].SetActive(true);
+                        isAuto = false;
+                        maxBulletCount = 12;
+                        reloadTime = 2f;
+                        bulletsPerSecond = 9f;
+                    }
+                    // AK
+                    else if (currentGunIndex == 1)
+                    {
+                        guns[2].SetActive(false);
+                        guns[0].SetActive(false);
+                        guns[1].SetActive(true);
+                        isAuto = true;
+                        maxBulletCount = 40;
+                        reloadTime = 2.9f;
+                        bulletsPerSecond = 10f;
+                    }
+                    // M4
+                    else if (currentGunIndex == 2)
+                    {
+                        guns[0].SetActive(false);
+                        guns[1].SetActive(false);
+                        guns[2].SetActive(true);
+                        isAuto = true;
+                        maxBulletCount = 30;
+                        reloadTime = 3.1f;
+                        bulletsPerSecond = 11.63f;
+                    }
+                    bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+                }
+                else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // down
+                {
+                    if (currentGunIndex == 2)
+                    {
+                        currentGunIndex = 0;
+                    }
+                    else
+                    {
+                        currentGunIndex++;
+                    }
+
+                    // Pistol
+                    if (currentGunIndex == 0)
+                    {
+                        guns[1].SetActive(false);
+                        guns[2].SetActive(false);
+                        guns[0].SetActive(true);
+                        isAuto = false;
+                        maxBulletCount = 12;
+                        reloadTime = 2f;
+                        bulletsPerSecond = 9f;
+                    }
+                    // AK
+                    else if (currentGunIndex == 1)
+                    {
+                        guns[2].SetActive(false);
+                        guns[0].SetActive(false);
+                        guns[1].SetActive(true);
+                        isAuto = true;
+                        maxBulletCount = 40;
+                        reloadTime = 2.9f;
+                        bulletsPerSecond = 10f;
+                    }
+                    // M4
+                    else if (currentGunIndex == 2)
+                    {
+                        guns[0].SetActive(false);
+                        guns[1].SetActive(false);
+                        guns[2].SetActive(true);
+                        isAuto = true;
+                        maxBulletCount = 30;
+                        reloadTime = 3.1f;
+                        bulletsPerSecond = 11.63f;
+                    }
+                    bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+                }*/
+
+
+        // Cycle guns with C key
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if (currentGunIndex == 2)
             {

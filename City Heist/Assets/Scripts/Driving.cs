@@ -41,14 +41,29 @@ public class Driving : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, -turnSpeed * Time.deltaTime, 0f);
+            if (speed < 0)
+            {
+                transform.Rotate(0, turnSpeed * Time.deltaTime, 0f);
+            }
+            else
+            {
+                transform.Rotate(0, -turnSpeed * Time.deltaTime, 0f);
+            }
 
 
 
         }
         if (Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0 , turnSpeed * Time.deltaTime, 0f);
+            if (speed < 0)
+            {
+                transform.Rotate(0, -turnSpeed * Time.deltaTime, 0f);
+            }
+            else
+            {
+                transform.Rotate(0, turnSpeed * Time.deltaTime, 0f);
+            }
+
 
 
         }

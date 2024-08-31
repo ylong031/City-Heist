@@ -48,11 +48,14 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            ContactPoint contact = collision.contacts[0];
-            Quaternion rot = Quaternion.FromToRotation(Vector3.forward, contact.normal);
-            Vector3 pos = contact.point;
-            GameObject bulletHoleObj = Instantiate(bulletHole, pos, rot);
-            bulletHoleObj.transform.position = Vector3.MoveTowards(bulletHoleObj.transform.position, GameManager.instance.playerMovement.transform.position, 0.01f);
+            if (collision.collider.tag == "Walls&Doors")
+            {
+                ContactPoint contact = collision.contacts[0];
+                Quaternion rot = Quaternion.FromToRotation(Vector3.forward, contact.normal);
+                Vector3 pos = contact.point;
+                GameObject bulletHoleObj = Instantiate(bulletHole, pos, rot);
+                bulletHoleObj.transform.position = Vector3.MoveTowards(bulletHoleObj.transform.position, GameManager.instance.playerMovement.transform.position, 0.01f);
+            }
         }
         Destroy(gameObject);
     }
