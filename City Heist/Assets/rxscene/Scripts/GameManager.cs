@@ -94,6 +94,8 @@ public class GameManager : MonoBehaviour
     public GameObject rulesPanel;
     public GameObject staticRulesPanel;
 
+    public TMP_Text camSensText;
+
     void Awake()
     {
         // Game Manager Singleton
@@ -580,5 +582,11 @@ public class GameManager : MonoBehaviour
     public void CloseRules()
     {
         staticRulesPanel.SetActive(false);
+    }
+
+    public void SetCameraSensitivity(float camSens)
+    {
+        thirdPersonCamera.m_XAxis.m_MaxSpeed = camSens;
+        camSensText.text = camSens.ToString();
     }
 }
