@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 850
-  m_MinSize: {x: 678, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 446
+  controlID: 1549
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 0
     width: 1100
     height: 850
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 447
+  controlID: 1550
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,10 +163,10 @@ MonoBehaviour:
     y: 0
     width: 1100
     height: 452
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 448
+  controlID: 1551
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -304,16 +304,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -18.143223, y: 1.8342792, z: -3.410644}
+    m_Target: {x: -31.389824, y: 1.6767057, z: -2.7990077}
     speed: 2
-    m_Value: {x: -18.143223, y: 1.8342792, z: -3.410644}
+    m_Value: {x: -31.389824, y: 1.6767057, z: -2.7990077}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -359,13 +359,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.005161663, y: 0.7254995, z: -0.005440627, w: 0.6881853}
+    m_Target: {x: 0.114252396, y: 0.69022226, z: -0.11174166, w: 0.7057329}
     speed: 2
-    m_Value: {x: 0.005161651, y: 0.7254978, z: -0.005440614, w: 0.6881836}
+    m_Value: {x: 0.11425208, y: 0.69022036, z: -0.11174136, w: 0.705731}
   m_Size:
-    m_Target: 1.7286506
+    m_Target: 1.1838074
     speed: 2
-    m_Value: 1.7286506
+    m_Value: 1.1838074
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -456,19 +456,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/rxscene/Scripts
+    - Assets/rxscene/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/rxscene/Scripts
+  - Assets/rxscene/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/zyb/Desktop/Y3S2/Game Dev/City-Heist/City Heist
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: f4600000
-    m_LastClickedID: 24820
+    m_SelectedIDs: ae600000
+    m_LastClickedID: 24750
     m_ExpandedIDs: 00000000426000004460000046600000486000004a6000004c6000004e600000506000008660000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -522,8 +522,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aa2f0000
-    m_LastClickedInstanceID: 12202
+    m_SelectedInstanceIDs: d24e0000
+    m_LastClickedInstanceID: 20178
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -641,5 +641,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 12202
+  m_LastInspectedObjectInstanceID: 20178
   m_LastVerticalScrollValue: 0
