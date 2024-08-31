@@ -17,7 +17,7 @@ public class DisplayRules : MonoBehaviour
         rulesText = GetComponentInChildren<TMP_Text>();
         if (SceneManager.GetActiveScene().name == "Bank 1" || SceneManager.GetActiveScene().name == "Bank 2")
         {
-            rules = "Your mission: Complete the tasks in the task list to escape with the loot!\nSteal as much money as possible to get a higher grade!\nRules: Shooting civilians will cost you time but will earn you extra money.\nTaking them hostage will delay the police but you won't get their money.\nChoose wisely!";
+            rules = "Your mission: Complete the tasks in the task list to escape with the loot!\nSteal as much money as possible to get a higher grade!\nRules: Shooting civilians will cost you time but will earn you extra money.\nTaking them hostage will delay the police but you won't get their money.\nChoose wisely!\nP.S: You may want to leave the staffs alive till you leave the bank. They give hints.";
         }
         sentences = rules.Split('\n');
         StartCoroutine(DisplayRulesOneSentenceAtATime());
