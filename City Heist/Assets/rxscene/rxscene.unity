@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1471607890}
   m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -58,7 +58,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -787,6 +787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   isWallet: 1
+  moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &116827666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1451,6 +1453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 0
   isInCorrectRot: 0
+  wireOutlines: []
 --- !u!114 &169525899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,6 +2775,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   isWallet: 1
+  moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &351619690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3173,6 +3178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 90
   isInCorrectRot: 0
+  wireOutlines: []
 --- !u!114 &367456443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,7 +4128,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 116827663}
+  healthBar: {fileID: 0}
 --- !u!136 &453053827
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4716,7 +4724,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 1658126505}
+  healthBar: {fileID: 0}
 --- !u!136 &499924203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4787,6 +4797,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 16384
+  moneyBag: {fileID: 0}
 --- !u!143 &514937878
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4818,15 +4829,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 694274894902191839, guid: e674934accd5a5945a107614a63d49b6, type: 3}
-  gunShootPoint: {fileID: 1828479367}
+  gunShootPoint:
+  - {fileID: 0}
   maxBulletCount: 8
   reloadTime: 1.3
   emptyGunMagazine: {fileID: 4685006583551277935, guid: f491f71e833e57a439cf889b618623b0,
     type: 3}
-  reloadMagazineDropPoint: {fileID: 1065878822}
+  reloadMagazineDropPoint:
+  - {fileID: 0}
   bulletCountText: {fileID: 137304589}
   isAuto: 0
   bulletsPerSecond: 4
+  guns: []
 --- !u!1 &522940036
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,7 +6288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d644cf0c316b74eb3fed6acc15a7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: {fileID: 271264240}
 --- !u!65 &683748450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6603,6 +6616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   isWallet: 0
+  moneyObjs: []
+  isMiniSafe: 0
 --- !u!1 &700199599
 GameObject:
   m_ObjectHideFlags: 0
@@ -8787,6 +8802,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   isWallet: 1
+  moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &952181646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10890,7 +10907,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 952181643}
+  healthBar: {fileID: 0}
 --- !u!136 &1195255569
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11288,6 +11307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 180
   isInCorrectRot: 0
+  wireOutlines: []
 --- !u!114 &1236827922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11824,7 +11844,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 1590856385}
+  healthBar: {fileID: 0}
 --- !u!136 &1280753599
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12647,7 +12669,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.23226997, y: -0.00000009801225, z: 0.000000023405407, w: 0.97265136}
+  m_LocalRotation: {x: 0.23226997, y: -0.00000009709786, z: 0.000000023187052, w: 0.97265136}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14767,6 +14789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: {fileID: 271264240}
   isWallet: 1
+  moneyObjs: []
+  isMiniSafe: 0
 --- !u!65 &1590856388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16642,7 +16666,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 351619687}
+  healthBar: {fileID: 0}
 --- !u!136 &1740195598
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16798,7 +16824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747155550}
-  m_LocalRotation: {x: 0.19678517, y: -0.00000012534285, z: 0.000000025157526, w: 0.98044664}
+  m_LocalRotation: {x: 0.19678517, y: -0.00000008942005, z: 0.00000001794747, w: 0.98044664}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18234,9 +18260,11 @@ MonoBehaviour:
   foundMoney: 0
   jammedCCTV: 0
   takenHostage: 0
+  killedCivilian: 0
   remainingTime: 180
   isTimerRunning: 0
   countdownTimerText: {fileID: 1906708531}
+  countdownTimerChangesText: {fileID: 0}
   playerMovement: {fileID: 514937877}
   thirdPersonCamera: {fileID: 1406758920}
   instructionsPanel: {fileID: 234283238}
@@ -18308,7 +18336,17 @@ MonoBehaviour:
   minWalletMoneyReward: 20
   maxWalletMoneyReward: 100
   vaultMoneyReward: 1000
+  miniSafeMoneyReward: 0
   vaultCodeMemoText: 
+  vaultCodeMemo: {fileID: 0}
+  vaultKeycards: []
+  securityGuard: {fileID: 0}
+  escapePanel: {fileID: 0}
+  fracturedGlass: {fileID: 0}
+  wideFracturedGlass: {fileID: 0}
+  rulesPanel: {fileID: 0}
+  staticRulesPanel: {fileID: 0}
+  camSensText: {fileID: 0}
 --- !u!4 &1867200734
 Transform:
   m_ObjectHideFlags: 0
@@ -19094,6 +19132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRot: 270
   isInCorrectRot: 0
+  wireOutlines: []
 --- !u!114 &1927390982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19820,7 +19859,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 670290559}
   nameText: {fileID: 909149708}
   dialogueText: {fileID: 1688389579}
+  text: {fileID: 0}
   itemDrop: {fileID: 952677081}
+  healthBar: {fileID: 0}
 --- !u!136 &2011655652
 CapsuleCollider:
   m_ObjectHideFlags: 0
