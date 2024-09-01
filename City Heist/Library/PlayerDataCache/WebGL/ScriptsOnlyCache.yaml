@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - Exit
     - GameManager
     - GunMagazine
+    - HealthBar
     - MinimapCamera
     - Minimaps
     - Misc
@@ -223,6 +224,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13904}
     - Class: 114
       Script: {instanceID: 13932}
+    - Class: 114
+      Script: {instanceID: 179398}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -384,6 +387,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13904}
     - Class: 114
       Script: {instanceID: 13932}
+    - Class: 114
+      Script: {instanceID: 179398}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -918,7 +923,7 @@ ScriptsOnlyBuild:
     className: ScreenSpaceReflections
   - hash:
       serializedVersion: 2
-      Hash: f3216dd26273a60dfe202b823e3fd714
+      Hash: 84b77f6299c8e54dea83ee8de693dbb8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MinimapCamera
@@ -1014,7 +1019,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 94c55d4b12c487ee5a17524380c83a52
+      Hash: d6336bfec2552e43a5501e6f06da7c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NPC
@@ -1828,6 +1833,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColourSquare
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

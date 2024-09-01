@@ -24,8 +24,11 @@ public class NPC : MonoBehaviour
 
     public GameObject itemDrop;
 
+    public HealthBar healthBar;
+
     void Start()
     {
+        healthBar.SetMaxHealth(health);
         StartCoroutine(ChangeBankManagerDialogue());
     }
 
@@ -241,6 +244,21 @@ public class NPC : MonoBehaviour
         }
 
         health -= dmg;
+        if (name == "Bank Manager" || name == "Security Guard")
+        {
+            StartCoroutine(healthBar.SetHealth(dmg));
+        }
+        else
+        {
+            if (health == 0)
+            {
+                healthBar.SetHealthToZero();
+            }
+            else
+            {
+                StartCoroutine(healthBar.SetHealth(dmg));
+            }
+        }
         if(health <= 0)
         {
             if (name != "Bank Manager" && name != "Security Guard")
