@@ -24,6 +24,10 @@ public class PlayerShooting : MonoBehaviour
     public GameObject[] guns;
     int currentGunIndex = 0;
 
+    // Laser Pointer
+    public GameObject[] lasers;
+    public GameObject reticle;
+
     void Start()
     {
         //currentBulletCount = maxBulletCount;
@@ -35,12 +39,34 @@ public class PlayerShooting : MonoBehaviour
         // M4
         currentBulletCount[2] = 30;
         bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+
+        // Disable laser pointers at first
+        foreach (var laser in lasers)
+        {
+            laser.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         shootTime -= Time.deltaTime;
+
+        // Laser Pointer
+        if (lasers[currentGunIndex].activeSelf)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(gunShootPoint[currentGunIndex].transform.position, transform.forward + (-transform.right * 0.04f), out hit))
+            {
+                if (hit.collider != null && !hit.collider.name.Contains("Bullet"))
+                {
+                    //Debug.Log(hit.collider.name);
+                    //Debug.DrawRay(gunShootPoint[currentGunIndex].transform.position, (transform.forward + (-transform.right * 0.04f)) * 60f);
+                    Vector3 localHitPoint = transform.InverseTransformPoint(hit.point);
+                    lasers[currentGunIndex].GetComponent<LineRenderer>().SetPosition(1, localHitPoint);
+                }
+            }
+        }
 
         // If you are reloading / doing puzzle task / game is paused
         if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf || PauseGame.instance.isPaused)
@@ -159,9 +185,10 @@ public class PlayerShooting : MonoBehaviour
             // Pistol
             if (currentGunIndex == 0)
             {
-                guns[1].SetActive(false);
                 guns[2].SetActive(false);
+                lasers[2].SetActive(false);
                 guns[0].SetActive(true);
+                lasers[0].SetActive(true);
                 isAuto = false;
                 maxBulletCount = 12;
                 reloadTime = 2f;
@@ -170,9 +197,10 @@ public class PlayerShooting : MonoBehaviour
             // AK
             else if (currentGunIndex == 1)
             {
-                guns[2].SetActive(false);
                 guns[0].SetActive(false);
+                lasers[0].SetActive(false);
                 guns[1].SetActive(true);
+                lasers[1].SetActive(true);
                 isAuto = true;
                 maxBulletCount = 40;
                 reloadTime = 2.9f;
@@ -181,15 +209,23 @@ public class PlayerShooting : MonoBehaviour
             // M4
             else if (currentGunIndex == 2)
             {
-                guns[0].SetActive(false);
                 guns[1].SetActive(false);
+                lasers[1].SetActive(false);
                 guns[2].SetActive(true);
+                lasers[2].SetActive(true);
                 isAuto = true;
                 maxBulletCount = 30;
                 reloadTime = 3.1f;
                 bulletsPerSecond = 11.63f;
             }
             bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+        }
+
+        // Enable / disable laser pointers
+        if (Input.GetMouseButtonDown(1))
+        {
+            lasers[currentGunIndex].SetActive(!lasers[currentGunIndex].activeSelf);
+            reticle.SetActive(!reticle.activeSelf);
         }
 
         // If there are bullets in your gun

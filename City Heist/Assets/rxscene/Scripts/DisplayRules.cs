@@ -67,7 +67,7 @@ public class DisplayRules : MonoBehaviour
         foreach (var sentence in sentences[index])
         {
             rulesText.text += sentence;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
         rulesText.text += "\n";
         isRunning = false;
