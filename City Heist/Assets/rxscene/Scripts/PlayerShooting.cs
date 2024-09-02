@@ -26,7 +26,6 @@ public class PlayerShooting : MonoBehaviour
 
     // Laser Pointer
     public GameObject[] lasers;
-    public GameObject reticle;
 
     void Start()
     {
@@ -40,11 +39,11 @@ public class PlayerShooting : MonoBehaviour
         currentBulletCount[2] = 30;
         bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
 
-        // Disable laser pointers at first
-        foreach (var laser in lasers)
-        {
-            laser.SetActive(false);
-        }
+        //// Disable laser pointers at first
+        //foreach (var laser in lasers)
+        //{
+        //    laser.SetActive(false);
+        //}
     }
 
     // Update is called once per frame
@@ -56,14 +55,13 @@ public class PlayerShooting : MonoBehaviour
         if (lasers[currentGunIndex].activeSelf)
         {
             RaycastHit hit;
-            if (Physics.Raycast(gunShootPoint[currentGunIndex].transform.position, transform.forward + (-transform.right * 0.04f), out hit))
+            if (Physics.Raycast(gunShootPoint[currentGunIndex].transform.position, transform.forward, out hit))
             {
                 if (hit.collider != null && !hit.collider.name.Contains("Bullet"))
                 {
                     //Debug.Log(hit.collider.name);
-                    //Debug.DrawRay(gunShootPoint[currentGunIndex].transform.position, (transform.forward + (-transform.right * 0.04f)) * 60f);
                     Vector3 localHitPoint = transform.InverseTransformPoint(hit.point);
-                    lasers[currentGunIndex].GetComponent<LineRenderer>().SetPosition(1, localHitPoint);
+                    lasers[currentGunIndex].GetComponent<LineRenderer>().SetPosition(1, Vector3.forward * hit.distance);
                 }
             }
         }
@@ -225,7 +223,6 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             lasers[currentGunIndex].SetActive(!lasers[currentGunIndex].activeSelf);
-            reticle.SetActive(!reticle.activeSelf);
         }
 
         // If there are bullets in your gun

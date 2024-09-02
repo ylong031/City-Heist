@@ -76,7 +76,14 @@ public class Minimaps : MonoBehaviour
                 // When zoomed out to maximum, reset camera position
                 if (minimaps[0].GetComponent<Camera>().orthographicSize == 25.45f)
                 {
-                    minimaps[0].transform.position = new Vector3(-3.7f, minimaps[0].transform.position.y, -22.22f);
+                    if (GameManager.instance.currentLevel == 1)
+                    {
+                        minimaps[0].transform.position = new Vector3(-3.7f, minimaps[0].transform.position.y, -22.22f);
+                    }
+                    else if(GameManager.instance.currentLevel == 2)
+                    {
+                        minimaps[0].transform.position = new Vector3(-45.3f, minimaps[0].transform.position.y, -16.22f);
+                    }
                 }
             }
         }

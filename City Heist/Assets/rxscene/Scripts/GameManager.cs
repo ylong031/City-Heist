@@ -96,6 +96,8 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text camSensText;
 
+    public int currentLevel = 1;
+
     void Awake()
     {
         // Game Manager Singleton

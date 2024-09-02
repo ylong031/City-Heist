@@ -32,7 +32,8 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "NPC")
+        // NPCs have 2 colliders, only damage NPC when bullet collides with non-trigger collider
+        if (collision.collider.tag == "NPC" && !collision.collider.isTrigger)
         {
             collision.collider.GetComponent<NPC>().TakeDamage(1);
         }
