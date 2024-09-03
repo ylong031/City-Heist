@@ -21,6 +21,7 @@ public class Misc : MonoBehaviour
     public GameObject pausePanel;
     public Driving playerVehicle;
     public GameObject staticRulesPanel;
+    public TMP_Dropdown qualityDropdown;
 
     public void Deduct() 
     {
@@ -39,6 +40,12 @@ public class Misc : MonoBehaviour
         money = PlayerPrefs.GetFloat("Money", 1000f);
         PlayerPrefs.SetFloat("Money", money);
         remainingTime = PlayerPrefs.GetFloat("Time", 600f);
+
+        if (qualityDropdown != null)
+        {
+            qualityDropdown.value = QualitySettings.GetQualityLevel();
+            qualityDropdown.RefreshShownValue();
+        }
     }
 
     private void Update()
@@ -129,5 +136,11 @@ public class Misc : MonoBehaviour
     public void CloseRules()
     {
         staticRulesPanel.SetActive(false);
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+        //Debug.Log(QualitySettings.GetQualityLevel());
     }
 }

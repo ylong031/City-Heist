@@ -44,7 +44,7 @@ public class Buttons : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        Debug.Log(QualitySettings.GetQualityLevel());
+        //Debug.Log(QualitySettings.GetQualityLevel());
     }
 
     public void EnableMinimap(bool b)

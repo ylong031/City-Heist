@@ -95,8 +95,11 @@ public class GameManager : MonoBehaviour
     public GameObject staticRulesPanel;
 
     public TMP_Text camSensText;
+    public TMP_Text playerMoveSpeedText;
 
     public int currentLevel = 1;
+
+    public TMP_Dropdown qualityDropdown;
 
     void Awake()
     {
@@ -106,6 +109,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (qualityDropdown != null)
+        {
+            qualityDropdown.value = QualitySettings.GetQualityLevel();
+            qualityDropdown.RefreshShownValue();
+        }
+
         if (PlayerPrefs.GetInt("NextBank", 0) != 0)
         {
             killedCivilian = true;
@@ -590,5 +599,17 @@ public class GameManager : MonoBehaviour
     {
         thirdPersonCamera.m_XAxis.m_MaxSpeed = camSens;
         camSensText.text = camSens.ToString();
+    }
+
+    public void SetPlayerMoveSpeed(float moveSpeed)
+    {
+        playerMovement.speed = moveSpeed;
+        playerMoveSpeedText.text = moveSpeed.ToString();
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+        //Debug.Log(QualitySettings.GetQualityLevel());
     }
 }

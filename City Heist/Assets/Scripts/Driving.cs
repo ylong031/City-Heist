@@ -38,6 +38,28 @@ public class Driving : MonoBehaviour
 
         speedtext.text = "Speed : " + speed;
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (thirdpersoncamera.activeSelf)
+            {
+                thirdpersoncamera.SetActive(false);
+                firstpersoncamera.SetActive(true);
+
+            }
+            else
+            {
+                thirdpersoncamera.SetActive(true);
+                firstpersoncamera.SetActive(false);
+
+
+            }
+
+
+
+
+
+        }
+
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -86,29 +108,6 @@ public class Driving : MonoBehaviour
         {
             
             stop = true;
-
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (thirdpersoncamera.activeSelf) 
-            {
-                thirdpersoncamera.SetActive(false);
-                firstpersoncamera.SetActive(true);
-
-            }
-            else 
-            {
-                thirdpersoncamera.SetActive(true);
-                firstpersoncamera.SetActive(false);
-
-
-            }
-
-           
-
-
 
         }
 

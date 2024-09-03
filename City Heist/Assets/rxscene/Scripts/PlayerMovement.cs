@@ -16,9 +16,31 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject moneyBag;
 
+    bool firstFall = false;
+
     // Update is called once per frame
     void Update()
     {
+        // Respawn Player If Fall Though Floor
+        if (transform.position.y < -10f && !firstFall)
+        {
+            // Try to respawn at fall point
+            velocity.y = -2f;
+            controller.enabled = false;
+            transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+            controller.enabled = true;
+            firstFall = true;
+        }
+        else if (transform.position.y < -10f && firstFall)
+        {
+            // Respawn at starting point if failed to respawn at fall point
+            velocity.y = -2f;
+            controller.enabled = false;
+            transform.position = new Vector3(15f, 1f, -15.9f);
+            controller.enabled = true;
+            firstFall = false;
+        }
+
         // Move Player
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -36,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            if (firstFall)
+            {
+                firstFall = false;
+            }
         }
 
         velocity.y += (gravity * 2) * Time.deltaTime;

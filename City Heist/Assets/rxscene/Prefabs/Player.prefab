@@ -186,7 +186,7 @@ MonoBehaviour:
   groundDistance: 0.2
   groundMask:
     serializedVersion: 2
-    m_Bits: 212992
+    m_Bits: 737280
   moneyBag: {fileID: 2743534916814442296}
 --- !u!114 &651272310568210862
 MonoBehaviour:
