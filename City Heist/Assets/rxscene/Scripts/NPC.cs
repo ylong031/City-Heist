@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
@@ -66,9 +67,11 @@ public class NPC : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
+                    //GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
+					StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
                 }
 
+				healthBar.GetComponentInChildren<Image>().enabled = false;
                 personLyingDown.SetActive(true);
                 // Only the bank manager and the security guard can be talked to after being taken hostage
                 if (name == "Bank Manager" || name == "Security Guard")
@@ -78,7 +81,9 @@ public class NPC : MonoBehaviour
                 }
                 else
                 {
-                    gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
+					GetComponent<Renderer>().enabled = false;
+					enabled = false;					
                 }
                 if (name == "Bank Manager" && !GameManager.instance.isColourSquareTask)
                 {
@@ -238,7 +243,7 @@ public class NPC : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        if (mngGrdIsTakenHostage || mngGrdIsShot)
+        if (mngGrdIsTakenHostage || mngGrdIsShot || isTalkedTo)
         {
             return;
         }
@@ -252,7 +257,8 @@ public class NPC : MonoBehaviour
         {
             if (health == 0)
             {
-                healthBar.SetHealthToZero();
+                //healthBar.SetHealthToZero();
+				StartCoroutine(healthBar.SetHealth(dmg));
             }
             else
             {
@@ -287,7 +293,8 @@ public class NPC : MonoBehaviour
             }
             else
             {
-                GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
+                //GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
+				StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
             }
 
             if (itemDrop != null)
@@ -313,7 +320,9 @@ public class NPC : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+				GetComponent<Renderer>().enabled = false;
+				enabled = false;
             }
         }
     }
