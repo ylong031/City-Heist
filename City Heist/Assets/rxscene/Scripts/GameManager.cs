@@ -96,6 +96,8 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text camSensText;
     public TMP_Text playerMoveSpeedText;
+    public Slider camSensSlider;
+    public Slider playerMoveSpeedSlider;
 
     public int currentLevel = 1;
 
@@ -114,6 +116,10 @@ public class GameManager : MonoBehaviour
             qualityDropdown.value = QualitySettings.GetQualityLevel();
             qualityDropdown.RefreshShownValue();
         }
+        camSensSlider.value = PlayerPrefs.GetFloat("CameraSensitivity", 225f);
+        camSensText.text = PlayerPrefs.GetFloat("CameraSensitivity", 225f).ToString();
+        playerMoveSpeedSlider.value = PlayerPrefs.GetFloat("PlayerMoveSpeed", 8f);
+        playerMoveSpeedText.text = PlayerPrefs.GetFloat("PlayerMoveSpeed", 8f).ToString();
 
         if (PlayerPrefs.GetInt("NextBank", 0) != 0)
         {
@@ -599,12 +605,14 @@ public class GameManager : MonoBehaviour
     {
         thirdPersonCamera.m_XAxis.m_MaxSpeed = camSens;
         camSensText.text = camSens.ToString();
+        PlayerPrefs.SetFloat("CameraSensitivity", camSens);
     }
 
     public void SetPlayerMoveSpeed(float moveSpeed)
     {
         playerMovement.speed = moveSpeed;
         playerMoveSpeedText.text = moveSpeed.ToString();
+        PlayerPrefs.SetFloat("PlayerMoveSpeed", moveSpeed);
     }
 
     public void SetQuality(int qualityIndex)

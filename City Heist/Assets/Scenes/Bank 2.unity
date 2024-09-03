@@ -31524,7 +31524,7 @@ MonoBehaviour:
   m_MinValue: 100
   m_MaxValue: 350
   m_WholeNumbers: 1
-  m_Value: 250
+  m_Value: 225
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -48036,8 +48036,8 @@ RectTransform:
   m_Father: {fileID: 291360218}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6, y: 0}
-  m_AnchorMax: {x: 0.6, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -62681,7 +62681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 250
+  m_text: 225
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -64084,7 +64084,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 250
+    m_MaxSpeed: 225
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -64167,8 +64167,8 @@ MonoBehaviour:
   m_Strategy: 0
   m_MaximumEffort: 4
   m_SmoothingTime: 0
-  m_Damping: 0.6
-  m_DampingWhenOccluded: 0.6
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 0
 --- !u!1 &1408434241
 GameObject:
@@ -86587,7 +86587,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -87401,6 +87401,8 @@ MonoBehaviour:
   staticRulesPanel: {fileID: 406333780}
   camSensText: {fileID: 1372072108}
   playerMoveSpeedText: {fileID: 1130804012}
+  camSensSlider: {fileID: 713057903}
+  playerMoveSpeedSlider: {fileID: 1115205602}
   currentLevel: 1
   qualityDropdown: {fileID: 631976835}
 --- !u!4 &1867200734

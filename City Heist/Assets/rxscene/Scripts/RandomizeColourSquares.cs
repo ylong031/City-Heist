@@ -74,7 +74,7 @@ public class RandomizeColourSquares : MonoBehaviour
             Destroy(gameObject);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.05f);
         StartCoroutine(Randomize());
     }
 }

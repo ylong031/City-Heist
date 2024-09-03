@@ -62,6 +62,7 @@ public class Exit : MonoBehaviour
             {
                 GameManager.instance.escapePanel.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
+                GameManager.instance.thirdPersonCamera.enabled = false;
             }
         }
     }
@@ -70,6 +71,7 @@ public class Exit : MonoBehaviour
     {
         GameManager.instance.escapePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.thirdPersonCamera.enabled = true;
     }
 
     public void Escape()
