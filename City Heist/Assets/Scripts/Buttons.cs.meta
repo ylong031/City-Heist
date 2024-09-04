@@ -3,7 +3,11 @@ guid: 6398bcebb92c1534e8f5fe416e7db432
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - qualityDropdown: {instanceID: 0}
+  - rulesPanel: {instanceID: 0}
+  - buttonAudioSource: {instanceID: 0}
+  - buttonSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
