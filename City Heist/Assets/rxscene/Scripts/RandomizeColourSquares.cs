@@ -120,9 +120,10 @@ public class RandomizeColourSquares : MonoBehaviour
         moveCount++;
 		if(canMoveDown)
 		{
-			if (moveCount >= 10 - (maxMoveDown - 2) * 3)
+			if (moveCount >= 10 - (maxMoveDown - 2) * 2)
 			{
 				//Debug.Log("Randomization Complete!");
+				GameManager.instance.finalIndex = 10 - (maxMoveDown - 2) * 2 + 1;
 				yield return new WaitForSeconds(0.05f);
 				Destroy(gameObject);
 			}

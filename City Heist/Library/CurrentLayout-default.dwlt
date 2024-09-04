@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 392}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -150,7 +150,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 630
-  m_MinSize: {x: 875, y: 392}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -477,7 +477,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d423fdfff023fdff1231fdff4c6ffdff5eaffdffd8bbfdffe6bbfdff2c73feffccbcfeff98ddfeff62fafffffafaffff3a400000784a00005af8130082f813001ca1140084a11400
+      m_ExpandedIDs: 5ad6feff76d6feff9ce3feffda21fffff061ffff6e6effff806effffea7cffff8efaffff3afbffff784a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

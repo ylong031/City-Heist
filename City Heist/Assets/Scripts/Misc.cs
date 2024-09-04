@@ -39,8 +39,15 @@ public class Misc : MonoBehaviour
 
         money = PlayerPrefs.GetFloat("Money", 1000f);
         PlayerPrefs.SetFloat("Money", money);
-        remainingTime = PlayerPrefs.GetFloat("Time", 600f);
-
+		if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
+		{
+			remainingTime = PlayerPrefs.GetFloat("Time", 540f);
+		}
+		else
+		{
+			remainingTime = PlayerPrefs.GetFloat("Time", 600f);
+		}
+		
         if (qualityDropdown != null)
         {
             qualityDropdown.value = QualitySettings.GetQualityLevel();
