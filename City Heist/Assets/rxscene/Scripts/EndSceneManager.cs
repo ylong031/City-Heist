@@ -13,6 +13,10 @@ public class EndSceneManager : MonoBehaviour
 
     public GameObject losePanel;
 
+    //add reference to the AudioSource and AudioClip
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,13 +89,28 @@ public class EndSceneManager : MonoBehaviour
         gradeText.text = grade + " Grade";
     }
 
+    //create function to play the sound
+    private void PlayButtonSound()
+    {
+        if (buttonAudioSource != null && buttonSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonSound);
+        }
+    }
+
     public void ReturnToMainMenu()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         StartCoroutine(Return());
     }
 
     IEnumerator Return()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         worldCanvasAnim.SetTrigger("Return");
         yield return new WaitForSeconds(3f);
         robberyVehicleSmoke.SetActive(true);
@@ -103,11 +122,17 @@ public class EndSceneManager : MonoBehaviour
 
     public void Retry()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         StartCoroutine(SceneTransition.instance.TransitionToScene("CityScene"));
     }
 
     public void FastReturnToMainMenu()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         StartCoroutine(SceneTransition.instance.TransitionToScene("MainMenu"));
     }
 }
