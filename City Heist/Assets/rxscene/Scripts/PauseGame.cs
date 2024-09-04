@@ -7,6 +7,19 @@ public class PauseGame : MonoBehaviour
     public bool isPaused = false;
     public GameObject pausePanel;
 
+    //add reference to the AudioSource and AudioClip
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonSound;
+
+    //create function to play the sound
+    private void PlayButtonSound()
+    {
+        if (buttonAudioSource != null && buttonSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonSound);
+        }
+    }
+
     void Awake()
     {
         instance = this;
@@ -50,6 +63,9 @@ public class PauseGame : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         Pause();
         StartCoroutine(SceneTransition.instance.TransitionToScene("MainMenu"));
     }

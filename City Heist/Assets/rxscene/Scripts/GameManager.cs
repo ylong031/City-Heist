@@ -103,6 +103,10 @@ public class GameManager : MonoBehaviour
 
     public TMP_Dropdown qualityDropdown;
 
+    //add reference to the AudioSource and AudioClip
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonSound;
+
     void Awake()
     {
         // Game Manager Singleton
@@ -270,6 +274,15 @@ public class GameManager : MonoBehaviour
         else
         {
             rulesPanel.SetActive(true);
+        }
+    }
+
+    //create function to play the sound
+    private void PlayButtonSound()
+    {
+        if (buttonAudioSource != null && buttonSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonSound);
         }
     }
 
@@ -594,6 +607,9 @@ public class GameManager : MonoBehaviour
 
     public void CloseInstructionsPanel()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         // Locks cursor to center of game window and also hides cursor
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -607,16 +623,22 @@ public class GameManager : MonoBehaviour
 
     public void ShowRules()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
         staticRulesPanel.SetActive(true);
     }
 
     public void CloseRules()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
         staticRulesPanel.SetActive(false);
     }
 
     public void SetCameraSensitivity(float camSens)
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
         thirdPersonCamera.m_XAxis.m_MaxSpeed = camSens;
         camSensText.text = camSens.ToString();
         PlayerPrefs.SetFloat("CameraSensitivity", camSens);
@@ -624,6 +646,8 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayerMoveSpeed(float moveSpeed)
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
         playerMovement.speed = moveSpeed;
         playerMoveSpeedText.text = moveSpeed.ToString();
         PlayerPrefs.SetFloat("PlayerMoveSpeed", moveSpeed);
@@ -631,6 +655,9 @@ public class GameManager : MonoBehaviour
 
     public void SetQuality(int qualityIndex)
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         QualitySettings.SetQualityLevel(qualityIndex);
         //Debug.Log(QualitySettings.GetQualityLevel());
     }
