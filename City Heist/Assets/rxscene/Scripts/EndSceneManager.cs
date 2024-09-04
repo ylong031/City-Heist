@@ -34,25 +34,53 @@ public class EndSceneManager : MonoBehaviour
         timeLeftText.text = "Time Left:\n" + minutes + "min " + seconds + "s";
 
         string grade = "";
-        if (moneyEarned >= 3800)
+        if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
         {
-            grade = "S";
-        }
-        else if (moneyEarned >= 3000)
-        {
-            grade = "A";
-        }
-        else if (moneyEarned >= 2000)
-        {
-            grade = "B";
-        }
-        else if (moneyEarned >= 1000)
-        {
-            grade = "C";
+            // 1000 + 2000 + 2000 + 1000 + (40-200)x8
+            if (moneyEarned >= 6600)
+            {
+                grade = "S";
+            }
+            else if (moneyEarned >= 5000)
+            {
+                grade = "A";
+            }
+            else if (moneyEarned >= 3000)
+            {
+                grade = "B";
+            }
+            else if (moneyEarned >= 1000)
+            {
+                grade = "C";
+            }
+            else
+            {
+                grade = "D";
+            }
         }
         else
         {
-            grade = "D";
+            // 1000 + 1000 + 1000 + 500 + (20-100)x8
+            if (moneyEarned >= 3800)
+            {
+                grade = "S";
+            }
+            else if (moneyEarned >= 3000)
+            {
+                grade = "A";
+            }
+            else if (moneyEarned >= 2000)
+            {
+                grade = "B";
+            }
+            else if (moneyEarned >= 1000)
+            {
+                grade = "C";
+            }
+            else
+            {
+                grade = "D";
+            }
         }
         gradeText.text = grade + " Grade";
     }

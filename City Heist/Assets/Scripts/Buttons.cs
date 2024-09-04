@@ -52,11 +52,11 @@ public class Buttons : MonoBehaviour
         Debug.Log(b);
         if (b)
         {
-            PlayerPrefs.SetInt("EnableMinimap", 1);
+            PlayerPrefs.SetInt("EnableMinimap", 0);
         }
         else if (!b)
         {
-            PlayerPrefs.SetInt("EnableMinimap", 0);
+            PlayerPrefs.SetInt("EnableMinimap", 1);
         }
     }
 }

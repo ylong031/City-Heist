@@ -10,9 +10,17 @@ public class RandomizeColourSquares : MonoBehaviour
 
 	int continuousHorizontalMove = 0;
 	int continuousVerticalMove = 0;
-
+	
+	int maxMoveDown = 2;
+	bool canMoveDown = true;
+	
     void Start()
     {
+		if (PlayerPrefs.GetInt("EnableMinimap", 1) == 1)
+		{
+			maxMoveDown = 0;
+            canMoveDown = false;
+		}
         StartCoroutine(Randomize());
     }
 
@@ -20,10 +28,53 @@ public class RandomizeColourSquares : MonoBehaviour
     {
 		if(continuousHorizontalMove == 2 && verticalMove < 3)
 		{
-            verticalMove++;
-			++continuousVerticalMove;
-			continuousHorizontalMove = 0;
-            transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+			if(maxMoveDown == 0)
+			{				
+				verticalMove++;
+				++continuousVerticalMove;
+				continuousHorizontalMove = 0;
+				transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+			}
+			else
+			{
+				var rand = Random.Range(0, 2);
+				if(rand == 0)
+				{
+					if(maxMoveDown > 0 && verticalMove > 0 && horizontalMove < 8)
+					{
+						--maxMoveDown;
+						verticalMove--;
+						++continuousVerticalMove;
+						continuousHorizontalMove = 0;
+						transform.position = new Vector3(transform.position.x, transform.position.y - (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+					}			
+					else
+					{
+						verticalMove++;
+						++continuousVerticalMove;
+						continuousHorizontalMove = 0;
+						transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+					}
+				}
+				else if(rand == 1)
+				{
+					if(maxMoveDown > 0 && verticalMove > 1 && horizontalMove < 8)
+					{
+						--maxMoveDown;
+						verticalMove--;
+						++continuousVerticalMove;
+						continuousHorizontalMove = 0;
+						transform.position = new Vector3(transform.position.x, transform.position.y - (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+					}			
+					else
+					{
+						verticalMove++;
+						++continuousVerticalMove;
+						continuousHorizontalMove = 0;
+						transform.position = new Vector3(transform.position.x, transform.position.y + (GameManager.instance.colourSquares[9].transform.position.y - GameManager.instance.colourSquares[0].transform.position.y), transform.position.z);
+					}
+				}
+			}
 		}
 		else if(continuousVerticalMove == 1 && horizontalMove < 8)
 		{
@@ -67,12 +118,24 @@ public class RandomizeColourSquares : MonoBehaviour
 		//Debug.Log("Vert: " + continuousVerticalMove + " | Hori: " + continuousHorizontalMove);
 
         moveCount++;
-        if (moveCount >= 10)
-        {
-            //Debug.Log("Randomization Complete!");
-            yield return new WaitForSeconds(0.05f);
-            Destroy(gameObject);
-        }
+		if(canMoveDown)
+		{
+			if (moveCount >= 10 - (maxMoveDown - 2) * 3)
+			{
+				//Debug.Log("Randomization Complete!");
+				yield return new WaitForSeconds(0.05f);
+				Destroy(gameObject);
+			}
+		}	
+		else
+		{
+			if (moveCount >= 10)
+			{
+				//Debug.Log("Randomization Complete!");
+				yield return new WaitForSeconds(0.05f);
+				Destroy(gameObject);
+			}
+		}
 
         yield return new WaitForSeconds(0.05f);
         StartCoroutine(Randomize());

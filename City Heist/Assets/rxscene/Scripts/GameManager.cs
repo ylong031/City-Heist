@@ -121,6 +121,20 @@ public class GameManager : MonoBehaviour
         playerMoveSpeedSlider.value = PlayerPrefs.GetFloat("PlayerMoveSpeed", 8f);
         playerMoveSpeedText.text = PlayerPrefs.GetFloat("PlayerMoveSpeed", 8f).ToString();
 
+        if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
+        {
+            jamCCTVReward = 25f;
+            takeHostageReward = 3f;
+            killHostagePenalty = 15f;
+            vaultDoorPenalty = 12f;
+            colourSquareTaskPenalty = 12f;
+            cctvConsolePenalty = 12f;
+            minWalletMoneyReward = 40;
+            maxWalletMoneyReward = 200;
+            vaultMoneyReward = 2000f;
+            miniSafeMoneyReward = 1000f;
+        }
+
         if (PlayerPrefs.GetInt("NextBank", 0) != 0)
         {
             killedCivilian = true;
