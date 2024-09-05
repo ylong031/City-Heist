@@ -320,7 +320,6 @@ MonoBehaviour:
   dialogueText: {fileID: 0}
   text: {fileID: 0}
   itemDrop: {fileID: 1420494282230009535}
-  bloodSpill: {fileID: 0}
 --- !u!1 &1420494282230009535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2302,7 @@ RectTransform:
   m_GameObject: {fileID: 7681719722448237093}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12500091, y: 0.12500091, z: 0.12500091}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children:
   - {fileID: 9174556661943958952}
   m_Father: {fileID: 3476283408963674516}
@@ -2311,7 +2310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.02}
+  m_AnchoredPosition: {x: 0, y: 0.021}
   m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8251436346903972684

@@ -294,9 +294,9 @@ public class PlayerShooting : MonoBehaviour
     void Shoot()
     {
         // The player rotates clockwise when shooting while walking for some reason
-        animator.enabled = false;
-        animator.transform.localRotation = Quaternion.identity;
-        animator.enabled = true;
+        //animator.enabled = false;
+        //animator.transform.localRotation = Quaternion.identity;
+        //animator.enabled = true;
 
         currentBulletCount[currentGunIndex]--;
         GameObject bulletObj = Instantiate(bullet, gunShootPoint[currentGunIndex].position, Quaternion.identity);

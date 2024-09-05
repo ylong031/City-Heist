@@ -605,7 +605,6 @@ MonoBehaviour:
   dialogueText: {fileID: 0}
   text: {fileID: 0}
   itemDrop: {fileID: 487557358637072875}
-  bloodSpill: {fileID: 0}
 --- !u!1 &487557358347283103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1672,6 @@ GameObject:
   - component: {fileID: 487557359316315803}
   - component: {fileID: 487557359316315796}
   - component: {fileID: 487557359316315797}
-  - component: {fileID: 487557359316315802}
   m_Layer: 15
   m_Name: shorts_01
   m_TagString: Untagged
@@ -1781,20 +1779,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487557359316315800}
-  m_Mesh: {fileID: 493061882281093137, guid: 0666103ac0a7c0145bf5f08cb2943688, type: 3}
---- !u!64 &487557359316315802
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487557359316315800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 493061882281093137, guid: 0666103ac0a7c0145bf5f08cb2943688, type: 3}
 --- !u!1 &487557359323564475
 GameObject:
@@ -2562,7 +2546,7 @@ RectTransform:
   m_GameObject: {fileID: 2654710253962078611}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12500091, y: 0.12500091, z: 0.12500091}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children:
   - {fileID: 4340915549367719419}
   m_Father: {fileID: 487557358335377259}
@@ -2570,7 +2554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.02}
+  m_AnchoredPosition: {x: 0, y: 0.021}
   m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2387655534775676424

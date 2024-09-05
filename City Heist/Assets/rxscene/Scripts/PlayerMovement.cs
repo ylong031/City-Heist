@@ -59,9 +59,9 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
             // The player rotates clockwise when shooting while walking for some reason
-            animator.enabled = false;
-            animator.transform.localRotation = Quaternion.identity;
-            animator.enabled = true;
+            //animator.enabled = false;
+            //animator.transform.localRotation = Quaternion.identity;
+            //animator.enabled = true;
         }
 
         // Add Gravity to Player
