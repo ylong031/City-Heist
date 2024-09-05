@@ -10,6 +10,15 @@ public class VaultDoor : MonoBehaviour
 
     public TMP_Text interactText;
 
+    //add reference to audio source for opening vault door sound
+    public AudioSource vaultDoorSound;
+
+    //get the audio source component attached to the vault door
+    private void Start()
+    {
+        vaultDoorSound = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         // If player hasn't found the vault keycard / vault door has already been opened, don't do anything
@@ -67,6 +76,12 @@ public class VaultDoor : MonoBehaviour
             GameManager.instance.currentCode.color = Color.green;
             GameManager.instance.currentCode.text = "SUCCESS";
             yield return new WaitForSeconds(1.5f);
+        }
+
+        //play the sound for opening vault door
+        if (vaultDoorSound != null)
+        {
+            vaultDoorSound.Play();
         }
 
         GameManager.instance.thirdPersonCamera.enabled = true;
