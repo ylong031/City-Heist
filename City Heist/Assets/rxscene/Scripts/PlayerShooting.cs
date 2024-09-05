@@ -31,8 +31,12 @@ public class PlayerShooting : MonoBehaviour
     //add audio source for shooting sound
     public AudioSource shootingSound;
 
+    Animator animator;
+
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
+
         //currentBulletCount = maxBulletCount;
         currentBulletCount = new int[3];
         // Pistol
@@ -76,10 +80,17 @@ public class PlayerShooting : MonoBehaviour
             }
         }
 
+        if (!isReloading && currentBulletCount[currentGunIndex] < maxBulletCount && Input.GetKeyDown(KeyCode.R))
+        {
+            // Reload gun
+            isReloading = true;
+            StartCoroutine(Reload());
+        }
+
         // If you are reloading / doing puzzle task / game is paused
         if (isReloading || GameManager.instance.cctvPanel.activeSelf || GameManager.instance.vaultKeypad.activeSelf || GameManager.instance.colourSquarePanel.activeSelf || GameManager.instance.instructionsPanel.activeSelf || PauseGame.instance.isPaused)
         {
-            // You can't shoot / cycle guns
+            // You can't shoot / change guns
             return;
         }
 
@@ -245,9 +256,14 @@ public class PlayerShooting : MonoBehaviour
                     // If Left Mouse Button is held
                     if (Input.GetMouseButton(0))
                     {
+                        //animator.SetBool("isShooting", true);
                         // Shoot a bullet
                         Shoot();
                         shootTime = 1 / bulletsPerSecond;
+                    }
+                    else
+                    {
+                        //animator.SetBool("isShooting", false);
                     }
                 }
                 else
@@ -255,9 +271,14 @@ public class PlayerShooting : MonoBehaviour
                     // If Left Mouse Button is pressed
                     if (Input.GetMouseButtonDown(0))
                     {
+                        //animator.SetBool("isShooting", true);
                         // Shoot a bullet
                         Shoot();
                         shootTime = 1 / bulletsPerSecond;
+                    }
+                    else
+                    {
+                        //animator.SetBool("isShooting", false);
                     }
                 }
             }
@@ -272,6 +293,11 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
+        // The player rotates clockwise when shooting while walking for some reason
+        animator.enabled = false;
+        animator.transform.localRotation = Quaternion.identity;
+        animator.enabled = true;
+
         currentBulletCount[currentGunIndex]--;
         GameObject bulletObj = Instantiate(bullet, gunShootPoint[currentGunIndex].position, Quaternion.identity);
         bulletObj.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetComponent<Bullet>().speed;
@@ -284,6 +310,8 @@ public class PlayerShooting : MonoBehaviour
 
     IEnumerator Reload()
     {
+        //animator.SetBool("isShooting", false);
+
         GameObject gunMagObj = Instantiate(emptyGunMagazine, reloadMagazineDropPoint[currentGunIndex].position, reloadMagazineDropPoint[currentGunIndex].rotation);
         gunMagObj.GetComponent<Rigidbody>().velocity = -transform.up - transform.forward;
 

@@ -46,10 +46,4 @@ public class HealthBar : MonoBehaviour
             fillImage.color = Color.red;
         }
     }
-
-    public void SetHealthToZero()
-    {
-        slider.value = 0;
-        fillImage.enabled = false;
-    }
 }

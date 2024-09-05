@@ -8,7 +8,9 @@ public class NPC : MonoBehaviour
     public string dialogue;
 
     public int health;
-    public GameObject personLyingDown;
+
+    Animator animator;
+    bool isScared = false;
 
     bool isPlayerNearby = false;
     bool isTalkedTo = false;
@@ -25,16 +27,36 @@ public class NPC : MonoBehaviour
 
     public GameObject itemDrop;
 
-    public HealthBar healthBar;
+    HealthBar healthBar;
+    GameObject bloodSpill;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        healthBar = transform.GetChild(transform.childCount - 2).GetComponentInChildren<HealthBar>();
+        bloodSpill = transform.GetChild(transform.childCount - 1).gameObject;
         healthBar.SetMaxHealth(health);
         StartCoroutine(ChangeBankManagerDialogue());
     }
 
     private void Update()
     {
+        //Debug.Log(Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position));
+        if(!isScared && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
+        {
+            isScared = true;
+            animator.SetTrigger("isScared");
+        }
+
+        if (!isTalkedTo && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
+        {
+            // Rotate NPC towards player
+            Vector3 targetPos = new Vector3(GameManager.instance.playerMovement.transform.position.x,
+                                           transform.position.y,
+                                           GameManager.instance.playerMovement.transform.position.z);
+            transform.LookAt(targetPos, Vector3.up);
+        }
+
         // If player already talked to, don't do anything
         if (isTalkedTo)
         {
@@ -61,28 +83,19 @@ public class NPC : MonoBehaviour
                     dialoguePanel.SetActive(false);
                 }
 
-                if (name == "Bank Manager" || name == "Security Guard")
-                {
-                    StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
-                }
-                else
-                {
-                    //GameManager.instance.remainingTime += GameManager.instance.takeHostageReward;
-					StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
-                }
-
+                StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));
 				healthBar.GetComponentInChildren<Image>().enabled = false;
-                personLyingDown.SetActive(true);
+                animator.SetTrigger("isTakenHostage");
+
                 // Only the bank manager and the security guard can be talked to after being taken hostage
                 if (name == "Bank Manager" || name == "Security Guard")
                 {
-                    GetComponent<Renderer>().enabled = false;
+                    //GetComponent<Renderer>().enabled = false;
                     mngGrdIsTakenHostage = true;
                 }
                 else
                 {
-                    //gameObject.SetActive(false);
-					GetComponent<Renderer>().enabled = false;
+					//GetComponent<Renderer>().enabled = false;
 					enabled = false;					
                 }
                 if (name == "Bank Manager" && !GameManager.instance.isColourSquareTask)
@@ -231,7 +244,8 @@ public class NPC : MonoBehaviour
     {
         if (talkedToShotMngGrd && other.tag == "Player")
         {
-            personLyingDown.GetComponent<Renderer>().material.color = Color.red;
+            // Spawn Blood Spill
+            bloodSpill.gameObject.SetActive(true);
         }
 
         if (other.tag == "Player")
@@ -255,21 +269,14 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            if (health == 0)
-            {
-                //healthBar.SetHealthToZero();
-				StartCoroutine(healthBar.SetHealth(dmg));
-            }
-            else
-            {
-                StartCoroutine(healthBar.SetHealth(dmg));
-            }
+		    StartCoroutine(healthBar.SetHealth(dmg));
         }
         if(health <= 0)
         {
             if (name != "Bank Manager" && name != "Security Guard")
             {
-                personLyingDown.GetComponent<Renderer>().material.color = Color.red;
+                // Spawn Blood Spill
+                bloodSpill.gameObject.SetActive(true);
             }
 
             isTalkedTo = true;
@@ -287,15 +294,7 @@ public class NPC : MonoBehaviour
                 text.enabled = true;
             }
 
-            if (name == "Bank Manager" || name == "Security Guard")
-            {
-                StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
-            }
-            else
-            {
-                //GameManager.instance.remainingTime -= GameManager.instance.killHostagePenalty;
-				StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
-            }
+            StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.killHostagePenalty));
 
             if (itemDrop != null)
             {
@@ -311,17 +310,18 @@ public class NPC : MonoBehaviour
                     }
                 }
             }
-            personLyingDown.SetActive(true);
+
+            animator.SetTrigger("isDead");
+
             // Only the bank manager and the security guard can be talked to ONCE after being shot
             if (name == "Bank Manager" || name == "Security Guard")
             {
-                GetComponent<Renderer>().enabled = false;
+                //GetComponent<Renderer>().enabled = false;
                 mngGrdIsShot = true;
             }
             else
             {
-                //gameObject.SetActive(false);
-				GetComponent<Renderer>().enabled = false;
+				//GetComponent<Renderer>().enabled = false;
 				enabled = false;
             }
         }

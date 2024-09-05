@@ -35,7 +35,14 @@ public class Bullet : MonoBehaviour
         // NPCs have 2 colliders, only damage NPC when bullet collides with non-trigger collider
         if (collision.collider.tag == "NPC" && !collision.collider.isTrigger)
         {
-            collision.collider.GetComponent<NPC>().TakeDamage(1);
+            //collision.collider.GetComponent<NPC>().TakeDamage(1);
+            if (collision.transform.parent.parent.GetComponent<NPC>().health == 1)
+            {
+                collision.collider.enabled = false;
+            }
+            //Debug.Log(collision.transform.parent.parent);
+            collision.transform.parent.parent.GetComponent<NPC>().TakeDamage(1);
+
         }
         else if (collision.collider.tag == "Glass")
         {
