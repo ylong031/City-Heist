@@ -3,6 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
+    //add reference to the AudioSource and AudioClip
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonSound;
+
+    //initialize the audio source component
+    private void Start()
+    {
+        buttonAudioSource = gameObject.AddComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // If player is near the exit
@@ -76,6 +86,9 @@ public class Exit : MonoBehaviour
 
     public void Escape()
     {
+        //play the button sound when player choose to escape
+        buttonAudioSource.PlayOneShot(buttonSound);
+
         // Bank 2
         if (SceneManager.GetActiveScene().name == "Bank 2")
         {

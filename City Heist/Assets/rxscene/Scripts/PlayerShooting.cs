@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -52,6 +53,12 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the pointer is over a UI element
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return; // Skip shooting if the pointer is over a UI element
+        }
+
         shootTime -= Time.deltaTime;
 
         // Laser Pointer
@@ -231,7 +238,7 @@ public class PlayerShooting : MonoBehaviour
         // If there are bullets in your gun
         if (currentBulletCount[currentGunIndex] > 0)
         {
-            if(shootTime <= 0f)
+            if (shootTime <= 0f)
             {
                 if (isAuto)
                 {
