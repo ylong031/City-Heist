@@ -6,6 +6,9 @@ public class VaultKeycard : MonoBehaviour
     bool isPlayerNearby = false;
     public TMP_Text interactText;
 
+    //add audio source for picking up vault keycard
+    public AudioSource pickupKeycardSound;
+
     private void Update()
     {
         // If player isn't nearby, don't do anything
@@ -17,6 +20,9 @@ public class VaultKeycard : MonoBehaviour
         // If player presses E or F key
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
+            //play the sound for picking up vault keycard
+            pickupKeycardSound.Play();
+
             // Take the vault keycard
             GameManager.instance.foundVaultKeycard = true;
             GameManager.instance.tasks[1].isOn = true;
