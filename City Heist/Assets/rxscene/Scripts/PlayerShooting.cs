@@ -27,6 +27,9 @@ public class PlayerShooting : MonoBehaviour
     // Laser Pointer
     public GameObject[] lasers;
 
+    //add audio source for shooting sound
+    public AudioSource shootingSound;
+
     void Start()
     {
         //currentBulletCount = maxBulletCount;
@@ -265,6 +268,9 @@ public class PlayerShooting : MonoBehaviour
         currentBulletCount[currentGunIndex]--;
         GameObject bulletObj = Instantiate(bullet, gunShootPoint[currentGunIndex].position, Quaternion.identity);
         bulletObj.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetComponent<Bullet>().speed;
+
+        //play the shooting sound
+        shootingSound.Play();
 
         bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
     }
