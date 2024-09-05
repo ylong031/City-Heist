@@ -10,6 +10,9 @@ public class Money : MonoBehaviour
     public bool isMiniSafe = false;
     bool isPickedUp = false;
 
+    //add audio source for picking up money
+    public AudioSource pickupMoneySound;
+
     private void Update()
     {
         // If player isn't nearby, don't do anything
@@ -21,6 +24,9 @@ public class Money : MonoBehaviour
         // If player presses E or F key
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
+            //plays the sound for picking up money
+            pickupMoneySound.Play();
+
             // Take the money
             if (!isWallet)
             {
