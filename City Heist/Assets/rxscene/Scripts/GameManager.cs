@@ -128,11 +128,11 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
         {
             jamCCTVReward = 25f;
-            takeHostageReward = 3f;
-            killHostagePenalty = 15f;
-            vaultDoorPenalty = 12f;
-            colourSquareTaskPenalty = 12f;
-            cctvConsolePenalty = 12f;
+            takeHostageReward = 4f;
+            killHostagePenalty = 12f;
+            vaultDoorPenalty = 10f;
+            colourSquareTaskPenalty = 10f;
+            cctvConsolePenalty = 10f;
             minWalletMoneyReward = 40;
             maxWalletMoneyReward = 200;
             vaultMoneyReward = 2000f;

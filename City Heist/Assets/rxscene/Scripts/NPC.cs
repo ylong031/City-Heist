@@ -11,6 +11,7 @@ public class NPC : MonoBehaviour
 
     Animator animator;
     bool isScared = false;
+    public bool doesNotNoticePlayer = false;
 
     bool isPlayerNearby = false;
     bool isTalkedTo = false;
@@ -41,20 +42,23 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position));
-        if(!isScared && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
+        if (!doesNotNoticePlayer)
         {
-            isScared = true;
-            animator.SetTrigger("isScared");
-        }
+            //Debug.Log(Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position));
+            if (!isScared && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
+            {
+                isScared = true;
+                animator.SetTrigger("isScared");
+            }
 
-        if (!isTalkedTo && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
-        {
-            // Rotate NPC towards player
-            Vector3 targetPos = new Vector3(GameManager.instance.playerMovement.transform.position.x,
-                                           transform.position.y,
-                                           GameManager.instance.playerMovement.transform.position.z);
-            transform.LookAt(targetPos, Vector3.up);
+            if (!isTalkedTo && Vector3.Distance(transform.position, GameManager.instance.playerMovement.transform.position) < 10f)
+            {
+                // Rotate NPC towards player
+                Vector3 targetPos = new Vector3(GameManager.instance.playerMovement.transform.position.x,
+                                               transform.position.y,
+                                               GameManager.instance.playerMovement.transform.position.z);
+                transform.LookAt(targetPos, Vector3.up);
+            }
         }
 
         // If player already talked to, don't do anything
