@@ -29,6 +29,8 @@ public class WiresToRotate : MonoBehaviour
 
         if (transform.eulerAngles.z == correctRot)
         {
+            GameManager.instance.taskCorrectAudioSource.Play();
+
             isInCorrectRot = true;
             firstTimeCorrect = true;
 
@@ -47,6 +49,7 @@ public class WiresToRotate : MonoBehaviour
             // If wire rotates from correct rotation to incorrect rotation
             if (isInCorrectRot && firstTimeCorrect)
             {
+                GameManager.instance.taskIncorrectAudioSource.Play();
                 // Incur time penalty
                 StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.cctvConsolePenalty));
             }

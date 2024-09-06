@@ -18,6 +18,8 @@ public class ColourSquare : MonoBehaviour
     {
         if (index == GameManager.instance.currentIndex)
         {
+            GameManager.instance.taskCorrectAudioSource.Play();
+
             GameManager.instance.currentIndex++;
             GetComponent<Image>().color = Color.green;
             if (GameManager.instance.currentIndex == GameManager.instance.finalIndex)
@@ -27,6 +29,8 @@ public class ColourSquare : MonoBehaviour
         }
         else
         {
+            GameManager.instance.taskIncorrectAudioSource.Play();
+
             GameManager.instance.currentIndex = 1;
             //GameManager.instance.remainingTime -= GameManager.instance.colourSquareTaskPenalty;
             StartCoroutine(GameManager.instance.ChangeRemainingTime(-GameManager.instance.colourSquareTaskPenalty));

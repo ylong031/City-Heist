@@ -40,7 +40,7 @@ public class EndSceneManager : MonoBehaviour
         string grade = "";
         if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
         {
-            // 1000 + 2000 + 2000 + 1000 + (40-200)x16
+            // 1000 + 2000 + 2000 + 1000 + (40-200)x16(-2)
             if (moneyEarned >= 7200)
             {
                 grade = "S";
@@ -64,7 +64,7 @@ public class EndSceneManager : MonoBehaviour
         }
         else
         {
-            // 1000 + 1000 + 1000 + 500 + (20-100)x16
+            // 1000 + 1000 + 1000 + 500 + (20-100)x16(-2)
             if (moneyEarned >= 4100)
             {
                 grade = "S";

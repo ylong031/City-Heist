@@ -46,6 +46,11 @@ public class NPC : MonoBehaviour
         //initialize the audiosource
         NPCAudioSource = GetComponent<AudioSource>();
 
+        if (name.Contains("Girl"))
+        {
+            NPCAudioSource.pitch = 1.2f;
+        }
+
         StartCoroutine(ChangeBankManagerDialogue());
     }
 
@@ -83,6 +88,8 @@ public class NPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
             {
                 // Take hostage
+                GameManager.instance.takeHostageAudioSource.Play();
+
                 isTalkedTo = true;
                 if (!GameManager.instance.takenHostage && PlayerPrefs.GetInt("NextBank", 0) == 0)
                 {

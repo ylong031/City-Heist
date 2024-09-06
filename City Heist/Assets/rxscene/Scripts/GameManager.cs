@@ -107,6 +107,10 @@ public class GameManager : MonoBehaviour
     public AudioSource buttonAudioSource;
     public AudioClip buttonSound;
 
+    public AudioSource taskCorrectAudioSource;
+    public AudioSource taskIncorrectAudioSource;
+    public AudioSource takeHostageAudioSource;
+
     void Awake()
     {
         // Game Manager Singleton
@@ -455,6 +459,8 @@ public class GameManager : MonoBehaviour
         {
             if (currentCode.text == vaultCode)
             {
+                taskCorrectAudioSource.Play();
+
                 StartCoroutine(vaultDoor.OpenVaultDoor());
             }
             else
@@ -468,6 +474,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator IncorrectCode()
     {
+        taskIncorrectAudioSource.Play();
+
         currentCode.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         currentCode.color = Color.white;

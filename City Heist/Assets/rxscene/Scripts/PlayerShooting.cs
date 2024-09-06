@@ -31,6 +31,12 @@ public class PlayerShooting : MonoBehaviour
     //add audio source for shooting sound
     public AudioSource shootingSound;
 
+    //add audio source for reloading sound
+    public AudioSource reloadingSound;
+
+    //add audio source for change gun sound
+    public AudioSource changeGunSound;
+
     Animator animator;
 
     void Start()
@@ -192,6 +198,9 @@ public class PlayerShooting : MonoBehaviour
         // Cycle guns with C key
         if (Input.GetKeyDown(KeyCode.C))
         {
+            //play the change gun sound
+            changeGunSound.Play();
+
             if (currentGunIndex == 2)
             {
                 currentGunIndex = 0;
@@ -312,6 +321,9 @@ public class PlayerShooting : MonoBehaviour
     {
         //animator.SetBool("isShooting", false);
 
+        //play the reloading sound
+        reloadingSound.Play();
+
         GameObject gunMagObj = Instantiate(emptyGunMagazine, reloadMagazineDropPoint[currentGunIndex].position, reloadMagazineDropPoint[currentGunIndex].rotation);
         gunMagObj.GetComponent<Rigidbody>().velocity = -transform.up - transform.forward;
 
@@ -329,5 +341,8 @@ public class PlayerShooting : MonoBehaviour
         isReloading = false;
 
         bulletCountText.text = currentBulletCount[currentGunIndex] + "/∞";
+
+        //stop the reloading sound
+        reloadingSound.Stop();
     }
 }
