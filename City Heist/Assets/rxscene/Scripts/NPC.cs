@@ -31,12 +31,21 @@ public class NPC : MonoBehaviour
     HealthBar healthBar;
     GameObject bloodSpill;
 
+    //setting up AudioClip for when NPCs gets hurt or dies
+    public AudioClip NPCHurtSound;
+    public AudioClip NPCDiedSound;
+    public AudioSource NPCAudioSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         healthBar = transform.GetChild(transform.childCount - 2).GetComponentInChildren<HealthBar>();
         bloodSpill = transform.GetChild(transform.childCount - 1).gameObject;
         healthBar.SetMaxHealth(health);
+
+        //initialize the audiosource
+        NPCAudioSource = GetComponent<AudioSource>();
+
         StartCoroutine(ChangeBankManagerDialogue());
     }
 
@@ -267,6 +276,13 @@ public class NPC : MonoBehaviour
         }
 
         health -= dmg;
+
+        //play the sound when NPCs gets hurt
+        if (NPCAudioSource != null && NPCHurtSound != null)
+        {
+            NPCAudioSource.PlayOneShot(NPCHurtSound);
+        }
+
         if (name == "Bank Manager" || name == "Security Guard")
         {
             StartCoroutine(healthBar.SetHealth(dmg));
@@ -316,6 +332,12 @@ public class NPC : MonoBehaviour
             }
 
             animator.SetTrigger("isDead");
+
+            //play the sound when NPC dead
+            if (NPCAudioSource != null && NPCDiedSound != null)
+            {
+                NPCAudioSource.PlayOneShot(NPCDiedSound);
+            }
 
             // Only the bank manager and the security guard can be talked to ONCE after being shot
             if (name == "Bank Manager" || name == "Security Guard")
