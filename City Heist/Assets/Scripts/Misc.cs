@@ -23,6 +23,19 @@ public class Misc : MonoBehaviour
     public GameObject staticRulesPanel;
     public TMP_Dropdown qualityDropdown;
 
+    //add reference to the AudioSource and AudioClip
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonSound;
+
+    //create function to play the sound
+    private void PlayButtonSound()
+    {
+        if (buttonAudioSource != null && buttonSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonSound);
+        }
+    }
+
     public void Deduct() 
     {
         money = money - 10;
@@ -108,6 +121,9 @@ public class Misc : MonoBehaviour
 
     void Pause()
     {
+        //play the button sound
+        PlayButtonSound();
+
         if (staticRulesPanel.activeSelf)
         {
             return;
@@ -137,16 +153,25 @@ public class Misc : MonoBehaviour
 
     public void ShowRules()
     {
+        //play the button sound
+        PlayButtonSound();
+
         staticRulesPanel.SetActive(true);
     }
 
     public void CloseRules()
     {
+        //play the button sound
+        PlayButtonSound();
+
         staticRulesPanel.SetActive(false);
     }
 
     public void SetQuality(int qualityIndex)
     {
+        //play the button sound
+        PlayButtonSound();
+
         QualitySettings.SetQualityLevel(qualityIndex);
         //Debug.Log(QualitySettings.GetQualityLevel());
     }
