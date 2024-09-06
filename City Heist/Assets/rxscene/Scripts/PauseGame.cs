@@ -41,6 +41,9 @@ public class PauseGame : MonoBehaviour
 
     void Pause()
     {
+        //play the button sound when button pressed
+        PlayButtonSound();
+
         pausePanel.SetActive(!pausePanel.activeSelf);
         if (!isPaused)
         {

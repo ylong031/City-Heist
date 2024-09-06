@@ -12,6 +12,18 @@ public class DisplayRules : MonoBehaviour
     int index = 0;
     bool isRunning = false;
 
+    //add reference to audiosource
+    public AudioSource rulesAudioSource;
+
+    //create function to play the sound when clicking rules
+    void RulesSound()
+    {
+        if (rulesAudioSource != null)
+        {
+            rulesAudioSource.Play();
+        }
+    }
+
     void Start()
     {
         rulesText = GetComponentInChildren<TMP_Text>();
@@ -27,6 +39,9 @@ public class DisplayRules : MonoBehaviour
     {
         if (!isRunning && Input.GetMouseButtonDown(0))
         {
+            //play the sound when user clicks the rule
+            RulesSound();
+
             if (index == sentences.Length - 1)
             {
                 if (SceneManager.GetActiveScene().name == "Bank 1" || SceneManager.GetActiveScene().name == "Bank 2")
@@ -47,6 +62,9 @@ public class DisplayRules : MonoBehaviour
         }
         else if(isRunning && Input.GetMouseButtonDown(0))
         {
+            //play the sound when user clicks the rule
+            RulesSound();
+
             StopAllCoroutines();
             for (int i = 0; i <= index; i++)
             {
