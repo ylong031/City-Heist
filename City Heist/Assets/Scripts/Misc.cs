@@ -23,6 +23,8 @@ public class Misc : MonoBehaviour
     public GameObject staticRulesPanel;
     public TMP_Dropdown qualityDropdown;
 
+    public AudioSource bgmAudioSource;
+
     //add reference to the AudioSource and AudioClip
     public AudioSource buttonAudioSource;
     public AudioClip buttonSound;
@@ -38,7 +40,15 @@ public class Misc : MonoBehaviour
 
     public void Deduct() 
     {
-        money = money - 10;
+        if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
+        {
+            money = money - 20;
+        }
+        else
+        {
+            money = money - 10;
+        }
+
         if (money < 0)
         {
             money = 0;
@@ -54,13 +64,13 @@ public class Misc : MonoBehaviour
         PlayerPrefs.SetFloat("Money", money);
 		if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
 		{
-			remainingTime = PlayerPrefs.GetFloat("Time", 540f);
-		}
-		else
+            remainingTime = PlayerPrefs.GetFloat("Time", 540f);
+        }
+        else
 		{
-			remainingTime = PlayerPrefs.GetFloat("Time", 600f);
-		}
-		
+            remainingTime = PlayerPrefs.GetFloat("Time", 600f);
+        }
+
         if (qualityDropdown != null)
         {
             qualityDropdown.value = QualitySettings.GetQualityLevel();
@@ -105,6 +115,13 @@ public class Misc : MonoBehaviour
                 Debug.Log("Time has run out!");
                 remainingTime = 0;
                 isTimerRunning = false;
+
+                if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
+                {
+                    PlayerPrefs.SetInt("GameLost", 1);
+                }
+                PlayerPrefs.SetFloat("Time", remainingTime);
+                PlayerPrefs.SetFloat("Money", money);
                 StartCoroutine(SceneTransition.instance.TransitionToScene("End Scene"));
             }
         }
@@ -132,12 +149,14 @@ public class Misc : MonoBehaviour
         pausePanel.SetActive(!pausePanel.activeSelf);
         if (!isPaused)
         {
+            bgmAudioSource.volume = 0.5f;
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             playerVehicle.enabled = false;
         }
         else if (isPaused)
         {
+            bgmAudioSource.volume = 1f;
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             playerVehicle.enabled = true;

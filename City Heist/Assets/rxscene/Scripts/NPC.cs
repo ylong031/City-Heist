@@ -91,16 +91,21 @@ public class NPC : MonoBehaviour
                 GameManager.instance.takeHostageAudioSource.Play();
 
                 isTalkedTo = true;
-                if (!GameManager.instance.takenHostage && PlayerPrefs.GetInt("NextBank", 0) == 0)
+                if (!GameManager.instance.takenHostage/* && PlayerPrefs.GetInt("NextBank", 0) == 0*/)
                 {
                     nameText.text = "";
                     dialogueText.text = "You have just taken a hostage! You now have more time for your heist as the police can't act carelessly with a hostage's life at stake!";
                     text.enabled = false;
-                    GameManager.instance.takenHostage = true;
+                    //GameManager.instance.takenHostage = true;
                 }
                 else
                 {
                     dialoguePanel.SetActive(false);
+                }
+
+                if (PlayerPrefs.GetInt("EnableMinimap", 1) == 1)
+                {
+                    GameManager.instance.takenHostage = true;
                 }
 
                 StartCoroutine(GameManager.instance.ChangeRemainingTime(GameManager.instance.takeHostageReward));

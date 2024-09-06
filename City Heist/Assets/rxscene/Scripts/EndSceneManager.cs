@@ -24,7 +24,12 @@ public class EndSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("GameLost", 0) == 1)
         {
+            var hardMode = PlayerPrefs.GetInt("EnableMinimap", 1);
             PlayerPrefs.DeleteAll();
+            if (hardMode == 0)
+            {
+                PlayerPrefs.SetInt("EnableMinimap", 0);
+            }
             losePanel.SetActive(true);
             return;
         }
@@ -40,20 +45,20 @@ public class EndSceneManager : MonoBehaviour
         string grade = "";
         if (PlayerPrefs.GetInt("EnableMinimap", 1) == 0)
         {
-            // 1000 + 2000 + 2000 + 1000 + (40-200)x16(-2)
-            if (moneyEarned >= 7200)
+            // 1000 + 2000 + 2000 + 1000 + (40~200, 80) x14 (16-2) x2 (2 banks)
+            if (moneyEarned >= 8000)
             {
                 grade = "S";
             }
-            else if (moneyEarned >= 5000)
+            else if (moneyEarned >= 6000)
             {
                 grade = "A";
             }
-            else if (moneyEarned >= 3000)
+            else if (moneyEarned >= 4000)
             {
                 grade = "B";
             }
-            else if (moneyEarned >= 1000)
+            else if (moneyEarned >= 2000)
             {
                 grade = "C";
             }
@@ -64,8 +69,8 @@ public class EndSceneManager : MonoBehaviour
         }
         else
         {
-            // 1000 + 1000 + 1000 + 500 + (20-100)x16(-2)
-            if (moneyEarned >= 4100)
+            // 1000 + 1000 + 1000 + 500 + (20~100, 40) x14 (16-2) x2 (2 banks)
+            if (moneyEarned >= 4500)
             {
                 grade = "S";
             }

@@ -7,6 +7,8 @@ public class PauseGame : MonoBehaviour
     public bool isPaused = false;
     public GameObject pausePanel;
 
+    public AudioSource bgmAudioSource;
+
     //add reference to the AudioSource and AudioClip
     public AudioSource buttonAudioSource;
     public AudioClip buttonSound;
@@ -47,6 +49,7 @@ public class PauseGame : MonoBehaviour
         pausePanel.SetActive(!pausePanel.activeSelf);
         if (!isPaused)
         {
+            bgmAudioSource.volume = 0.5f;
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             GameManager.instance.isTimerRunning = false;
@@ -55,6 +58,7 @@ public class PauseGame : MonoBehaviour
         }
         else if (isPaused)
         {
+            bgmAudioSource.volume = 1f;
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             GameManager.instance.isTimerRunning = true;

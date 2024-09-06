@@ -35,6 +35,8 @@ public class VaultDoor : MonoBehaviour
             {
                 if (!GameManager.instance.isColourSquareTask)
                 {
+                    GameManager.instance.playerMovement.GetComponentInChildren<Animator>().SetFloat("moveSpeed", 0f);
+
                     // Open bank vault door keypad
                     Cursor.lockState = CursorLockMode.None;
                     GameManager.instance.thirdPersonCamera.enabled = false;
