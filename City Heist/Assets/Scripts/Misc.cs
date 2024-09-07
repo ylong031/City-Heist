@@ -81,7 +81,7 @@ public class Misc : MonoBehaviour
     private void Update()
     {
         moneytext.text = "$ " + money;
-
+/*
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (taskmenu.activeSelf)
@@ -94,7 +94,7 @@ public class Misc : MonoBehaviour
                 taskmenu.SetActive(true);
 
             }
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
