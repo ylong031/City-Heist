@@ -12,24 +12,12 @@ public class DisplayRules : MonoBehaviour
     int index = 0;
     bool isRunning = false;
 
-    //add reference to audiosource
-    public AudioSource rulesAudioSource;
-
-    //create function to play the sound when clicking rules
-    void RulesSound()
-    {
-        if (rulesAudioSource != null)
-        {
-            rulesAudioSource.Play();
-        }
-    }
-
     void Start()
     {
         rulesText = GetComponentInChildren<TMP_Text>();
         if (SceneManager.GetActiveScene().name == "Bank 1" || SceneManager.GetActiveScene().name == "Bank 2")
         {
-            rules = "Your mission: Complete the tasks in the task list to escape with the loot!\nSteal as much money as possible to get a higher grade!\nRules: Shooting civilians will cost you time but will earn you extra money.\nTaking them hostage will delay the police but you won't get their money.\nChoose wisely!\nP.S: You may want to leave the staffs alive till you leave the bank. They give hints.";
+            rules = "Your mission: Complete the tasks in the task list to escape with the loot!\nSteal as much money as possible to get a higher grade!\nRules: Shooting civilians will cost you time but will earn you extra money.\nTaking them hostage will delay the police but you won't get their money.\nChoose wisely!\nP.S: You may want to leave the staff alive till you leave the bank. They give you hints!";
         }
         sentences = rules.Split('\n');
         StartCoroutine(DisplayRulesOneSentenceAtATime());
@@ -39,9 +27,6 @@ public class DisplayRules : MonoBehaviour
     {
         if (!isRunning && Input.GetMouseButtonDown(0))
         {
-            //play the sound when user clicks the rule
-            RulesSound();
-
             if (index == sentences.Length - 1)
             {
                 if (SceneManager.GetActiveScene().name == "Bank 1" || SceneManager.GetActiveScene().name == "Bank 2")
@@ -60,11 +45,8 @@ public class DisplayRules : MonoBehaviour
                 StartCoroutine(DisplayRulesOneSentenceAtATime());
             }
         }
-        else if(isRunning && Input.GetMouseButtonDown(0))
+        else if (isRunning && Input.GetMouseButtonDown(0))
         {
-            //play the sound when user clicks the rule
-            RulesSound();
-
             StopAllCoroutines();
             for (int i = 0; i <= index; i++)
             {
