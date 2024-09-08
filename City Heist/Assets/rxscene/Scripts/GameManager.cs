@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
     public AudioSource taskCorrectAudioSource;
     public AudioSource taskIncorrectAudioSource;
     public AudioSource takeHostageAudioSource;
+    public AudioSource startAudioSource;
 
     void Awake()
     {
@@ -272,6 +273,11 @@ public class GameManager : MonoBehaviour
         // 2nd bank
         if (PlayerPrefs.GetInt("NextBank", 0) != 0)
         {
+            if (startAudioSource != null)
+            {
+                startAudioSource.Play();
+            }
+
             CloseInstructionsPanel();
         }
         // 1st bank

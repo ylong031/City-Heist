@@ -1555,8 +1555,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c71ebe9c31ccddf408babb75a0071f75, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8c741a0a421392a4b95445b0dc485ee5, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
@@ -1713,6 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftClickContinueText: {fileID: 904655115}
   rulesAudioSource: {fileID: 39787054}
+  startAudioSource: {fileID: 28269896}
 --- !u!114 &39787051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78231,7 +78232,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604957481}
-  m_LocalRotation: {x: 0.17121495, y: 1e-45, z: -0, w: 0.9852337}
+  m_LocalRotation: {x: 0.17121494, y: 1e-45, z: -0, w: 0.9852337}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -92048,6 +92049,7 @@ MonoBehaviour:
   taskCorrectAudioSource: {fileID: 1660155217}
   taskIncorrectAudioSource: {fileID: 1534425417}
   takeHostageAudioSource: {fileID: 1960617735}
+  startAudioSource: {fileID: 28269896}
 --- !u!4 &1867200734
 Transform:
   m_ObjectHideFlags: 0

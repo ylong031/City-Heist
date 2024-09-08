@@ -35539,6 +35539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftClickContinueText: {fileID: 1303167096}
   rulesAudioSource: {fileID: 758740671}
+  startAudioSource: {fileID: 1158695276}
 --- !u!114 &758740668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54150,8 +54151,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c71ebe9c31ccddf408babb75a0071f75, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8c741a0a421392a4b95445b0dc485ee5, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.435
   m_Pitch: 1
   Loop: 0
@@ -65853,7 +65854,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704195}
-  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
+  m_LocalRotation: {x: 0.18910751, y: -0.0000000084479606, z: 0.0000000016269286,
+    w: 0.9819564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -76971,7 +76973,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604957481}
-  m_LocalRotation: {x: 0.17121495, y: -1e-45, z: -0, w: 0.9852337}
+  m_LocalRotation: {x: 0.17121494, y: -1e-45, z: -0, w: 0.9852337}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -85281,7 +85283,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747155550}
-  m_LocalRotation: {x: 0.15331319, y: -0.000000008501481, z: 0.0000000013189826, w: 0.98817766}
+  m_LocalRotation: {x: 0.15331319, y: 0.000000008501481, z: -0.0000000013189826, w: 0.98817766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -89713,6 +89715,7 @@ MonoBehaviour:
   taskCorrectAudioSource: {fileID: 472243654}
   taskIncorrectAudioSource: {fileID: 1774140509}
   takeHostageAudioSource: {fileID: 2103976114}
+  startAudioSource: {fileID: 1158695276}
 --- !u!4 &1867200734
 Transform:
   m_ObjectHideFlags: 0

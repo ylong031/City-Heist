@@ -14,6 +14,7 @@ public class DisplayRules : MonoBehaviour
 	
 	//add reference to audiosource
     public AudioSource rulesAudioSource;
+    public AudioSource startAudioSource;
 
     //create function to play the sound when clicking rules
     void RulesSound()
@@ -44,6 +45,11 @@ public class DisplayRules : MonoBehaviour
 			
             if (index == sentences.Length - 1)
             {
+                if (startAudioSource != null)
+                {
+                    startAudioSource.Play();
+                }
+
                 if (SceneManager.GetActiveScene().name == "Bank 1" || SceneManager.GetActiveScene().name == "Bank 2")
                 {
                     StartCoroutine(RulesPanelFadeOut());
